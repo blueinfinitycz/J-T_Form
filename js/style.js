@@ -3,6 +3,11 @@ $(document).ready(
 
 		if ( $(window).width() > 991 ) $('#segments').height( $(window).outerHeight() - 50 );
 
+		$( window ).resize(function() {
+  			if ( $(window).width() > 991 ) $('#segments').height( $(window).outerHeight() - 50 );
+			  else $('#segments').css('height', 'auto');
+		});
+
 		var getparam = function(name) { return  decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null; }
 		var what = getparam('form');
 		var message = getparam("message");
