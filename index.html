@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>J&amp;T Leasing</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=10,9" />
+	<meta name="keywords" content="leasing, finanční leasing, operativní leasing, financování IT, financování počítačů, financování software, IT jako služba, úvěr na zdravotní péči, financování zubařů a lékařů, úvěr na zuby">
+	<meta name="description" content="Poskytujeme finanční leasing, operativní leasing a úvěry v oblastech informačních technologií a zdravotnictví. Financujeme velká IT řešení včetně softwaru, lékařské vybavení a zdravotní péči.">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous"> <!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="css/style.css?ver=3">
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/style.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+	<script>
+		window.addEventListener("load", function(){
+			window.cookieconsent.initialise({
+			  "palette": {
+			    "popup": {
+			      "background": "#9479f0",
+			      "text": "white"
+			    },
+			    "button": {
+			      "background": "transparent",
+			      "border": "white",
+			      "text": "white"
+			    }
+			  },
+			  "content": {
+			    "message": "J&T Leasingová společnost a J&amp;T Banka používají cookies na této webové stránce. Chcete-li se dozvědět více, přejděte do sekce",
+			    "dismiss": "ROZUMÍM",
+			    "link": "Ochrana soukromí a cookie.",
+			    "href": "http://www.jtbank.cz/bezpecnostni-informace/"
+			  }
+			})});
+		</script>
+	<style type="text/css">
+		.cc-window.cc-banner {
+			padding: 10px 100px;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container">
+		<a class="navbar-brand" href="#"><img src="images/Logo-White.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="return scrollToAnchor('segments')">segmenty</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#" onclick="return scrollToAnchor('aboutus')">o společnosti <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="return scrollToAnchor('finprod')">finanční produkty</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="return scrollToAnchor('loginform')">pro partnery</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="return scrollToAnchor('contact')">kontakt</a>
+				</li>
+		</div>
+		</div>
+	</nav>
+
+	<section id="segments">
+
+		<div class="segment blue">
+
+			<div class="title">
+				Informační a komunikační<br>
+				technologie<br>
+				<img src="images/down-light.png" alt="" onclick="openSegment(1)">
+			</div>
+
+			<div class="img"><img src="images/up-light.png" alt="" onclick="closeSegment()"></div>
+
+			<div class="container">
+				<div class="cols">
+					<div class="title">Informační a komunikační technologie</div>
+					<div>Financujeme informační technologie od běžných
+						počítačů, po velká hardwarová i softwarová
+						řešení. Poskytujeme kompletní škálu financování
+						prostřednictvím finančního, operativního
+						i zpětného leasingu, úvěrů nebo faktoringu.
+						I díky tomu jsme vždy schopni najít nejjednodušší
+						a nejvýhodnější řešení. Součástí financování
+						je možnost pojištění financovaných předmětů
+						renomovaným pojišťovacím ústavem.</div>
+					<div><button onclick="return scrollToAnchor('contact')">Kontaktujte mě →</button></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="segment purple hidden">
+			<div class="title">
+				Zdravotnická a veterinární<br>
+				technika<br>
+				<img src="images/down-light.png" alt="" onclick="openSegment(2)">
+			</div>
+
+			<div class="img"><img src="images/up-light.png" alt="" onclick="closeSegment()"></div>
+
+			<div class="container">
+				<div class="cols">
+					<div class="title">Zdravotnická<br>a veterinární<br>
+						technika<br>a vybavení</div>
+					<div>Financujeme nákup zdravotnických a veterinárních
+						přístrojů a zařízení pro veškeré lékařské obory
+						a veterinární praxe, rekonstrukce či nákup již
+						provozovaných ordinací. Financování poskytneme
+						i nově vznikajícím zdravotnickým pracovištím
+						a začínajícím lékařům. Součástí financování
+						je možnost pojištění předmětů
+						přímo ve splátkách.</div>
+					<div><button onclick="return scrollToAnchor('contact')">Kontaktujte mě →</button></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="segment tyrkis hidden">
+			<div class="title">
+				Zdravotní péče<br>
+				<img src="images/down-dark.png" alt="" onclick="openSegment(3)">
+			</div>
+
+			<div class="img"><img src="images/up-dark.png" alt="" onclick="closeSegment()"></div>
+
+			<div class="container">
+				<div class="cols">
+					<div class="title">Zdravotní<br>péče</div>
+					<div>Poskytujeme spotřebitelské úvěry na lékařské
+						zákroky v oboru stomatologie, oftalmologie,
+						dermatologie i plastické chirurgie. Umožňujeme
+						rozložit výdaje za ošetření do několika menších
+						částek a překlenout nedostatek financí při
+						zachování kvalitní a včasné péče.</div>
+					<div><button class="dark" onclick="return scrollToAnchor('contact')">Kontaktujte mě →</button></div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<section id="aboutus" class="grey">
+
+		<div class="container">
+			<div class="cols">
+				<div class="title">O společnosti</div>
+				<div>Zaměřujeme se na financování informačních
+					technologií a lékařské péče. Financujeme běžné
+					počítače i kompletní hardwarová a softwarová
+					řešení. Klinikám i lékařům poskytujeme finance
+					na vybavení ordinací, pacientům na nákladnější
+					zdravotní péči. Součástí poskytovaných služeb
+					je i pojištění.<br><br>
+					Zakládáme si na rychlém a srozumitelném
+					sjednání úvěru, finančního nebo operativního
+					leasingu. Máme silné zázemí, jsme dceřinou
+					společností J&T Banky a součástí finanční
+					skupiny J&T Finance Group SE.
+				</div>
+				<div><p class="normal">Dokumenty ke stažení ↓</p>
+					<p class="normal">
+						<ul>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Reklamační řád (s účinností od 9.4.2018)</a></li>
+							<li>→ <a href="documents/Osobni_udaje_informace_JTLS.pdf" target="_blank">Osobní údaje</a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+			<div id="moreaboutus-switcher" class="cols">
+				<div></div>
+				<div>
+					<div class="more" onclick="showMoreAboutUs()"><img src="images/plus.png"><br>Více o společnosti</div>
+					<div class="less" onclick="hideMoreAboutUs()"><img src="images/x.png"></div>
+				</div>
+				<div></div>
+			</div>
+			<div id="moreaboutus" class="cols">
+				<div></div>
+				<div>
+					<p><span class="labels">J&T Leasingová společnost, a. s.</span>
+						Založena 7. ledna 2014.<br>
+						Zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, oddíl B,
+						vložka 14450.<br>
+						IČO: 284 27 980; DIČ: CZ 284 27 980<br>
+						Statutární orgán: Ing. Vlastimil Nešetřil, Ph.D.</p>
+					<p><span class="labels">Předmět podnikání:</span>
+						Poskytování nebo zprostředkování spotřebitelského úvěru.</p>
+					<p>J&T Leasingová společnost, a. s., jakožto poskytovatel spotřebitelského úvěru,
+						využívá ke zprostředkování úvěrů pouze svých zaměstnanců, nikoliv vázaných
+						zástupců.</p>
+					<p>Výroba, obchod a služby neuvedené v přílohách 1 až 3 živnostenského zákona
+						(obory činnosti: Zprostředkování obchodu a služeb, Pronájem a půjčování
+						věcí movitých a Služby v oblasti administrativní správy a služby organizačně
+						hospodářské povahy).</p>
+					<p><span class="labels">Zprostředkování pojištění</span>
+						J&T Leasingová společnost, a.s., jakožto pojišťovací agent, využívá ke
+						zprostředkování pojištění, pouze svých zaměstnanců, nikoliv podřízených
+						pojišťovacích zprostředkovatelů.</p>
+					<p><span class="labels">Údaje o registru ověřující oprávnění JTLS k činnosti poskytovatele
+							spotřebitelských úvěrů</span>
+						Společnost J&T Leasingová společnost, a.s., je oprávněna poskytovat
+						spotřebitelské úvěry na základě licence poskytovatele spotřebitelského úvěru.
+						Oprávnění společnosti vykonávat činnost poskytovatele spotřebitelského úvěru
+						je možno ověřit na webových stránkách <a href="http://www.cnb.cz/cs/dohled_financni_trh/seznamy/" target="_blank">České národní banky</a>.</p>
+					<p><span class="labels">Sídlo společnosti:</span>
+						Pobřežní 297/14, PSČ 186 00, Praha 8 - Karlín</p>
+					<p><span class="labels">Informace o orgánu dohledu:</span>
+						Dozor nad dodržováním povinností stanovených zákonem
+						o spotřebitelském úvěru vykonává nad společností Česká národní banka.</p>
+					<p><span class="labels">Poskytování rady:</span>
+						J&T Leasingová společnost, a. s. není poskytovatelem nebo
+						zprostředkovatelem rady ve smyslu § 85 odst. 1, zák. 257/2016 Sb.</p>
+				</div>
+				<div>
+					<p><span class="labels">Informace ve smyslu ust. § 21 zákona č. 38/2004 Sb., o pojišťovacích
+							zprostředkovatelích a samostatných likvidátorech pojistných událostí:</span>
+						J&T Leasingová společnost, a .s. je evidován jako pojišťovací agent,
+						reg. číslo 233851PA v registru pojišťovacích zprostředkovatelů a samostatných
+						likvidátorů pojistných událostí vedeného Českou národní bankou.
+						Zápis v registru lze ověřit dle seznamů zveřejňovaných Českou národní bankou,
+						ve Finančním zpravodaji nebo na adrese www.cnb.cz.</p>
+					<p>Na žádost klienta podá J&T Leasingová společnost, a. s.
+						informaci o tom, pro které činnosti je činná.</p>
+					<p>J&T Leasingová společnost, a. s. vykonává činnost způsobem,
+						při kterém není povinna provádět analýzu produktů.</p>
+					<p>Na žádost klienta podá J&T Leasingová společnost, a. s.
+						klientovi informaci o způsobu svého odměňování.</p>
+					<p>J&T Leasingová společnost, a. s. prohlašuje, že nemá jakýkoliv přímý či nepřímý
+						podíl na hlasovacích právech a kapitálu žádné pojišťovny, převyšující 10 %.</p>
+					<p>Žádná pojišťovna ani osoba ovládající pojišťovnu nemá přímý ani nepřímý podíl
+						na hlasovacích právech a kapitálu pojišťovacího zprostředkovatele, který by
+						převyšoval 10 %.</p>
+					<p><span class="labels">Mechanismus vyřizování stížností:</span>
+						Klienti a ostatní dotčené osoby jsou oprávněni obracet se
+						se svými stížnostmi na níže uvedené instituce:</p>
+					<p>J&T Leasingová společnost, a.s. v souladu s Reklamačním řádem</p>
+					<p>Finančního arbitra, se sídlem Legerova 1581/69, 110 00 Praha 1,
+						www.finarbitr.cz , který je oprávněn k mimosoudnímu řešení sporů
+						v oblasti finančních služeb</p>
+					<p>Českou národní banku, tel.: 224 411 111, web: www.cnb.cz</p>
+					<p>Příslušnou pojišťovnu v případě pojištění</p>
+					<p>Českou obchodní inspekci v případě neživotního pojištění</p>
+					<p>a/nebo jsou oprávněni podat na společnost žalobu u příslušného soudu</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="finprod" class="grey">
+
+		<div class="container">
+			<div class="cols">
+				<div class="title">Finanční produkty</div>
+				<div>
+					<p><span class="labels">Finanční leasing</span>
+						Pronájem předmětu uzavíraný na dobu určitou,
+						obvykle od 36 do 60 měsíců. Předmět leasingu je po
+						dobu pronájmu ve vlastnictví leasingové společnosti
+						a klient má výhradní právo na jeho užívání za
+						předem dohodnutou výši nájemného. Při ukončení
+						leasingové smlouvy má klient právo předmět odkoupit za
+						předem definovanou cenu.</p>
+					<p><span class="labels">Operativní leasing</span>
+						Nájemní vztah, který se uzavírá na kratší dobu, obvykle od 6 do
+						48 měsíců. Po ukončení doby pronájmu zůstává
+						předmět ve vlastnictví leasingové společnosti,
+						což umožňuje započítat do leasingových splátek
+						pouze rozdíl mezi pořizovací a zůstatkovou
+						hodnotou předmětu. Klient tak zaplatí pouze reálně
+						amortizovanou část pořizovací ceny předmětu.</p>
+					<p><span class="labels">Zpětný leasing</span>
+						Umožňuje profinancování již pořízených předmětů,
+						které klient zpětně prodá leasingové společnosti
+						a následně si pronajme na základě leasingové
+						smlouvy formou finančního nebo operativního
+						leasingu. Získané finance z prodeje předmětu může
+						klient volně použít v rámci své podnikatelské činnosti.</p>
+					<p><span class="labels">Podnikatelský úvěr</span>
+						Jedná se o poskytnutí peněžních prostředků pro
+						účelové financování jednotlivých předmětů nebo
+						investičních projektů. U tohoto druhu financování
+						je předmět ve vlastnictví klienta a leasingová
+						společnost jej obvykle zajišťuje formou zajišťovacího 
+						převodu vlastnického práva. Úvěr je řešením
+						i pro financování předmětů a projektů spojených
+						s poskytováním dotací nebo pro financování SW
+						licencí v rámci IT projektů.</p>
+					<p><span class="labels">Odkup pohledávek</span>
+						Podstatou je odkup pohledávek nebo splátkových
+						kalendářů vzniklých dodávkami odběratelům
+						klienta s krátkodobou nebo střednědobou
+						splatností.</p>
+				</div>
+				<div>
+					<p><span class="labels">Spotřebitelský úvěr k financování
+							zdravotní péče</span></p>
+					<p>Úvěr bez poplatků a sankcí za předčasné
+						splacení pro klienty fyzické osoby nepodnikatele
+						poskytovaný na lékařské zákroky v oboru
+						stomatologie, oftalmologie, dermatologie
+						a plastické chirurgie. Standardní doba splácení
+						úvěru je 12 až 36 měsíců, výše úvěru 15 000
+						až 150 000 Kč.</p>
+					<p><a href="#" onclick="return scrollToAnchor('prodinfo')">Produktové informace →</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="prodinfo" class="grey">
+
+		<div class="container">
+			<div class="cols">
+				<div class="title">Produktové informace:<br>Spotřebitelské úvěry</div>
+				<div>
+					<p><span class="labels">Druh spotřebitelského úvěru:</span>
+						Spotřebitelský úvěr poskytovaný pouze v domácí měně (CZK), jehož účel je určen
+						výhradně na úhradu úkonů zdravotní péče.</p>
+					<p><span class="labels">Doba trvání spotřebitelského úvěru:</span>
+						Úvěr je sjednáván na dobu určitou, a to od 12 do 36 měsíců.</p>
+					<p><span class="labels">Typ úrokové sazby:</span>
+						Úroková sazba je stanovena jako pevná roční úroková sazba, která je platná po
+						celou dobu trvání úvěrového vztahu.</p>
+					<p><span class="labels">Reprezentativní příklad poskytnutého úvěru:</span>
+						<dl class="row">
+						<dt class="col-sm-8">Celková částka úvěru</dt><dd class="col-sm-4">70 000 Kč</dd>
+						<dt class="col-sm-8">Doba trvání úvěru</dt><dd class="col-sm-4">36 (měsíců)</dd>
+						<dt class="col-sm-8">Úroková sazba</dt><dd class="col-sm-4">7,90 % p.a.</dd>
+						<dt class="col-sm-8">Četnost plateb</dt><dd class="col-sm-4">měsíčně</dd>
+						<dt class="col-sm-8">Výše pravidelné platby</dt><dd class="col-sm-4">2 190 Kč</dd>
+						<dt class="col-sm-8">Poplatek za sjednání úvěru</dt><dd class="col-sm-4">0 Kč</dd>
+						<dt class="col-sm-8">RPSN</dt><dd class="col-sm-4">8,12 %</dd>
+						<dt class="col-sm-8">Celková částka splatná klientem</dt><dd class="col-sm-4">78 840 Kč</dd>
+						<dt class="col-sm-8">Datum kalkulace úvěru</dt><dd class="col-sm-4">11.12.2017</dd>
+						</dl>
+					<p><span class="labels">Náklady úvěru nezahrnuté do celkových nákladů úvěru:</span>
+						J&T Leasingová společnost, a. s. nepožaduje od klientů úhradu jakýchkoli
+						dodatečných nákladů nad rámec nákladů poskytnutého úvěru.</p>
+					<p><span class="labels">Splátky a způsob rozdělení splátek:</span>
+						Úvěr je splácen v neměnných a pravidelných měsíčních splátkách, dle
+						stanoveného harmonogramu splátek. Úroky jsou spláceny společně se splátkou
+						jistiny. Úhradou všech splátek stanovených v harmonogramu splátek dochází ke
+						splacení celkové výše spotřebitelského úvěru.</p>
+					<p><span class="labels">Podklady nezbytné k posouzení úvěruschopnosti</span>
+						J&T Leasingová společnost, a. s. před poskytnutím úvěru vyžaduje od klientů
+						vyplnit elektronickou <a href="documents/žádost_JTLS.pdf" target="_blank">Žádost o úvěr</a>. V&nbsp;žádosti jsou uvedeny informace týkají se
+						osobních a identifikačních údajů klienta (ověřitelných z dokladu totožnosti),
+						kontaktní údaje (adresa, telefon, email) a údaje o životní a rodinné situaci (typ
+						domácnosti, počet členů domácnosti, typ bydlení, zdroj a výše příjmů, výše
+						měsíčních splátek a výdajů). Údaje o životní a rodinné situaci jsou následně
+						přeneseny mezi přílohy návrhu úvěrové smlouvy. Výši pravidelného příjmu klient
+						dokládá na samostatném zaměstnavatelem stvrzeném formuláři <a href="documents/JTLS_potvrzeni_o_vysi_prijmu.pdf" target="_blank">Potvrzení o
+						příjmu</a>.</p>
+					<p><span class="labels">Proces poskytnutí spotřebitelského úvěru:</span>
+						J&T Leasingová společnost, a. s. před poskytnutím úvěru důkladně vyhodnocuje
+						situaci každého potenciálního klienta. Do žádosti o úvěr klient uvádí
+						informace o své životní, rodinné a finanční situaci, kterou následně dokládá na
+						zaměstnavatelem ověřeném potvrzení o příjmu (k dispozici v dokumentech
+						ke stažení). Výpočtový model J&T Leasingová společnost, a. s., který posuzuje
+						klientem poskytnuté údaje, zahrnuje do svého vyhodnocení (posouzení
+						úvěruschopnosti) také informace z insolvenčního rejstříku, Centrální evidence
+						exekucí, databáze neplatných dokladů MV ČR a databáze zájmového sdružení
+						právnických osob SOLUS (k ověření platební morálky a historii). Výsledek
+						výpočtového modelu je klientovi vždy poskytnut. Kladné vyhodnocení žádosti
+						klienta je dodatečně potvrzeno klientovi e-mailem, a to s uvedením dalších
+						instrukcí k uzavření požadované smlouvy.</p>
+				</div>
+				<div>
+					<p><span class="labels">Požadované zajištění úvěru:</span>
+						J&T Leasingová společnost, a. s. nevyžaduje zajištění poskytnutého úvěru
+						movitou či nemovitou věcí, nebo jinou formu zajištění.</p>
+					<p><span class="labels">Doplňkové služby:</span>
+						Uzavření smlouvy o doplňkových službách, pokud jsou J&T Leasingová
+						společnost, a. s. poskytovány, není podmínkou pro získání spotřebitelského
+						úvěru.</p>
+					<p><span class="labels">Předčasné splacení spotřebitelského úvěru:</span>
+						Klient je oprávněn kdykoliv po čerpání úvěru předčasně splatit celý úvěr nebo
+						jakoukoliv jeho část. K oznámení tohoto požadavku klientem poskytovateli
+						je určen formulář Vzor oznámení o předčasném splacení (k dispozici v
+						dokumentech ke stažení).</p>
+					<p><span class="labels">Důsledky nedodržení smluvních závazků:</span>
+						Pokud je klient v prodlení s úhradou jakékoli splátky úvěru, zavazuje se klient
+						zaplatit J&T Leasingové společnosti, a. s. (dále jen JTLS) úrok z prodlení v souladu
+						se zákonem č. 257/2016 Sb. o spotřebitelském úvěru. V případě, že klient je v
+						prodlení s úhradou splátky úvěru po dobu delší 14 kalendářních dní, JTLS vyzve
+						klienta k uhrazení splátky úvěru a poskytne mu k tomu lhůtu 30 dnů. V případě
+						marného uplynutí uvedené lhůty je JTLS oprávněna úvěr okamžitě zesplatnit. J&T
+						Leasingová společnost, a. s. posuzuje případně zesplatnění individuálně, a to na
+						základě dostupnosti možné dohody s klientem.</p>
+					<p class="normal">Dokumenty ke stažení ↓</p>
+					<p class="normal">
+						<ul>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Žádost o úvěr a prohlášení klienta</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Všeobecné obchodní podmínky (do 24.5.2018)</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Všeobecné obchodní podmínky (od 25.5.2018)</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Vzorová smlouva (do 24.5.2018)</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Vzorová smlouva (od 25.5.2018)</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Potvrzení o příjmu</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Vzor formuláře pro odstoupení od smlouvy</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Vzor oznámení o předčasném splacení</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Souhlas s pořízením fotokopie dokladu totožnosti</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Souhlas se zpracováním osobních údajů</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Informace o zpracování údajů v databázi
+								sdružení SOLUS</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Poučení o registrech sdružení SOLUS</a></li>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Informace pro klienty v potížích
+								s plněním svých závazků</a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="loginform" class="grey">
+
+		<div class="container">
+			<form action="https://www.jtleasing.cz/JTLS/Default.aspx" method="POST">
+				<div class="cols">
+					<div>&nbsp;</div>
+					<div class="title">
+						<input type="text" placeholder="jméno" name="userName">
+						<input type="text" placeholder="heslo" name="password">
+						<p><div id="formmessage"></div></p>
+					</div>
+					<div><button class="dark">Odeslat -></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section id="contact" class="grey">
+
+		<style>
+			#map {
+				height: 600px;
+				width: 100%;
+			}
+		</style>
+
+		<div class="block block-map" id="map"></div>
+		<div class="container">
+			<div class="cols">
+				<div>
+					<p>J&T Leasingová společnost, a. s.</p>
+					<p>Pobřežní 297/14<br>
+						186 00 Praha 8<br>
+						Česká republika<br>
+						info@jtleasing.cz</p>
+				</div>
+				<div>
+					<p>Obchodní kontakty:</p>
+					<p>obchod@jtleasing.cz<br>
+						+420 221 710 304 (informační technologie)<br>
+						+420 221 710 346 (zdravotní technika a spotřebitelské úvěry)<br>
+						+420 221 710 769 (pojištění)</p>
+				</div>
+			</div>
+			<script>
+				function initMap() {
+
+
+					var styledMapType = new google.maps.StyledMapType(
+						[{
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#f5f5f5"
+								}]
+							},
+							{
+								"elementType": "labels.icon",
+								"stylers": [{
+									"visibility": "off"
+								}]
+							},
+							{
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#616161"
+								}]
+							},
+							{
+								"elementType": "labels.text.stroke",
+								"stylers": [{
+									"color": "#f5f5f5"
+								}]
+							},
+							{
+								"featureType": "administrative.land_parcel",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#bdbdbd"
+								}]
+							},
+							{
+								"featureType": "poi",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#eeeeee"
+								}]
+							},
+							{
+								"featureType": "poi",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#757575"
+								}]
+							},
+							{
+								"featureType": "poi.park",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#e5e5e5"
+								}]
+							},
+							{
+								"featureType": "poi.park",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#9e9e9e"
+								}]
+							},
+							{
+								"featureType": "road",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#ffffff"
+								}]
+							},
+							{
+								"featureType": "road.arterial",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#757575"
+								}]
+							},
+							{
+								"featureType": "road.highway",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#dadada"
+								}]
+							},
+							{
+								"featureType": "road.highway",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#616161"
+								}]
+							},
+							{
+								"featureType": "road.local",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#9e9e9e"
+								}]
+							},
+							{
+								"featureType": "transit.line",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#e5e5e5"
+								}]
+							},
+							{
+								"featureType": "transit.station",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#eeeeee"
+								}]
+							},
+							{
+								"featureType": "water",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#c9c9c9"
+								}]
+							},
+							{
+								"featureType": "water",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#9e9e9e"
+								}]
+							}
+						], {
+							name: 'Styled Map'
+						});
+
+
+					var uluru = {
+						lat: 50.092479,
+						lng: 14.440546
+					};
+					var map = new google.maps.Map(document.getElementById('map'), {
+						zoom: 12,
+						center: uluru
+					});
+					var marker = new google.maps.Marker({
+						position: uluru,
+						map: map
+					});
+					map.mapTypes.set('styled_map', styledMapType);
+					map.setMapTypeId('styled_map');
+				}
+			</script>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAnFrPS7tiXptCh90UFJqMW5TgpOYBZiE&callback=initMap">
+			</script>
+		</div>
+	</section>
+</body>
+
+</html>

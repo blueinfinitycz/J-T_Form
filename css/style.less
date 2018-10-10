@@ -1,0 +1,342 @@
+@charset "UTF-8";
+
+@import "fedra";
+
+
+//	colors
+@blue: #6dbef2;
+@purple: #9479f0;
+@tyrkis: #9de6fe;
+@dark-blue: #000d5b;
+@white: white;
+@grey: #eceded;
+
+@font-color-light: @white;
+@font-color-dark: @dark-blue;
+
+@font-size-text: 14px;
+@font-size-text-small: 12px;
+
+body {
+	padding: 0px;
+	font-family: 'Fedra', 'Roboto', sans-serif;
+	font-size: @font-size-text;
+	color: @font-color-light;
+	font-weight: 100;
+	
+	background-color: transparent;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+dt {
+	font-weight: 400;
+	font-size: @font-size-text-small
+}
+
+dd {
+	font-weight: 100;
+	font-size: @font-size-text-small;
+	padding: 0;
+}
+
+nav.navbar {
+	position: fixed;
+	width: 100%;
+	background: @blue;
+	z-index: 1000;
+} 
+
+nav .navbar-brand img {
+	height: 40px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: @white;
+}
+
+.navbar-nav .nav-item {
+	flex: 1;
+}
+
+section.grey {
+	border-bottom: 2px solid @white;
+	background-color: @grey;
+}
+
+#segments {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	padding-top: 50px;
+	box-sizing: content-box;
+	background-color: @blue;
+}
+
+#segments .segment {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+#segments .segment.open {
+	flex-direction: column;
+}
+
+#segments .segment .img {
+	display: none;
+	flex: 1;
+	width: 100%;
+	background-image: url(../images/medicina.png);
+	background-size: cover;
+	position: relative;
+}
+
+#segments .segment:nth-child(1) .img {
+	background-image: url(../images/technologie.png);
+	background-size: cover;
+}
+
+#segments .segment:nth-child(2) .img {
+	background-image: url(../images/technika.png);
+	background-size: cover;
+}
+
+#segments .segment.open .img {
+	display: block;
+}
+
+#segments .segment.open .img img {
+	position: absolute;
+	bottom: 8px;
+	cursor: pointer;
+}
+
+
+#segments .segment .container {
+	display: none;
+}
+
+#segments .segment.open .container {
+	display: block;
+}
+
+#segments .segment .cols {
+	display: none;
+	flex-direction: row;
+	justify-content: stretch;
+}
+
+#segments .segment.open .cols {
+	display: flex;
+	padding-top: 16px;
+}
+
+#segments .segment .cols > div {
+	text-align: left;
+	flex: 1;
+	padding: 16px;
+}
+
+#segments .segment .cols > div.title {
+	border-top: 2px solid @font-color-light;
+}
+
+#segments .segment.tyrkis .cols > div.title {
+	border-top: 2px solid @font-color-dark;
+}
+
+
+#segments .segment.blue {
+	background-color: @blue;
+}
+
+#segments .segment.purple {
+	background-color: @purple;
+}
+
+#segments .segment.tyrkis {
+	background-color: @tyrkis;
+	color: @font-color-dark;
+}
+
+#segments .segment .title {
+	font-size: 44px;
+	width: 100%;
+	font-weight: 100;
+}
+
+#segments .segment.open > .title {
+	display: none;
+}
+
+#segments .segment .title img {
+	width: 40px;
+	cursor: pointer;
+}
+
+button {
+	background: transparent;
+	border: 1px solid @font-color-light;
+	color: @font-color-light;
+	padding: 8px 12px 8px 12px ;
+}
+
+button.dark {
+	border: 1px solid @font-color-dark;
+	color: @font-color-dark;	
+}
+
+section.grey {
+	color: @font-color-dark;
+	padding-bottom: 80px;
+}
+
+section.grey .title {
+	font-size: 44px;
+	width: 100%;
+	font-weight: 100;
+}
+
+section.grey .cols {
+	flex-direction: row;
+	justify-content: stretch;
+	display: flex;
+	padding-top: 16px;
+}
+
+section.grey .cols > div {
+	text-align: left;
+	flex: 1;
+	padding: 16px;
+}
+
+section.grey .cols > div.title {
+	border-top: 2px solid @font-color-dark;
+}
+
+section.grey a {
+	color: @dark-blue;
+	text-decoration: underline;
+	font-weight: 100;
+}
+
+
+#moreaboutus-switcher .more, #moreaboutus-switcher  .less {
+
+	padding: 20px 0 20px 0;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+#moreaboutus-switcher  .less {
+	display: none;
+}
+
+#moreaboutus-switcher.open  .more {
+	display: none;
+}
+
+#moreaboutus-switcher.open  .less {
+	display: flex;
+}
+
+#moreaboutus-switcher .more img, #moreaboutus-switcher .less img {
+	width: 50px;
+
+}
+
+#aboutus #moreaboutus.cols {
+	display: none;
+}
+
+section p {
+	font-size: @font-size-text;
+}
+
+section #moreaboutus p {
+	font-size: @font-size-text-small;
+}
+
+section p span.labels {
+	font-weight: 400;
+	display: block;
+}
+
+section#prodinfo p {
+	font-size: @font-size-text-small;
+}
+
+section#prodinfo p.normal {
+	font-size: @font-size-text;
+}
+
+
+input {
+    width: 200px;
+    border: 0;
+    background: transparent;
+    color: @font-color-dark;
+	font-size: 20px;
+}
+
+input::placeholder {
+    color: @font-color-dark;
+}
+
+#formmessage {
+	font-size: @font-size-text;
+	font-weight: 400;
+	padding: 10px 15px;
+	border: 2px solid @white;
+	display: none;
+}
+
+@media (min-width: 991px) {
+	.navbar-nav {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		margin-left: 60px;
+	}
+}
+
+@media (max-width: 991px) {
+
+	section.grey .cols {
+		display: block;
+	}
+
+	section.grey .cols > div {
+	}
+
+	#segments {
+		height: auto;
+		display: block;
+	}
+
+	#segments .segment {
+
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	#segments .segment {
+
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+
+	#segments .segment.open .cols {
+		display: block;
+	}
+
+	#segments .segment.open .img {
+		height: 150px;
+	}
+}
