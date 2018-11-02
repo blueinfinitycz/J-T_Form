@@ -1,11 +1,20 @@
 $(document).ready(
 	function() {
 
-		if ( $(window).width() > 991 ) $('#segments').height( $(window).outerHeight() - 50 );
+		if ( $(window).width() > 991 ) {
+			$('#segments').height( $(window).outerHeight() - 50 );
+			$('#contact').height( $(window).outerHeight() - 50 );
+		}
 
 		$( window ).resize(function() {
-  			if ( $(window).width() > 991 ) $('#segments').height( $(window).outerHeight() - 50 );
-			  else $('#segments').css('height', 'auto');
+  			if ( $(window).width() > 991 ) {
+				  $('#segments').height( $(window).outerHeight() - 50 );
+				  $('#contact').height( $(window).outerHeight() - 50 );
+			}
+			else {
+				$('#segments').css('height', 'auto');
+				$('#contact').css('height', 'auto');
+			}
 		});
 
 		var getparam = function(name) { return  decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null; }
@@ -64,7 +73,7 @@ function hideMoreAboutUs() {
 
 function scrollToAnchor(aid){
     var aTag = $("*[id='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top - 50 },'slow');
+    $('html,body').animate({scrollTop: aTag.offset().top - 66 },'slow');
 	$('.navbar-collapse').collapse('hide');
     return false;
 }

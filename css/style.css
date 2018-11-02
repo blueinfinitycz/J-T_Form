@@ -41,6 +41,10 @@ ul {
   list-style: none;
   padding: 0;
 }
+ul li {
+  padding-left: 15px;
+  text-indent: -15px;
+}
 dt {
   font-weight: 400;
   font-size: 12px;
@@ -64,6 +68,12 @@ nav .navbar-brand img {
 }
 .navbar-nav .nav-item {
   flex: 1;
+}
+#navbarSupportedContent {
+  padding-top: 18px;
+}
+.navbar-dark .navbar-toggler {
+  border-color: transparent;
 }
 section.grey {
   border-bottom: 2px solid white;
@@ -108,8 +118,10 @@ section.grey {
 }
 #segments .segment.open .img img {
   position: absolute;
-  bottom: 8px;
+  bottom: 32px;
   cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
 }
 #segments .segment .container {
   display: none;
@@ -124,7 +136,7 @@ section.grey {
 }
 #segments .segment.open .cols {
   display: flex;
-  padding-top: 16px;
+  padding-top: 32px;
 }
 #segments .segment .cols > div {
   text-align: left;
@@ -144,13 +156,17 @@ section.grey {
   background-color: #9479f0;
 }
 #segments .segment.tyrkis {
-  background-color: #9de6fe;
+  background-color: #19e6e2;
   color: #000d5b;
 }
 #segments .segment .title {
   font-size: 44px;
   width: 100%;
   font-weight: 100;
+  line-height: 100%;
+}
+#segments .segment .title.clickable {
+  cursor: pointer;
 }
 #segments .segment.open > .title {
   display: none;
@@ -158,12 +174,13 @@ section.grey {
 #segments .segment .title img {
   width: 40px;
   cursor: pointer;
+  margin-top: 24px;
 }
 button {
   background: transparent;
   border: 1px solid white;
   color: white;
-  padding: 8px 12px 8px 12px ;
+  padding: 12px 12px 8px 12px ;
 }
 button.dark {
   border: 1px solid #000d5b;
@@ -177,12 +194,13 @@ section.grey .title {
   font-size: 44px;
   width: 100%;
   font-weight: 100;
+  line-height: 100%;
 }
 section.grey .cols {
   flex-direction: row;
   justify-content: stretch;
   display: flex;
-  padding-top: 16px;
+  padding-top: 32px;
 }
 section.grey .cols > div {
   text-align: left;
@@ -235,12 +253,23 @@ section#prodinfo p {
 section#prodinfo p.normal {
   font-size: 14px;
 }
+section#loginform {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
 input {
   width: 200px;
   border: 0;
   background: transparent;
   color: #000d5b;
   font-size: 20px;
+}
+input:focus {
+  outline: none;
+  border-bottom: 1px solid #000d5b;
+}
+button:focus {
+  outline: none;
 }
 input::placeholder {
   color: #000d5b;
@@ -251,6 +280,24 @@ input::placeholder {
   padding: 10px 15px;
   border: 2px solid white;
   display: none;
+}
+section#contact {
+  display: flex;
+  flex-direction: column;
+}
+#map {
+  width: 100%;
+  flex: 1;
+}
+.modal-content {
+  background-color: #eceded;
+  border-radius: 0;
+}
+.modal-content .cols > div.title {
+  border-top: 2px solid #000d5b;
+}
+.modal-content .cols > div.title input {
+  width: 100%;
 }
 @media (min-width: 991px) {
   .navbar-nav {
@@ -264,6 +311,10 @@ input::placeholder {
   section.grey .cols {
     display: block;
   }
+  section.grey .cols > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
   #segments {
     height: auto;
     display: block;
@@ -272,14 +323,19 @@ input::placeholder {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  #segments .segment {
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
   #segments .segment.open .cols {
     display: block;
   }
   #segments .segment.open .img {
     height: 150px;
+  }
+  #segments .segment .title {
+    font-size: 24px;
+    width: 100%;
+    font-weight: 100;
+    line-height: 100%;
+  }
+  section.grey .title {
+    font-size: 24px;
   }
 }
