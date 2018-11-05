@@ -77,3 +77,12 @@ function scrollToAnchor(aid){
 	$('.navbar-collapse').collapse('hide');
     return false;
 }
+
+function sendingOK() {
+	alert('OK');
+}
+
+function sendingFailed() {
+	alert('failed');
+}
+
