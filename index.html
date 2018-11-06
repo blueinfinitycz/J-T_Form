@@ -655,12 +655,13 @@
 						<div class="cols">
 							<div>&nbsp;</div>
 							<div class="title">
-								<input type="text" placeholder="jméno" name="userName"><br><br>
-								<input type="text" placeholder="email" name="email"><br><br>
-								<input type="text" placeholder="telefon" name="phone"><br><br>
-								<p><div id="formmessage"></div></p>
+								<input type="text" placeholder="jméno" name="userName" id="userName"><br><br>
+								<input type="text" placeholder="email" name="email" id="email"><br><br>
+								<input type="text" placeholder="telefon" name="phone" id="phone"><br><br>
+								<p><div id="formOKmessage"></div></p>
+								<p><div id="formFailedmessage"></div></p>
 							</div>
-							<div><button type="submit" class="dark">Odeslat →</button>
+							<div><button type="button" class="dark" onclick="sendForm()">Odeslat →</button>
 							</div>
 						</div>
 					</form>

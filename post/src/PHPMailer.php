@@ -1845,7 +1845,7 @@ class PHPMailer
             // $hostinfo[4]: optional port number
             // The host string prefix can temporarily override the current setting for SMTPSecure
             // If it's not specified, the default value is used
-            var_export($hostinfo);
+            //var_export($hostinfo);
             //Check the host name is a valid name or IP address before trying to use it
             if (!static::isValidHost($hostinfo[3])) {
                 static::edebug($this->lang('connect_host').' '.$hostentry);

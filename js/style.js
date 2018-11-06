@@ -78,11 +78,42 @@ function scrollToAnchor(aid){
     return false;
 }
 
-function sendingOK() {
-	alert('OK');
+function sendForm() {
+	$('#formOKmessage').fadeOut();
+	$('#formFailedmessage').fadeOut();
+
+	data = {
+		"userName": $('#userName').val(),
+		"email": $('#email').val(),
+		"phone": $('#phone').val(),
+	}
+	$.ajax({
+		type: "POST",
+		url: 'http://jtleasing.jtfg.com/post',
+		data: data,
+		dataType: 'jsonp',
+		jsonp: false,
+    	jsonpCallback: "myJsonMethod",
+    	success : sendingOK,
+    	error : sendingFailed,
+	});
 }
 
-function sendingFailed() {
-	alert('failed');
+function sendingOK( data ) {
+
+	if ( data.error == '' ) {
+		$('#formOKmessage').html('Poslané. Ozveme se vám.');
+		$('#formOKmessage').fadeIn();
+		setTimeout( function() { 
+			$('#contactModal').modal('hide');
+			$('#formOKmessage').fadeOut();
+			$('#formFailedmessage').fadeOut();
+		}, 3000);
+	} else sendingFailed();
+}
+
+function sendingFailed(httpReq,status,exception) {
+	$('#formFailedmessage').html('Nastala chyba. Skuste to znovu pozdeji.');
+	$('#formFailedmessage').fadeIn();
 }
 

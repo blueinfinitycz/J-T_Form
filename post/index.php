@@ -1,5 +1,7 @@
 <?php
 
+header('Access-Control-Allow-Origin: *', false);
+header('Content-type: application/json');
 header_remove('X-Frame-Options');
 
 // Import PHPMailer classes into the global namespace
@@ -12,12 +14,12 @@ require 'src/PHPMailer.php';
 require 'src/Exception.php';
 require 'src/SMTP.php';
 
-$name = trim(strip_tags($_POST['userName']));
-$email = trim(strip_tags($_POST['email']));
-$phone = trim(strip_tags($_POST['phone']));
+$name = trim(strip_tags($_REQUEST['userName']));
+$email = trim(strip_tags($_REQUEST['email']));
+$phone = trim(strip_tags($_REQUEST['phone']));
 
 if ($name == '' || ($email == '' && $phone == '')) {
-    echo 'empty';
+    echo 'myJsonMethod('.json_encode(array('message' => 'empty', 'error' => 'Missing data'), JSON_HEX_APOS).')';
     exit;
 }
 
@@ -34,7 +36,8 @@ try {
     //Recipients
     $mail->setFrom('jtleasing@jtb.com', 'JTLeasing');
     //$mail->addAddress('info@jtleasing.cz', 'Info');     // Add a recipient
-    $mail->addAddress('baca@jtfg.com', 'Info');     // Add a recipient
+    $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
+    $mail->addAddress('malek@jtbank.cz', 'Petr Malek');     // Add a recipient
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
@@ -51,13 +54,7 @@ try {
     );
 
     $mail->send();
-    echo 'Message has been sent'; ?>
-    <script>parent.sendingOK();</script>
-    <?php
+    echo 'myJsonMethod('.json_encode(array('message' => 'Message has been sent', 'error' => ''), JSON_HEX_APOS).')';
 } catch (Exception $e) {
-        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo; ?>
-    <script>parent.sendingFailed();</script>
-    <?php
-    }
-
-echo "\n\n";
+    echo 'myJsonMethod('.json_encode(array('message' => 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo, 'error' => 'Error sending')).')';
+}

@@ -296,6 +296,18 @@ section#contact {
 .modal-content .cols > div.title {
   border-top: 2px solid #000d5b;
 }
+#formOKmessage {
+  display: none;
+  border: 2px solid #6dbef2;
+  color: #6dbef2;
+  padding: 10px;
+}
+#formFailedmessage {
+  display: none;
+  border: 2px solid #9479f0;
+  color: #9479f0;
+  padding: 10px;
+}
 .modal-content .cols > div.title input {
   width: 100%;
 }
