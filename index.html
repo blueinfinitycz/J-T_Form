@@ -69,11 +69,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#" onclick="return scrollToAnchor('segments')">segmenty</a>
 				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#" onclick="return scrollToAnchor('aboutus')">o společnosti <span class="sr-only">(current)</span></a>
-				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#" onclick="return scrollToAnchor('finprod')">finanční produkty</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#" onclick="return scrollToAnchor('aboutus')">o společnosti <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#" onclick="return scrollToAnchor('loginform')">pro partnery</a>
@@ -87,7 +87,7 @@
 
 	<section id="segments">
 
-		<div class="segment blue">
+		<div class="segment blue" id="segment-1"> 
 
 			<div class="title clickable" onclick="openSegment(1)">
 				Informační a komunikační<br>
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 
-		<div class="segment purple hidden">
+		<div class="segment purple hidden" id="segment-2">
 			<div class="title clickable" onclick="openSegment(2)">
 				Zdravotnická a veterinární<br>
 				technika<br>
@@ -140,7 +140,7 @@
 			</div>
 		</div>
 
-		<div class="segment tyrkis hidden">
+		<div class="segment tyrkis hidden" id="segment-3">
 			<div class="title clickable" onclick="openSegment(3)">
 				Zdravotní péče<br>
 				<img src="images/down-dark.png" alt="" onclick="openSegment(3)">
@@ -164,119 +164,6 @@
 
 	</section>
 
-	<section id="aboutus" class="grey">
-
-		<div class="container">
-			<div class="cols">
-				<div class="title">O společnosti</div>
-				<div>Zaměřujeme se na financování informačních
-					technologií a lékařské péče. Financujeme běžné
-					počítače i&nbsp;kompletní hardwarová a&nbsp;softwarová
-					řešení. Klinikám i&nbsp;lékařům poskytujeme finance
-					na vybavení ordinací, pacientům na nákladnější
-					zdravotní péči. Součástí poskytovaných služeb
-					je i&nbsp;pojištění.<br><br>
-					Zakládáme si na rychlém a srozumitelném
-					sjednání úvěru, finančního nebo operativního
-					leasingu. Máme silné zázemí, jsme dceřinou
-					společností J&amp;T Banky a&nbsp;součástí finanční
-					skupiny J&amp;T Finance Group SE.
-				</div>
-				<div><p class="normal">Dokumenty ke stažení ↓</p>
-					<p class="normal">
-						<ul>
-							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Reklamační řád (s účinností od 9.4.2018)</a></li>
-							<li>→ <a href="documents/Osobni_udaje_informace_JTLS.pdf" target="_blank">Osobní údaje</a></li>
-							<li>→ <a href="documents/JTLS_VOP.pdf" target="_blank">Všeobecné obchodní podmínky JTLS</a></li>
-							<li>→ <a href="documents/CP_pojisteni-majetku-a-odpovednosti-vpp.pdf" target="_blank">Česká pojišťovna - Všeobecné pojistné podmínky pro pojištění majetku a odpovědnosti</a></li>
-							<li>→ <a href="documents/CP_pojisteni-elektronickych-zarizeni-dpp-2018.pdf" target="_blank">Česká pojišťovna - Doplnkové pojistné podmínky pro pojištení elektronických zarízení</a></li>
-							<li>→ <a href="documents/CP_DPP poj.movitých věcí.pdf" target="_blank">Česká pojišťovna - Doplňkové pojistné podmínky pro pojištění movitých věcí</a></li>
-							<li>→ <a href="documents/Direct_VPPOP-2013.pdf" target="_blank">Direct - Všeobecné pojistné podmínky pro pojištení obcanu a podnikatelu</a></li>
-							<li>→ <a href="documents/Direct_DPEZ-2014.pdf" target="_blank">Direct - Doplnkové pojistné podmínky pro škodové pojištení elektroniky</a></li>
-							<li>→ <a href="documents/Uniqa_VPP_UCZ_14.pdf" target="_blank">Uniqua - Soubor pojistných podmínek pro pojištění podnikatelů</a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-			<div id="moreaboutus-switcher" class="cols">
-				<div></div>
-				<div>
-					<div class="more" onclick="showMoreAboutUs()"><img src="images/plus.png"><br>Více o&nbsp;společnosti</div>
-					<div class="less" onclick="hideMoreAboutUs()"><img src="images/x.png"></div>
-				</div>
-				<div></div>
-			</div>
-			<div id="moreaboutus" class="cols">
-				<div></div>
-				<div>
-					<p><span class="labels">J&T Leasingová společnost, a. s.</span>
-						Založena 7. ledna 2014.<br>
-						Zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, oddíl B,
-						vložka 14450.<br>
-						IČO: 284 27 980; DIČ: CZ 284 27 980<br>
-						Statutární orgán: Ing. Vlastimil Nešetřil, Ph.D.</p>
-					<p><span class="labels">Předmět podnikání:</span>
-						Poskytování nebo zprostředkování spotřebitelského úvěru.</p>
-					<p>J&T Leasingová společnost, a. s., jakožto poskytovatel spotřebitelského úvěru,
-						využívá ke zprostředkování úvěrů pouze svých zaměstnanců, nikoliv vázaných
-						zástupců.</p>
-					<p>Výroba, obchod a&nbsp;služby neuvedené v&nbsp;přílohách 1&nbsp;až&nbsp;3 živnostenského zákona
-						(obory činnosti: Zprostředkování obchodu a služeb, Pronájem a půjčování
-						věcí movitých a&nbsp;Služby v oblasti administrativní správy a&nbsp;služby organizačně
-						hospodářské povahy).</p>
-					<p><span class="labels">Zprostředkování pojištění</span>
-						J&T Leasingová společnost, a.s., jakožto pojišťovací agent, využívá ke
-						zprostředkování pojištění, pouze svých zaměstnanců, nikoliv podřízených
-						pojišťovacích zprostředkovatelů.</p>
-					<p><span class="labels">Údaje o registru ověřující oprávnění JTLS k činnosti poskytovatele
-							spotřebitelských úvěrů</span>
-						Společnost J&amp;T Leasingová společnost, a.s., je oprávněna poskytovat
-						spotřebitelské úvěry na základě licence poskytovatele spotřebitelského úvěru.
-						Oprávnění společnosti vykonávat činnost poskytovatele spotřebitelského úvěru
-						je možno ověřit na webových stránkách <a href="http://www.cnb.cz/cs/dohled_financni_trh/seznamy/" target="_blank">České národní banky</a>.</p>
-					<p><span class="labels">Sídlo společnosti:</span>
-						Pobřežní 297/14, PSČ 186 00, Praha 8 - Karlín</p>
-					<p><span class="labels">Informace o orgánu dohledu:</span>
-						Dozor nad dodržováním povinností stanovených zákonem
-						o&nbsp;spotřebitelském úvěru vykonává nad společností Česká národní banka.</p>
-					<p><span class="labels">Poskytování rady:</span>
-						J&T Leasingová společnost, a. s. není poskytovatelem nebo
-						zprostředkovatelem rady ve smyslu § 85 odst. 1, zák. 257/2016 Sb.</p>
-				</div>
-				<div>
-					<p><span class="labels">Informace ve smyslu ust. § 21 zákona č. 38/2004 Sb., o&nbsp;pojišťovacích
-							zprostředkovatelích a samostatných likvidátorech pojistných událostí:</span>
-						J&T Leasingová společnost, a.&nbsp;s. je evidován jako pojišťovací agent,
-						reg. číslo 233851PA v&nbsp;registru pojišťovacích zprostředkovatelů a samostatných
-						likvidátorů pojistných událostí vedeného Českou národní bankou.
-						Zápis v registru lze ověřit dle seznamů zveřejňovaných Českou národní bankou,
-						ve Finančním zpravodaji nebo na adrese www.cnb.cz.</p>
-					<p>Na žádost klienta podá J&amp;T Leasingová společnost, a. s.
-						informaci o&nbsp;tom, pro které činnosti je činná.</p>
-					<p>J&T Leasingová společnost, a.&nbsp;s. vykonává činnost způsobem,
-						při kterém není povinna provádět analýzu produktů.</p>
-					<p>Na žádost klienta podá J&amp;T Leasingová společnost, a.&nbsp;s.
-						klientovi informaci o&nbsp;způsobu svého odměňování.</p>
-					<p>J&T Leasingová společnost, a.&nbsp;s. prohlašuje, že nemá jakýkoliv přímý či nepřímý
-						podíl na hlasovacích právech a&nbsp;kapitálu žádné pojišťovny, převyšující 10 %.</p>
-					<p>Žádná pojišťovna ani osoba ovládající pojišťovnu nemá přímý ani nepřímý podíl
-						na hlasovacích právech a&nbsp;kapitálu pojišťovacího zprostředkovatele, který by
-						převyšoval 10 %.</p>
-					<p><span class="labels">Mechanismus vyřizování stížností:</span>
-						Klienti a&nbsp;ostatní dotčené osoby jsou oprávněni obracet se
-						se svými stížnostmi na níže uvedené instituce:</p>
-					<p>J&T Leasingová společnost, a.&nbsp;s. v&nbsp;souladu s&nbsp;Reklamačním řádem</p>
-					<p>Finančního arbitra, se sídlem Legerova 1581/69, 110 00 Praha&nbsp;1,
-						www.finarbitr.cz, který je oprávněn k&nbsp;mimosoudnímu řešení sporů
-						v&nbsp;oblasti finančních služeb</p>
-					<p>Českou národní banku, tel.: 224 411 111, web: www.cnb.cz</p>
-					<p>Příslušnou pojišťovnu v&nbsp;případě pojištění</p>
-					<p>Českou obchodní inspekci v&nbsp;případě neživotního pojištění</p>
-					<p>a/nebo jsou oprávněni podat na společnost žalobu u&nbsp;příslušného soudu</p>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section id="finprod" class="grey">
 
 		<div class="container">
@@ -440,6 +327,120 @@
 								s plněním svých závazků</a></li>
 						</ul>
 					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="aboutus" class="grey">
+
+		<div class="container">
+			<div class="cols">
+				<div class="title">O společnosti</div>
+				<div>Zaměřujeme se na financování informačních
+					technologií a lékařské péče. Financujeme běžné
+					počítače i&nbsp;kompletní hardwarová a&nbsp;softwarová
+					řešení. Klinikám i&nbsp;lékařům poskytujeme finance
+					na vybavení ordinací, pacientům na nákladnější
+					zdravotní péči. Součástí poskytovaných služeb
+					je i&nbsp;pojištění.<br><br>
+					Zakládáme si na rychlém a srozumitelném
+					sjednání úvěru, finančního nebo operativního
+					leasingu. Máme silné zázemí, jsme dceřinou
+					společností J&amp;T Banky a&nbsp;součástí finanční
+					skupiny J&amp;T Finance Group SE.
+				</div>
+				<div><p class="normal">Dokumenty ke stažení ↓</p>
+					<p class="normal">
+						<ul>
+							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Reklamační řád (s účinností od 9.4.2018)</a></li>
+							<li>→ <a href="documents/Osobni_udaje_informace_JTLS.pdf" target="_blank">Osobní údaje</a></li>
+							<li>→ <a href="documents/JTLS_VOP.pdf" target="_blank">Všeobecné obchodní podmínky JTLS</a></li>
+							<li>→ <a href="documents/CP_pojisteni-majetku-a-odpovednosti-vpp.pdf" target="_blank">Česká pojišťovna - Všeobecné pojistné podmínky pro pojištění majetku a odpovědnosti</a></li>
+							<li>→ <a href="documents/CP_pojisteni-elektronickych-zarizeni-dpp-2018.pdf" target="_blank">Česká pojišťovna - Doplnkové pojistné podmínky pro pojištení elektronických zarízení</a></li>
+							<li>→ <a href="documents/CP_DPP poj.movitých věcí.pdf" target="_blank">Česká pojišťovna - Doplňkové pojistné podmínky pro pojištění movitých věcí</a></li>
+							<li>→ <a href="documents/Direct_VPPOP-2013.pdf" target="_blank">Direct - Všeobecné pojistné podmínky pro pojištení obcanu a podnikatelu</a></li>
+							<li>→ <a href="documents/Direct_DPEZ-2014.pdf" target="_blank">Direct - Doplnkové pojistné podmínky pro škodové pojištení elektroniky</a></li>
+							<li>→ <a href="documents/Uniqa_VPP_UCZ_14.pdf" target="_blank">Uniqua - Soubor pojistných podmínek pro pojištění podnikatelů</a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+			<div id="moreaboutus-switcher" class="cols">
+				<div></div>
+				<div>
+					<div class="more" onclick="showMoreAboutUs()"><img src="images/plus.png"><br>Více o&nbsp;společnosti</div>
+					<div class="less" onclick="hideMoreAboutUs()"><img src="images/x.png"></div>
+				</div>
+				<div></div>
+			</div>
+			<div id="moreaboutus" class="cols">
+				<div></div>
+				<div>
+					<p><span class="labels">J&T Leasingová společnost, a. s.</span>
+						Založena 7. ledna 2014.<br>
+						Zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, oddíl B,
+						vložka 14450.<br>
+						IČO: 284 27 980; DIČ: CZ 284 27 980<br>
+						Statutární orgán: Ing. Vlastimil Nešetřil, Ph.D.</p>
+					<p><span class="labels">Předmět podnikání:</span>
+						Poskytování nebo zprostředkování spotřebitelského úvěru.</p>
+					<p>J&T Leasingová společnost, a. s., jakožto poskytovatel spotřebitelského úvěru,
+						využívá ke zprostředkování úvěrů pouze svých zaměstnanců, nikoliv vázaných
+						zástupců.</p>
+					<p>Výroba, obchod a&nbsp;služby neuvedené v&nbsp;přílohách 1&nbsp;až&nbsp;3 živnostenského zákona
+						(obory činnosti: Zprostředkování obchodu a služeb, Pronájem a půjčování
+						věcí movitých a&nbsp;Služby v oblasti administrativní správy a&nbsp;služby organizačně
+						hospodářské povahy).</p>
+					<p><span class="labels">Zprostředkování pojištění</span>
+						J&T Leasingová společnost, a.s., jakožto pojišťovací agent, využívá ke
+						zprostředkování pojištění, pouze svých zaměstnanců, nikoliv podřízených
+						pojišťovacích zprostředkovatelů.</p>
+					<p><span class="labels">Údaje o registru ověřující oprávnění JTLS k činnosti poskytovatele
+							spotřebitelských úvěrů</span>
+						Společnost J&amp;T Leasingová společnost, a.s., je oprávněna poskytovat
+						spotřebitelské úvěry na základě licence poskytovatele spotřebitelského úvěru.
+						Oprávnění společnosti vykonávat činnost poskytovatele spotřebitelského úvěru
+						je možno ověřit na webových stránkách <a href="http://www.cnb.cz/cs/dohled_financni_trh/seznamy/" target="_blank">České národní banky</a>.</p>
+					<p><span class="labels">Sídlo společnosti:</span>
+						Pobřežní 297/14, PSČ 186 00, Praha 8 - Karlín</p>
+					<p><span class="labels">Informace o orgánu dohledu:</span>
+						Dozor nad dodržováním povinností stanovených zákonem
+						o&nbsp;spotřebitelském úvěru vykonává nad společností Česká národní banka.</p>
+					<p><span class="labels">Poskytování rady:</span>
+						J&T Leasingová společnost, a. s. není poskytovatelem nebo
+						zprostředkovatelem rady ve smyslu § 85 odst. 1, zák. 257/2016 Sb.</p>
+				</div>
+				<div>
+					<p><span class="labels">Informace ve smyslu ust. § 21 zákona č. 38/2004 Sb., o&nbsp;pojišťovacích
+							zprostředkovatelích a samostatných likvidátorech pojistných událostí:</span>
+						J&T Leasingová společnost, a.&nbsp;s. je evidován jako pojišťovací agent,
+						reg. číslo 233851PA v&nbsp;registru pojišťovacích zprostředkovatelů a samostatných
+						likvidátorů pojistných událostí vedeného Českou národní bankou.
+						Zápis v registru lze ověřit dle seznamů zveřejňovaných Českou národní bankou,
+						ve Finančním zpravodaji nebo na adrese www.cnb.cz.</p>
+					<p>Na žádost klienta podá J&amp;T Leasingová společnost, a. s.
+						informaci o&nbsp;tom, pro které činnosti je činná.</p>
+					<p>J&T Leasingová společnost, a.&nbsp;s. vykonává činnost způsobem,
+						při kterém není povinna provádět analýzu produktů.</p>
+					<p>Na žádost klienta podá J&amp;T Leasingová společnost, a.&nbsp;s.
+						klientovi informaci o&nbsp;způsobu svého odměňování.</p>
+					<p>J&T Leasingová společnost, a.&nbsp;s. prohlašuje, že nemá jakýkoliv přímý či nepřímý
+						podíl na hlasovacích právech a&nbsp;kapitálu žádné pojišťovny, převyšující 10 %.</p>
+					<p>Žádná pojišťovna ani osoba ovládající pojišťovnu nemá přímý ani nepřímý podíl
+						na hlasovacích právech a&nbsp;kapitálu pojišťovacího zprostředkovatele, který by
+						převyšoval 10 %.</p>
+					<p><span class="labels">Mechanismus vyřizování stížností:</span>
+						Klienti a&nbsp;ostatní dotčené osoby jsou oprávněni obracet se
+						se svými stížnostmi na níže uvedené instituce:</p>
+					<p>J&T Leasingová společnost, a.&nbsp;s. v&nbsp;souladu s&nbsp;Reklamačním řádem</p>
+					<p>Finančního arbitra, se sídlem Legerova 1581/69, 110 00 Praha&nbsp;1,
+						www.finarbitr.cz, který je oprávněn k&nbsp;mimosoudnímu řešení sporů
+						v&nbsp;oblasti finančních služeb</p>
+					<p>Českou národní banku, tel.: 224 411 111, web: www.cnb.cz</p>
+					<p>Příslušnou pojišťovnu v&nbsp;případě pojištění</p>
+					<p>Českou obchodní inspekci v&nbsp;případě neživotního pojištění</p>
+					<p>a/nebo jsou oprávněni podat na společnost žalobu u&nbsp;příslušného soudu</p>
 				</div>
 			</div>
 		</div>
@@ -658,6 +659,8 @@
 								<input type="text" placeholder="jméno" name="userName" id="userName"><br><br>
 								<input type="text" placeholder="email" name="email" id="email"><br><br>
 								<input type="text" placeholder="telefon" name="phone" id="phone"><br><br>
+								<label>Poznámka</label>
+								<textarea name="desc" id="desc" rows="5" cols="55"></textarea>
 								<p><div id="formOKmessage"></div></p>
 								<p><div id="formFailedmessage"></div></p>
 							</div>

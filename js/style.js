@@ -35,23 +35,31 @@ $(document).ready(
 
 function openSegment( i ) {
 
+	$('#segments').height( ($(window).outerHeight() * 1.60) - 50 );
 	$.each( [1,2,3],
 		function() {
 			if ( this == i ) {
 				$('.segment:nth-child('+this+')').addClass('open');
+				$('.segment:nth-child('+this+')').css('flex','3');
+				scrollToAnchor('segment-'+i);
 			} else {
-				$('.segment:nth-child('+this+')').hide();
+				//$('.segment:nth-child('+this+')').hide();
+				$('.segment:nth-child('+this+')').css('flex','1');
+				$('.segment:nth-child('+this+')').removeClass('open');
 			}
 		}
 	);
-	scrollToAnchor('segments');
+	//scrollToAnchor('segments');
 }
 
 function closeSegment() {
+
+	$('#segments').height( ($(window).outerHeight() * 1) - 50 );
 	$.each( [1,2,3],
 		function() {
 			$('.segment:nth-child('+this+')').removeClass('open');
-			$('.segment:nth-child('+this+')').show();
+			//$('.segment:nth-child('+this+')').show();
+			$('.segment:nth-child('+this+')').css('flex','1');
 		}
 	);	
 	scrollToAnchor('segments');
@@ -86,6 +94,7 @@ function sendForm() {
 		"userName": $('#userName').val(),
 		"email": $('#email').val(),
 		"phone": $('#phone').val(),
+		"desc": $('#desc').val(),
 	}
 	$.ajax({
 		type: "POST",

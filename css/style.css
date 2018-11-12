@@ -274,6 +274,13 @@ button:focus {
 input::placeholder {
   color: #000d5b;
 }
+textarea {
+  background-color: transparent;
+}
+#contactModal label {
+  color: #000d5b;
+  font-size: 20px;
+}
 #formmessage {
   font-size: 14px;
   font-weight: 400;
