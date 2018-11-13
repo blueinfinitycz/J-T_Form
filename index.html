@@ -20,7 +20,7 @@
 
 	<link rel="stylesheet" href="css/style.css?ver=3">
 	<script src="js/jquery-ui.js"></script>
-	<script src="js/style.js"></script>
+	<script src="js/style.js?ver-=1"></script>
 
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -277,8 +277,8 @@
 						klienta k uhrazení splátky úvěru a&nbsp;poskytne mu k&nbsp;tomu lhůtu 30 dnů. V&nbsp;případě marného uplynutí uvedené lhůty je
 						JTLS oprávněna úvěr okamžitě zesplatnit. J&amp;T Leasingová společnost, a.&nbsp;s., posuzuje případně zesplatnění
 						individuálně, a&nbsp;to na základě dostupnosti možné dohody s klientem.</p>
-					<p class="normal">Dokumenty ke stažení ↓</p>
-					<p class="normal">
+					<p class="normal clickable" onclick="toggleDocsProdukt()">Dokumenty ke stažení <span id="arrow-docs-product">↓</span></p>
+					<div class="normal" style="display: none;" id="list-docs-product">
 						<ul>
 							<li>→ <a href="documents/Z%CC%8Ca%CC%81dost_SU%CC%81_JTLS_20180620.pdf" target="_blank">Žádost o&nbsp;úvěr
 									a&nbsp;prohlášení klienta</a></li>
@@ -300,7 +300,7 @@
 							<li>→ <a href="documents/informace_plneni_zavazku_JTLS.pdf" target="_blank">Informace pro klienty v potížích
 									s plněním svých závazků</a></li>
 						</ul>
-					</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -319,8 +319,8 @@
 					jsme dceřinou společností J&amp;T Banky a součástí finanční skupiny J&amp;T Finance Group SE.
 				</div>
 				<div>
-					<p class="normal">Dokumenty ke stažení ↓</p>
-					<p class="normal">
+					<p class="normal clickable" onclick="toggleDocsCompany()">Dokumenty ke stažení <span id="arrow-docs-company">↓</span></p>
+					<div class="normal" style="display: none;" id="list-docs-company">
 						<ul>
 							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Reklamační řád (s účinností od
 									9.4.2018)</a></li>
@@ -339,7 +339,7 @@
 							<li>→ <a href="documents/Uniqa_VPP_UCZ_14.pdf" target="_blank">Uniqua - Soubor pojistných podmínek pro
 									pojištění podnikatelů</a></li>
 						</ul>
-					</p>
+					</div>
 				</div>
 			</div>
 			<div id="moreaboutus-switcher" class="cols">
@@ -415,7 +415,7 @@
 	<section id="loginform" class="grey">
 
 		<div class="container">
-			<form action="https://www.jtleasing.cz/JTLS/Default.aspx" method="POST">
+			<form action="Default.aspx" method="POST">
 				<div class="cols">
 					<div>&nbsp;</div>
 					<div class="title">

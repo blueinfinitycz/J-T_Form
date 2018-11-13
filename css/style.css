@@ -54,6 +54,9 @@ dd {
   font-size: 12px;
   padding: 0;
 }
+.clickable {
+  cursor: pointer;
+}
 nav.navbar {
   position: fixed;
   width: 100%;

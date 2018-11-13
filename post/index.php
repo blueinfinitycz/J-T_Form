@@ -43,7 +43,7 @@ try {
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Žádost o kontakt z jtleasing.cz';
-    $mail->Body = "Žádost o kontakt z jtleasing.cz od <br>\n<br>\n".$name."<br>\n".$email."<br>\n".$phone."<br>\n";
+    $mail->Body = "Žádost o kontakt z jtleasing.cz od <br>\n<br>\n".$name."<br>\n".$email."<br>\n".$phone."<br>\n".$desc."<br>\n";
     $mail->AltBody = "Žádost o kontakt z jtleasing.cz od \n\n".$name."\n".$email."\n".$phone."\n".$desc."\n";
 
     $mail->SMTPOptions = array(

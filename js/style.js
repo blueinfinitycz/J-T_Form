@@ -79,6 +79,28 @@ function hideMoreAboutUs() {
 	$('#moreaboutus').hide();
 }
 
+function toggleDocsProdukt() {
+	if ( $('#list-docs-product').is(':visible') ) {
+		$('#list-docs-product').slideUp();
+		$('#arrow-docs-product').html('↓')
+	} else {
+		$('#list-docs-product').slideDown();
+		$('#arrow-docs-product').html('↑')
+	}
+
+}
+
+function toggleDocsCompany() {
+	if ( $('#list-docs-company').is(':visible') ) {
+		$('#list-docs-company').slideUp();
+		$('#arrow-docs-company').html('↓')
+	} else {
+		$('#list-docs-company').slideDown();
+		$('#arrow-docs-company').html('↑')
+	}
+
+}
+
 function scrollToAnchor(aid){
     var aTag = $("*[id='"+ aid +"']");
     $('html,body').animate({scrollTop: aTag.offset().top - 66 },'slow');
@@ -98,7 +120,7 @@ function sendForm() {
 	}
 	$.ajax({
 		type: "POST",
-		url: 'http://jtleasing.jtfg.com/post',
+		url: 'https://jtleasing.jtfg.com/post',
 		data: data,
 		dataType: 'jsonp',
 		jsonp: false,
