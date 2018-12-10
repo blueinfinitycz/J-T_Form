@@ -27,6 +27,8 @@ $(document).ready(
 			}
 			if ( what == 'password' ) {
 				openForgotten();
+				$('#formmessage2').html(message);
+				$('#formmessage2').slideDown();
 			}
 			setTimeout( function() { scrollToAnchor('loginform'); }, 500 );
 		}
@@ -148,3 +150,8 @@ function sendingFailed(httpReq,status,exception) {
 	$('#formFailedmessage').fadeIn();
 }
 
+function openForgotten() {
+	
+	$('#forgotten').slideDown();
+	$('#login').slideUp();
+}

@@ -16,9 +16,9 @@
 	 crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" href="css/style.css?ver=3">
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/style.js?ver-=1"></script>
+	<link rel="stylesheet" href="css/style.css?ver=4">
+	<script src="js/jquery-ui.js?ver-=4"></script>
+	<script src="js/style.js?ver-=4"></script>
 
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -185,7 +185,7 @@
 					<p><span class="labels">Spotřebitelský úvěr k&nbsp;financování zdravotní péče</span></p>
 					<p>Úvěr bez poplatků a&nbsp;sankcí za předčasné splacení pro klienty fyzické osoby nepodnikatele poskytovaný na
 						lékařské zákroky v&nbsp;oboru stomatologie, oftalmologie, dermatologie a&nbsp;plastické chirurgie. Standardní doba splácení
-						úvěru je 12 až 36 měsíců, výše úvěru 15 000 až 150 000 Kč.</p>
+						úvěru je 24 až 36 měsíců, výše úvěru 40 000 až 150 000 Kč.</p>
 					<p><span class="labels">Odkup pohledávek</span>
 						Podstatou je odkup pohledávek nebo splátkových kalendářů vzniklých dodávkami odběratelům klienta s&nbsp;krátkodobou
 						nebo střednědobou splatností.</p>
@@ -208,7 +208,7 @@
 						Spotřebitelský úvěr poskytovaný pouze v domácí měně (CZK), jehož účel je určen výhradně na úhradu úkonů
 						zdravotní péče.</p>
 					<p><span class="labels">Doba trvání spotřebitelského úvěru:</span>
-						Úvěr je sjednáván na dobu určitou, a&nbsp;to od 12 do 36 měsíců.</p>
+						Úvěr je sjednáván na dobu určitou, a&nbsp;to na 24 nebo 36 měsíců.</p>
 					<p><span class="labels">Typ úrokové sazby:</span>
 						Úroková sazba je stanovena jako pevná roční úroková sazba, která je platná po celou dobu trvání úvěrového vztahu.</p>
 					<p><span class="labels">Reprezentativní příklad poskytnutého úvěru:</span>
@@ -320,8 +320,8 @@
 					<p class="normal clickable" onclick="toggleDocsCompany()" style=" text-decoration: underline;">Dokumenty ke stažení <span id="arrow-docs-company">↓</span></p>
 					<div class="normal" style="display: none; text-decoration: underline;" id="list-docs-company">
 						<ul>
-							<li>→ <a href="documents/Reklamacni_rad_JTLS_09042018.pdf" target="_blank">Reklamační řád (s účinností od
-									9.4.2018)</a></li>
+							<li>→ <a href="documents/SJTF_7_2018_V2_P4e_Reklamacni_rad_JTLS.pdf" target="_blank">Reklamační řád (s účinností od
+									1.9.2018)</a></li>
 							<li>→ <a href="documents/Osobni_udaje_informace_JTLS.pdf" target="_blank">Osobní údaje</a></li>
 							<li>→ <a href="documents/JTLS_VOP.pdf" target="_blank">Všeobecné obchodní podmínky JTLS</a></li>
 							<li>→ <a href="documents/CP_pojisteni-majetku-a-odpovednosti-vpp.pdf" target="_blank">Česká pojišťovna -
@@ -414,7 +414,7 @@
 
 	<section id="loginform" class="grey">
 
-		<div class="container">
+		<div class="container" id="login">
 			<form action="Default.aspx" method="POST">
 				<div class="cols">
 					<div>&nbsp;</div>
@@ -423,6 +423,24 @@
 						<input type="password" placeholder="heslo" name="password">
 						<p>
 							<div id="formmessage"></div>
+						</p>
+						<div><a href="#loginform" onclick="openForgotten()">Zapomněli jste heslo?</a>
+						</div>
+					</div>
+					<div><button class="dark">Odeslat →</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="container" id="forgotten" style="display: none">
+			<form action="RenewalPwd.aspx" method="POST">
+				<div class="cols">
+					<div>&nbsp;</div>
+					<div class="title">
+						Zaslat přihlášení<br>
+						<input type="text" placeholder="jméno" name="userName" id="exampleInputEmail2">
+						<p>
+							<div id="formmessage2"></div>
 						</p>
 					</div>
 					<div><button class="dark">Odeslat →</button>
