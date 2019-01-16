@@ -322,6 +322,9 @@ section#contact {
   color: #9479f0;
   padding: 10px;
 }
+input[id="surname"] {
+  display: none;
+}
 .modal-content .cols > div.title input {
   width: 100%;
 }

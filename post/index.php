@@ -19,6 +19,9 @@ $email = trim(strip_tags($_REQUEST['email']));
 $phone = trim(strip_tags($_REQUEST['phone']));
 $desc = trim(strip_tags($_REQUEST['desc']));
 
+$check = $_REQUEST['surname'];
+if ( $check != "" ) exit;
+
 if ($name == '' || ($email == '' && $phone == '')) {
     echo 'myJsonMethod('.json_encode(array('message' => 'empty', 'error' => 'Missing data'), JSON_HEX_APOS).')';
     exit;
