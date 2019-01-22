@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>J&amp;T Leasing</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=10,9" />
+	<meta name="keywords" content="Financování IT,Financování výpočetní techniky,Financování lékařů,Leasing IT,Operativní leasing IT">
+	<meta name="description" content="Poskytujeme finanční leasing, operativní leasing a úvěry v oblastech informačních technologií a zdravotnictví. Financujeme velká IT řešení včetně softwaru, lékařské vybavení a zdravotní péči.">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="css/style.css?ver=5">
+	<script src="js/jquery-ui.js?ver=5"></script>
+	<script src="js/style.js?ver=5"></script>
+	<script src="js/jquery.selectrange.js?ver=5"></script>
+	<script src="js/calc.js?ver=5"></script>
+
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+	<script>
+		window.addEventListener("load", function(){
+			window.cookieconsent.initialise({
+			  "palette": {
+			    "popup": {
+			      "background": "#9479f0",
+			      "text": "white"
+			    },
+			    "button": {
+			      "background": "transparent",
+			      "border": "white",
+			      "text": "white"
+			    }
+			  },
+			  "content": {
+			    "message": "J&amp;T Leasingová společnost a J&amp;T Banka používají cookies na této webové stránce. Chcete-li se dozvědět více, přejděte do sekce",
+			    "dismiss": "ROZUMÍM",
+			    "link": "Ochrana soukromí a cookie.",
+			    "href": "http://www.jtbank.cz/bezpecnostni-informace/"
+			  }
+			})});
+		</script>
+	<style type="text/css">
+		.cc-window.cc-banner {
+			padding: 10px 100px;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#"><img src="images/Logo-White.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#segments">segmenty</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#finprod">finanční produkty</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html#aboutus">o společnosti <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#loginform">pro partnery</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#kontakt">kontakt</a>
+					</li>
+			</div>
+		</div>
+	</nav>
+
+	<section id="top" class="grey">
+
+		<div class="container" style="padding-top: 200px;">
+			<div class="cols">
+				<div class="title">Leasingová kalkulačka</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="calc" class="grey">
+
+		<div class="container">
+			<div class="cols">
+				<div>
+					<div class="subtitle">Pro výpočet leasingové splátky</div>
+					<p>zadejte předmět leasingu, cenu předmětu bez DPH a odpisovou skupinu.</p>
+				</div>
+			</div>
+			<div class="cols">
+				<div>
+					<dl class="row">
+						<dt class="col-sm-8">Předmět leasingu</dt>
+						<dd class="col-sm-4"><input type="text" placeholder="předmět" name="leasing-predmet" id="leasing-predmet"></dd>
+						<dt class="col-sm-8">Cena předmětu (bez DPH)</dt>
+						<dd class="col-sm-4"><input type="text" placeholder="cena" name="leasing-cena" id="leasing-cena" value="25 000 Kč"></dd>
+					</dl>
+				</div>
+				<div>
+					<dl class="row">
+						<dt class="col-sm-8"><div class="formFailedmessage" id="leasing-predmet-error"></div></dt>
+						<dd class="col-sm-4"></dd>
+						<dt class="col-sm-8"><div class="formFailedmessage" id="leasing-cena-error"></div></dt>
+						<dd class="col-sm-4"></dd>
+					</dl>
+				</div>
+			</div>
+			<div class="cols" id="leasing">
+				<div>
+					<div class="subtitle">OPERATIVNÍ LEASING</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><span class="labels">Volba</span></div>
+				</div>
+				<div>
+					<div><span class="labels">Počet splátek</span></div>
+				</div>
+				<div>
+					<div><span class="labels">Výše splátky</span></div>
+				</div>
+				<div>
+					<div><span class="labels">Leasingový koeficient</span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>12</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol12"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol12p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>24</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol24"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol24p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>36</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol36"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol36p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>48</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol48"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol48p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>60</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol60"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-ol60p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols">
+				<div>
+					<div class="subtitle">FINANČNÍ LEASING</div>
+				</div>
+				<div style="text-align: right">
+						Odpisová skupina&nbsp;&nbsp;&nbsp;1&nbsp;<input type="radio" value="1" name="leasing-group" id="leasing-group-1" checked>&nbsp;&nbsp;&nbsp;2&nbsp;<input type="radio" value="2" name="leasing-group" id="leasing-group-2">
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div>Volba</div>
+				</div>
+				<div>
+					<div>Počet splátek</div>
+				</div>
+				<div>
+					<div>Výše splátky</div>
+				</div>
+				<div>
+					<div>Leasingový koeficient</div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress lg1">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>36</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-fl36"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-fl36p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress lg1">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>48</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-fl48"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-fl48p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
+				</div>
+				<div>
+					<div>60</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-fl60"></span> Kč</div>
+				</div>
+				<div>
+					<div><span id="leasing-value-fl60p"></span></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols compress">
+				<div>
+					<div><div class="formFailedmessage" id="leasing-leasing-error"></div></div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+				<div>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+			<div class="cols">
+				<div>
+					<p><span class="labels">Upozornění:</span>
+						Nullam at arcu a est sollicitudin euismod. Sed convallis magna eu sem. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Etiam egestas wisi a erat. Pellentesque arcu. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut tempus purus at lorem. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Nam sed tellus id magna elementum tincidunt. Phasellus et lorem id felis nonummy placerat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Aliquam ornare wisi eu metus. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Et harum quidem rerum facilis est et expedita distinctio. Fusce suscipit libero eget elit. Aliquam erat volutpat.</p>
+				</div>
+			</div>
+			<div class="cols">
+				<div>
+					<p><input type="checkbox" id="leasing-interested">Mám zájem o dodatečnou nabídku finacování předmětu formou úvěru.</p>
+				</div>
+			</div>
+			<div class="cols">
+				<div><button type="button" id="leasing-submit" class="dark" onclick="processLeasing()" disabled>Mám zájem o nabídku →</button></div>
+			</div>
+		</div>
+	</section>
+
+	<section id="form" class="grey" style="display: none;">
+
+
+		<div class="container">
+			<div class="cols">
+				<div>
+					<div class="subtitle">Pro vytvoření individuální nabídky</div>
+					<p>vyplňte, prosím, níže uvedené údaje..</p>
+				</div>
+			</div>
+			<div class="cols">
+				<div>
+					<div class="subtitle">ÚDAJE NÁJEMCE</div>
+				</div>
+			</div>
+
+			<div class="cols">
+				<div>
+					<div class="row">
+						<div style="flex: 1">Jméno / Firma</div>
+						<div style="flex: 2"><input type="text" placeholder="jméno" name="form-jmeno" id="form-jmeno"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-jmeno-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Adresa trvalého bydliště / Sídla</div>
+						<div style="flex: 2"><input type="text" placeholder="adresa" name="form-adresa" id="form-adresa"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-adresa-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">PSČ / Město</div>
+						<div style="flex: 1"><input type="text" placeholder="PSČ" name="form-psc" id="form-psc"></div>
+						<div style="flex: 1"><input type="text" placeholder="město" name="form-mesto" id="form-mesto"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-psc-mesto-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Telefon</div>
+						<div style="flex: 2"><input type="text" placeholder="telefon" name="form-telefon" id="form-telefon"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-telefon-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">E-mail</div>
+						<div style="flex: 2"><input type="text" placeholder="email" name="form-email" id="form-email"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-email-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">IČ / DIČ</div>
+						<div style="flex: 1"><input type="text" placeholder="ič" name="form-ic" id="form-ic"></div>
+						<div style="flex: 1"><input type="text" placeholder="dič" name="form-dic" id="form-dic"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-ic-dic-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Číslo účtu / Kód banky</div>
+						<div style="flex: 1"><input type="text" placeholder="účet" name="form-ucet" id="form-ucet"></div>
+						<div style="flex: 1"><input type="text" placeholder="banka" name="form-banka" id="form-banka"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-ucet-banka-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Jméno / Příjmení statutárního orgánu</div>
+						<div style="flex: 2"><input type="text" placeholder="jméno statutárního orgánu" name="form-storgan" id="form-storgan"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-storgan-error">Vyplnte jmeno</div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Datum narození statutárního orgánu</div>
+						<div style="flex: 2"><input type="text" placeholder="narození statutárního orgánu" name="form-storgannar" id="form-storgannar"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-storgannar-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Hlavní předmět podnikání</div>
+						<div style="flex: 2"><input type="text" placeholder="předmět podnikání" name="form-predpod" id="form-predpod"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-predpod-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Datum zahájení podníkání</div>
+						<div style="flex: 2"><input type="text" placeholder="zahájení podníkání" name="form-datpod" id="form-datpod"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-datpod-error"></div></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="cols">
+				<div>
+					<div class="subtitle">PŘEDMĚT</div>
+				</div>
+			</div>
+
+			<div class="cols">
+				<div>
+					<div class="row">
+						<div style="flex: 1">Předmět leasingu</div>
+						<div style="flex: 2"><input type="text" placeholder="předmět" name="form-pod-predmet" id="form-pod-predmet"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-pod-predmet-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Adresa umístění předmětu leasingu</div>
+						<div style="flex: 2"><input type="text" placeholder="adresa" name="form-pod-adresa" id="form-pod-adresa"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-pod-adresa-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">PSČ / Město</div>
+						<div style="flex: 1"><input type="text" placeholder="PSČ" name="form-pod-psc" id="form-pod-psc"></div>
+						<div style="flex: 1"><input type="text" placeholder="město" name="form-pod-mesto" id="form-pod-mesto"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-pod-psc-mesto-error"></div></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="cols">
+				<div>
+					<div class="subtitle">DODAVATEL</div>
+				</div>
+			</div>
+
+			<div class="cols">
+				<div>
+					<div class="row">
+						<div style="flex: 1">Jméno / Firma</div>
+						<div style="flex: 2"><input type="text" placeholder="jméno" name="form-dod-jmeno" id="form-dod-jmeno"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-jmeno-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Adresa</div>
+						<div style="flex: 2"><input type="text" placeholder="adresa" name="form-dod-adresa" id="form-dod-adresa"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-adresa-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Telefon</div>
+						<div style="flex: 2"><input type="text" placeholder="telefon" name="form-dod-telefon" id="form-dod-telefon"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-telefon-error"></div></div>
+					</div>
+					<div class="row">
+						<div style="flex: 1">Email</div>
+						<div style="flex: 2"><input type="text" placeholder="email" name="form-dod-email" id="form-dod-email"></div>
+						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-email-error"></div></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="cols">
+				<div><button type="button" class="dark" onclick="sendCalcForm()">Kontaktujte mě s nabídkou →</button></div>
+			</div>
+			<p>
+				<div id="formOKmessage"></div>
+			</p>
+			<p>
+				<div id="formFailedmessage"></div>
+			</p>
+		</div>
+	</section>
+
+	<section id="contactx" class="grey">
+
+		<div class="container">
+			<div class="cols">
+				<div>
+					<p>J&amp;T Leasingová společnost, a.&nbsp;s.</p>
+					<p>Pobřežní 297/14<br>
+						186 00 Praha 8<br>
+						Česká republika<br>
+						info@jtleasing.cz<br>
+						<br>
+						IČ: 28427980<br>
+						DIČ: CZ28427980<br>
+					</p>
+
+				</div>
+				<div>
+					<p>Obchodní kontakty:</p>
+					<p>obchod@jtleasing.cz<br>
+						+420 221 710 304 (informační technologie)<br>
+						+420 221 710 346 (zdravotní technika a spotřebitelské úvěry)<br>
+						+420 221 710 769 (pojištění)</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<iframe name="iframe" style="display: none"></iframe>
+</body>
+
+</html>

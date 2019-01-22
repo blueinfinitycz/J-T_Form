@@ -185,6 +185,9 @@ button {
   color: white;
   padding: 12px 12px 8px 12px ;
 }
+button:disabled {
+  opacity: 0.2;
+}
 button.dark {
   border: 1px solid #000d5b;
   color: #000d5b;
@@ -202,16 +205,28 @@ section.grey .title {
 section.grey .title a {
   font-size: 12px;
 }
+section.grey .subtitle {
+  font-size: 28px;
+  width: 100%;
+  font-weight: 100;
+  line-height: 100%;
+}
 section.grey .cols {
   flex-direction: row;
   justify-content: stretch;
   display: flex;
   padding-top: 32px;
 }
+section.grey .cols.compress {
+  padding-top: 4px;
+}
 section.grey .cols > div {
   text-align: left;
   flex: 1;
   padding: 16px;
+}
+section.grey .cols.compress > div {
+  padding: 4px 16px 4px 16px;
 }
 section.grey .cols > div.title {
   border-top: 2px solid #000d5b;
@@ -270,6 +285,10 @@ input {
   color: #000d5b;
   font-size: 20px;
 }
+input[type=radio],
+input[type=checkbox] {
+  width: 40px;
+}
 input:focus {
   outline: none;
   border-bottom: 1px solid #000d5b;
@@ -279,6 +298,7 @@ button:focus {
 }
 input::placeholder {
   color: #000d5b;
+  opacity: 0.3;
 }
 textarea {
   background-color: transparent;
@@ -317,6 +337,12 @@ section#contact {
   padding: 10px;
 }
 #formFailedmessage {
+  display: none;
+  border: 2px solid #9479f0;
+  color: #9479f0;
+  padding: 10px;
+}
+.formFailedmessage {
   display: none;
   border: 2px solid #9479f0;
   color: #9479f0;

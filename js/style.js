@@ -105,7 +105,7 @@ function toggleDocsCompany() {
 
 function scrollToAnchor(aid){
     var aTag = $("*[id='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top - 66 },'slow');
+    $('html,body').animate({scrollTop: aTag.offset().top - 86 },'slow');
 	$('.navbar-collapse').collapse('hide');
     return false;
 }
