@@ -34,6 +34,7 @@ $(document).ready(
 			}
 		);
 
+		/*
 		$('#leasing-interested').click(
 			function() {
 				if( $('#leasing-interested').is(':checked') ) {
@@ -43,6 +44,7 @@ $(document).ready(
 				}
 			}
 		);
+		*/
 
 		calculate();
 	}
@@ -51,21 +53,21 @@ $(document).ready(
 var factors = {
 	"25000": {
 		"Intr": 0.02,
-		"FV 12": 0.08,
-		"FV 24": 0.06,
-		"FV 36": 0.04,
-		"FV 48": 0.03,
-		"FV 60": 0.01,
+		"FV 12": 0.09,
+		"FV 24": 0.07,
+		"FV 36": 0.05,
+		"FV 48": 0.04,
+		"FV 60": 0.02,
 		"INR (p.m.)": 0.0031,
 		"Depr": 1,
 	},
 	"150000": {
 		"Intr": 0.01,
-		"FV 12": 0.08,
-		"FV 24": 0.06,
-		"FV 36": 0.04,
-		"FV 48": 0.03,
-		"FV 60": 0.01,
+		"FV 12": 0.09,
+		"FV 24": 0.07,
+		"FV 36": 0.05,
+		"FV 48": 0.04,
+		"FV 60": 0.02,
 		"INR (p.m.)": 0.0031,
 		"Depr": 2,
 	},
@@ -95,15 +97,15 @@ function calculate() {
 	var ol60p = ( ol60 / val * 100 ).toFixed(2);
 
 	$('#leasing-value-ol12').html(ol12);
-	$('#leasing-value-ol12p').html(ol12p);
+	$('#leasing-value-ol12p').html(!isNaN(ol12p)?ol12p:0);
 	$('#leasing-value-ol24').html(ol24);
-	$('#leasing-value-ol24p').html(ol24p);
+	$('#leasing-value-ol24p').html(!isNaN(ol24p)?ol24p:0);
 	$('#leasing-value-ol36').html(ol36);
-	$('#leasing-value-ol36p').html(ol36p);
+	$('#leasing-value-ol36p').html(!isNaN(ol36p)?ol36p:0);
 	$('#leasing-value-ol48').html(ol48);
-	$('#leasing-value-ol48p').html(ol48p);
+	$('#leasing-value-ol48p').html(!isNaN(ol48p)?ol48p:0);
 	$('#leasing-value-ol60').html(ol60);
-	$('#leasing-value-ol60p').html(ol60p);
+	$('#leasing-value-ol60p').html(!isNaN(ol60p)?ol60p:0);
 
 	var fl36 = (PMT2( f["Intr"]/12, 36, -val, 0, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
 	var fl48 = (PMT2( f["Intr"]/12, 48, -val, 0, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
@@ -114,11 +116,11 @@ function calculate() {
 	var fl60p = ( fl60 / val * 100 ).toFixed(2);
 
 	$('#leasing-value-fl36').html(fl36);
-	$('#leasing-value-fl36p').html(fl36p);
+	$('#leasing-value-fl36p').html(!isNaN(fl36p)?fl36p:0);
 	$('#leasing-value-fl48').html(fl48);
-	$('#leasing-value-fl48p').html(fl48p);
+	$('#leasing-value-fl48p').html(!isNaN(fl48p)?fl48p:0);
 	$('#leasing-value-fl60').html(fl60);
-	$('#leasing-value-fl60p').html(fl60p);
+	$('#leasing-value-fl60p').html(!isNaN(fl60p)?fl60p:0);
 }
 
 function processLeasing() {

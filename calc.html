@@ -97,22 +97,22 @@
 	<section id="calc" class="grey">
 
 		<div class="container">
-			<div class="cols">
-				<div>
+			<div class="row">
+				<div class="col-md-12">
 					<div class="subtitle">Pro výpočet leasingové splátky</div>
 					<p>zadejte předmět leasingu, cenu předmětu bez DPH a odpisovou skupinu.</p>
 				</div>
 			</div>
-			<div class="cols">
-				<div>
+			<div class="row">
+				<div class="col-md-6">
 					<dl class="row">
 						<dt class="col-sm-8">Předmět leasingu</dt>
 						<dd class="col-sm-4"><input type="text" placeholder="předmět" name="leasing-predmet" id="leasing-predmet"></dd>
 						<dt class="col-sm-8">Cena předmětu (bez DPH)</dt>
-						<dd class="col-sm-4"><input type="text" placeholder="cena" name="leasing-cena" id="leasing-cena" value="25 000 Kč"></dd>
+						<dd class="col-sm-4"><input type="text" placeholder="cena" name="leasing-cena" id="leasing-cena" value="0 Kč"></dd>
 					</dl>
 				</div>
-				<div>
+				<div class="col-md-6">
 					<dl class="row">
 						<dt class="col-sm-8"><div class="formFailedmessage" id="leasing-predmet-error"></div></dt>
 						<dd class="col-sm-4"></dd>
@@ -120,214 +120,114 @@
 						<dd class="col-sm-4"></dd>
 					</dl>
 				</div>
-			</div>
-			<div class="cols" id="leasing">
-				<div>
-					<div class="subtitle">OPERATIVNÍ LEASING</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
-					<div><span class="labels">Volba</span></div>
-				</div>
-				<div>
-					<div><span class="labels">Počet splátek</span></div>
-				</div>
-				<div>
-					<div><span class="labels">Výše splátky</span></div>
-				</div>
-				<div>
-					<div><span class="labels">Leasingový koeficient</span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>12</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol12"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol12p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>24</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol24"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol24p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>36</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol36"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol36p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>48</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol48"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol48p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>60</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol60"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-ol60p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols">
-				<div>
-					<div class="subtitle">FINANČNÍ LEASING</div>
-				</div>
 				<div style="text-align: right">
 						Odpisová skupina&nbsp;&nbsp;&nbsp;1&nbsp;<input type="radio" value="1" name="leasing-group" id="leasing-group-1" checked>&nbsp;&nbsp;&nbsp;2&nbsp;<input type="radio" value="2" name="leasing-group" id="leasing-group-2">
 				</div>
 			</div>
-			<div class="cols compress">
-				<div>
-					<div>Volba</div>
-				</div>
-				<div>
-					<div>Počet splátek</div>
-				</div>
-				<div>
-					<div>Výše splátky</div>
-				</div>
-				<div>
-					<div>Leasingový koeficient</div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress lg1">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>36</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-fl36"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-fl36p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress lg1">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>48</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-fl48"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-fl48p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
-					<div><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></div>
-				</div>
-				<div>
-					<div>60</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-fl60"></span> Kč</div>
-				</div>
-				<div>
-					<div><span id="leasing-value-fl60p"></span></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols compress">
-				<div>
+			<div class="row" id="leasing">
+				<div class="col-md-6">
+					<div class="subtitle">OPERATIVNÍ LEASING</div>
+
+					<table class="table">
+						<tr>
+							<th><span class="labels">Volba</span></th>
+							<th><span class="labels">Počet splátek</span></th>
+							<th><span class="labels">Výše splátky</span></th>
+							<th><span class="labels">Leasingový koeficient</span></th>
+							<th>&nbsp;</th>
+						</tr>
+						<tr>
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>12</td>
+							<td><span id="leasing-value-ol12"></span> Kč</td>
+							<td><span id="leasing-value-ol12p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>24</td>
+							<td><span id="leasing-value-ol24"></span> Kč</td>
+							<td><span id="leasing-value-ol24p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>36</td>
+							<td><span id="leasing-value-ol36"></span> Kč</td>
+							<td><span id="leasing-value-ol36p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>48</td>
+							<td><span id="leasing-value-ol48"></span> Kč</td>
+							<td><span id="leasing-value-ol48p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>60</td>
+							<td><span id="leasing-value-ol60"></span> Kč</td>
+							<td><span id="leasing-value-ol60p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</div><!-- col-md-6 -->
+				<div class="col-md-6">
+					<div class="subtitle">FINANČNÍ LEASING</div>
+					
+					<table class="table">
+						<tr>
+							<th>Volba</th>
+							<th>Počet splátek</th>
+							<th>Výše splátky</th>
+							<th>Leasingový koeficient</th>
+							<th>&nbsp;</th>
+						</tr>
+						<tr class="lg1">
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>36</td>
+							<td><span id="leasing-value-fl36"></span> Kč</td>
+							<td><span id="leasing-value-fl36p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr class="lg1">
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>48</td>
+							<td><span id="leasing-value-fl48"></span> Kč</td>
+							<td><span id="leasing-value-fl48p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr class="lg2">
+							<td><input type="radio" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+							<td>60</td>
+							<td><span id="leasing-value-fl60"></span> Kč</td>
+							<td><span id="leasing-value-fl60p"></span></td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</div><!-- col-md-6 -->
+			</div><!-- row -->
+			<div class="row">
+				<div class="col-md-12">
 					<div><div class="formFailedmessage" id="leasing-leasing-error"></div></div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-				<div>
-					<div>&nbsp;</div>
-				</div>
-			</div>
-			<div class="cols">
-				<div>
+				</div><!-- col-md-12 -->
+			</div><!-- row -->
+			<div class="row">
+				<div class="col-md-12">
 					<p><span class="labels">Upozornění:</span>
 						Nullam at arcu a est sollicitudin euismod. Sed convallis magna eu sem. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Etiam egestas wisi a erat. Pellentesque arcu. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut tempus purus at lorem. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Nam sed tellus id magna elementum tincidunt. Phasellus et lorem id felis nonummy placerat. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Aliquam ornare wisi eu metus. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Et harum quidem rerum facilis est et expedita distinctio. Fusce suscipit libero eget elit. Aliquam erat volutpat.</p>
 				</div>
 			</div>
-			<div class="cols">
-				<div>
+			<div class="row">
+				<div class="col-md-12">
 					<p><input type="checkbox" id="leasing-interested">Mám zájem o dodatečnou nabídku finacování předmětu formou úvěru.</p>
 				</div>
 			</div>
-			<div class="cols">
-				<div><button type="button" id="leasing-submit" class="dark" onclick="processLeasing()" disabled>Mám zájem o nabídku →</button></div>
+			<div class="row">
+				<div class="col-md-12">
+					<div><button type="button" id="leasing-submit" class="dark" onclick="processLeasing()">Mám zájem o nabídku →</button></div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -336,136 +236,142 @@
 
 
 		<div class="container">
-			<div class="cols">
-				<div>
+			<div class="row">
+				<div class="class-md-12">
 					<div class="subtitle">Pro vytvoření individuální nabídky</div>
 					<p>vyplňte, prosím, níže uvedené údaje..</p>
 				</div>
 			</div>
-			<div class="cols">
-				<div>
+			<div class="row">
+				<div class="col-md-12">
 					<div class="subtitle">ÚDAJE NÁJEMCE</div>
 				</div>
 			</div>
 
-			<div class="cols">
-				<div>
-					<div class="row">
-						<div style="flex: 1">Jméno / Firma</div>
-						<div style="flex: 2"><input type="text" placeholder="jméno" name="form-jmeno" id="form-jmeno"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-jmeno-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Adresa trvalého bydliště / Sídla</div>
-						<div style="flex: 2"><input type="text" placeholder="adresa" name="form-adresa" id="form-adresa"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-adresa-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">PSČ / Město</div>
-						<div style="flex: 1"><input type="text" placeholder="PSČ" name="form-psc" id="form-psc"></div>
-						<div style="flex: 1"><input type="text" placeholder="město" name="form-mesto" id="form-mesto"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-psc-mesto-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Telefon</div>
-						<div style="flex: 2"><input type="text" placeholder="telefon" name="form-telefon" id="form-telefon"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-telefon-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">E-mail</div>
-						<div style="flex: 2"><input type="text" placeholder="email" name="form-email" id="form-email"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-email-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">IČ / DIČ</div>
-						<div style="flex: 1"><input type="text" placeholder="ič" name="form-ic" id="form-ic"></div>
-						<div style="flex: 1"><input type="text" placeholder="dič" name="form-dic" id="form-dic"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-ic-dic-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Číslo účtu / Kód banky</div>
-						<div style="flex: 1"><input type="text" placeholder="účet" name="form-ucet" id="form-ucet"></div>
-						<div style="flex: 1"><input type="text" placeholder="banka" name="form-banka" id="form-banka"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-ucet-banka-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Jméno / Příjmení statutárního orgánu</div>
-						<div style="flex: 2"><input type="text" placeholder="jméno statutárního orgánu" name="form-storgan" id="form-storgan"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-storgan-error">Vyplnte jmeno</div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Datum narození statutárního orgánu</div>
-						<div style="flex: 2"><input type="text" placeholder="narození statutárního orgánu" name="form-storgannar" id="form-storgannar"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-storgannar-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Hlavní předmět podnikání</div>
-						<div style="flex: 2"><input type="text" placeholder="předmět podnikání" name="form-predpod" id="form-predpod"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-predpod-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Datum zahájení podníkání</div>
-						<div style="flex: 2"><input type="text" placeholder="zahájení podníkání" name="form-datpod" id="form-datpod"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-datpod-error"></div></div>
-					</div>
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tr>
+							<th colspan="1">Jméno / Firma</th>
+							<td colspan="2"><input type="text" placeholder="jméno" name="form-jmeno" id="form-jmeno"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-jmeno-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Adresa trvalého bydliště / Sídla</th>
+							<td colspan="2"><input type="text" placeholder="adresa" name="form-adresa" id="form-adresa"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-adresa-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">PSČ / Město</th>
+							<td colspan="1"><input type="text" placeholder="PSČ" name="form-psc" id="form-psc"></td>
+							<td colspan="1"><input type="text" placeholder="město" name="form-mesto" id="form-mesto"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-psc-mesto-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Telefon</th>
+							<td colspan="2"><input type="text" placeholder="telefon" name="form-telefon" id="form-telefon"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-telefon-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">E-mail</th>
+							<td colspan="2"><input type="text" placeholder="email" name="form-email" id="form-email"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-email-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">IČ / DIČ</th>
+							<td colspan="1"><input type="text" placeholder="ič" name="form-ic" id="form-ic"></td>
+							<td colspan="1"><input type="text" placeholder="dič" name="form-dic" id="form-dic"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-ic-dic-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Číslo účtu / Kód banky</th>
+							<td colspan="1"><input type="text" placeholder="účet" name="form-ucet" id="form-ucet"></td>
+							<td colspan="1"><input type="text" placeholder="banka" name="form-banka" id="form-banka"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-ucet-banka-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Jméno / Příjmení statutárního orgánu</th>
+							<td colspan="2"><input type="text" placeholder="jméno statutárního orgánu" name="form-storgan" id="form-storgan"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-storgan-error">Vyplnte jmeno</div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Datum narození statutárního orgánu</th>
+							<td colspan="2"><input type="text" placeholder="narození statutárního orgánu" name="form-storgannar" id="form-storgannar"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-storgannar-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Hlavní předmět podnikání</th>
+							<td colspan="2"><input type="text" placeholder="předmět podnikání" name="form-predpod" id="form-predpod"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-predpod-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Datum zahájení podníkání</th>
+							<td colspan="2"><input type="text" placeholder="zahájení podníkání" name="form-datpod" id="form-datpod"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-datpod-error"></div></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 
-			<div class="cols">
-				<div>
+			<div class="row">
+				<div class="col-md-12">
 					<div class="subtitle">PŘEDMĚT</div>
 				</div>
 			</div>
 
-			<div class="cols">
-				<div>
-					<div class="row">
-						<div style="flex: 1">Předmět leasingu</div>
-						<div style="flex: 2"><input type="text" placeholder="předmět" name="form-pod-predmet" id="form-pod-predmet"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-pod-predmet-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Adresa umístění předmětu leasingu</div>
-						<div style="flex: 2"><input type="text" placeholder="adresa" name="form-pod-adresa" id="form-pod-adresa"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-pod-adresa-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">PSČ / Město</div>
-						<div style="flex: 1"><input type="text" placeholder="PSČ" name="form-pod-psc" id="form-pod-psc"></div>
-						<div style="flex: 1"><input type="text" placeholder="město" name="form-pod-mesto" id="form-pod-mesto"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-pod-psc-mesto-error"></div></div>
-					</div>
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tr>
+							<th colspan="1">Předmět leasingu</th>
+							<td colspan="2"><input type="text" placeholder="předmět" name="form-pod-predmet" id="form-pod-predmet"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-pod-predmet-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Adresa umístění předmětu leasingu</th>
+							<td colspan="2"><input type="text" placeholder="adresa" name="form-pod-adresa" id="form-pod-adresa"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-pod-adresa-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">PSČ / Město</th>
+							<td colspan="1"><input type="text" placeholder="PSČ" name="form-pod-psc" id="form-pod-psc"></td>
+							<td colspan="1"><input type="text" placeholder="město" name="form-pod-mesto" id="form-pod-mesto"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-pod-psc-mesto-error"></td></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 
-			<div class="cols">
-				<div>
+			<div class="row">
+				<div class="col-md-12">
 					<div class="subtitle">DODAVATEL</div>
 				</div>
 			</div>
 
-			<div class="cols">
-				<div>
-					<div class="row">
-						<div style="flex: 1">Jméno / Firma</div>
-						<div style="flex: 2"><input type="text" placeholder="jméno" name="form-dod-jmeno" id="form-dod-jmeno"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-jmeno-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Adresa</div>
-						<div style="flex: 2"><input type="text" placeholder="adresa" name="form-dod-adresa" id="form-dod-adresa"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-adresa-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Telefon</div>
-						<div style="flex: 2"><input type="text" placeholder="telefon" name="form-dod-telefon" id="form-dod-telefon"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-telefon-error"></div></div>
-					</div>
-					<div class="row">
-						<div style="flex: 1">Email</div>
-						<div style="flex: 2"><input type="text" placeholder="email" name="form-dod-email" id="form-dod-email"></div>
-						<div style="flex: 1"><div class="formFailedmessage" id="form-dod-email-error"></div></div>
-					</div>
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tr>
+							<th colspan="1">Jméno / Firma</th>
+							<td colspan="2"><input type="text" placeholder="jméno" name="form-dod-jmeno" id="form-dod-jmeno"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-dod-jmeno-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Adresa</th>
+							<td colspan="2"><input type="text" placeholder="adresa" name="form-dod-adresa" id="form-dod-adresa"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-dod-adresa-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Telefon</th>
+							<td colspan="2"><input type="text" placeholder="telefon" name="form-dod-telefon" id="form-dod-telefon"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-dod-telefon-error"></div></td>
+						</tr>
+						<tr>
+							<th colspan="1">Email</th>
+							<td colspan="2"><input type="text" placeholder="email" name="form-dod-email" id="form-dod-email"></td>
+							<td colspan="1"><div class="formFailedmessage" id="form-dod-email-error"></div></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 

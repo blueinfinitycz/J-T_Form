@@ -82,6 +82,9 @@ section.grey {
   border-bottom: 2px solid white;
   background-color: #eceded;
 }
+.row {
+  padding-top: 20px;
+}
 #segments {
   height: 100%;
   display: flex;
