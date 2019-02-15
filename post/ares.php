@@ -50,7 +50,7 @@ function getPage($url)
 {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_PROXY, "proxyapps.pa.jtfg.com:3128");
+    //curl_setopt($ch, CURLOPT_PROXY, "proxyapps.pa.jtfg.com:3128");
 
     //curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
