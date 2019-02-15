@@ -10,9 +10,8 @@ $ares_mesto_fin = "";
 $ares_psc_fin   = "";
 $ares_stav_fin = "";
  
-$file = @getPage("http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=".$_REQUEST["ico_ajax_send"]);
-$pos = strpos( $file, "<?xml" );
-$file = substr( $file, $pos ); 
+$ic = str_replace( " ", "", $_REQUEST["ico_ajax_send"]);
+$file = @getPage("http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=".$ic);
 
 if($file)
   {
@@ -25,7 +24,7 @@ if($xml)
     $data = $xml->children($ns['are']);
     $el = $data->children($ns['D'])->VBAS;
      
-    if (strval($el->ICO) == $_REQUEST["ico_ajax_send"]) 
+    if (strval($el->ICO) == $ic) 
       {
         $ares_ico_fin = strval($el->ICO);
         $ares_dic_fin = strval($el->DIC);
@@ -65,6 +64,9 @@ function getPage($url) {
 		curl_setopt($ch, CURLOPT_HEADER, 1);
 		$curl_scraped_page = curl_exec($ch);
 		curl_close($ch);
+
+    $pos = strpos( $curl_scraped_page, "<?xml" );
+    $curl_scraped_page = substr( $curl_scraped_page, $pos ); 
 
 		return $curl_scraped_page;
 	}
