@@ -83,7 +83,7 @@ section.grey {
   background-color: #eceded;
 }
 .row {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 #segments {
   height: 100%;
@@ -144,7 +144,8 @@ section.grey {
   display: flex;
   padding-top: 32px;
 }
-#segments .segment .cols > div {
+#segments .segment .cols > div,
+.modal .cols > div {
   text-align: left;
   flex: 1;
   padding: 16px;
@@ -165,7 +166,8 @@ section.grey {
   background-color: #19e6e2;
   color: #000d5b;
 }
-#segments .segment .title {
+#segments .segment .title,
+.modal .title {
   font-size: 44px;
   width: 100%;
   font-weight: 100;
@@ -296,6 +298,9 @@ input:focus {
   outline: none;
   border-bottom: 1px solid #000d5b;
 }
+#form input {
+  width: 100%;
+}
 button:focus {
   outline: none;
 }
@@ -333,13 +338,32 @@ section#contact {
 .modal-content .cols > div.title {
   border-top: 2px solid #000d5b;
 }
-#formOKmessage {
+.modal {
+  color: #000d5b;
+}
+.modal .row {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.modal select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 0;
+}
+#calcModal .modal-dialog {
+  width: 800px;
+  max-width: 90%;
+}
+#formOKmessage,
+#leasingOKmessage {
   display: none;
   border: 2px solid #6dbef2;
   color: #6dbef2;
   padding: 10px;
 }
-#formFailedmessage {
+#formFailedmessage,
+#leasingFailedmessage {
   display: none;
   border: 2px solid #9479f0;
   color: #9479f0;
@@ -387,7 +411,8 @@ input[id="surname"] {
   #segments .segment.open .img {
     height: 150px;
   }
-  #segments .segment .title {
+  #segments .segment .title,
+  .modal .title {
     font-size: 24px;
     width: 100%;
     font-weight: 100;

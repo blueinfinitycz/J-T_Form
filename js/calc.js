@@ -34,6 +34,25 @@ $(document).ready(
 			}
 		);
 
+		$('#leasing-ico').keyup(
+			function() {
+				getCompany(this);
+			}
+		);
+
+		$('#leasing-predmet').change(
+			function() {
+				if ( $(this).val()=="6" ) {
+					$('#leasing-predmet-desc-form-label').fadeIn();
+					$('#leasing-predmet-desc-form-value').fadeIn();
+				} else {
+					$('#leasing-predmet-desc-form-label').fadeOut();
+					$('#leasing-predmet-desc-form-value').fadeOut();
+					$('#leasing-predmet-desc').val('');
+				}
+			}
+		);
+
 		/*
 		$('#leasing-interested').click(
 			function() {
@@ -52,29 +71,38 @@ $(document).ready(
 
 var factors = {
 	"25000": {
-		"Intr": 0.02,
+		"Intr": 0.07,
 		"FV 12": 0.09,
 		"FV 24": 0.07,
 		"FV 36": 0.05,
 		"FV 48": 0.04,
 		"FV 60": 0.02,
-		"INR (p.m.)": 0.0031,
+		"INR (p.m.)": 0.0,
 		"Depr": 1,
 	},
 	"150000": {
-		"Intr": 0.01,
+		"Intr": 0.07,
 		"FV 12": 0.09,
 		"FV 24": 0.07,
 		"FV 36": 0.05,
 		"FV 48": 0.04,
 		"FV 60": 0.02,
-		"INR (p.m.)": 0.0031,
+		"INR (p.m.)": 0.0,
 		"Depr": 2,
 	},
 }
 
+var devices = {
+	"12": [0.28,0.20,0.20,0.20,0.35,0.20],
+	"24": [0.22,0.15,0.15,0.15,0.28,0.15],
+	"36": [0.15,0.5,0.5,0.5,0.17,0.5],
+	"48": [0.8,0.0,0.0,0.0,0.8,0.0],
+	"60": [0.0,0.0,0.0,0.0,0.0,0.0],
+};
+
 function calculate() {
 	var val = $('#leasing-cena').val();
+	var predmet = $('#leasing-predmet').val();
 	val = val.replace(/\sKč/g, '').trim();
 	val = val.replace(/\s/g, '').trim();
 	val = parseFloat(val);
@@ -84,29 +112,40 @@ function calculate() {
 		f = factors["150000"];
 	}
 
+	var ol12 = (PMT2( f["Intr"]/12, 12, -val, devices["12"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
+	var ol24 = (PMT2( f["Intr"]/12, 24, -val, devices["24"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
+	var ol36 = (PMT2( f["Intr"]/12, 36, -val, devices["36"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
+	var ol48 = (PMT2( f["Intr"]/12, 48, -val, devices["48"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
+	var ol60 = (PMT2( f["Intr"]/12, 60, -val, devices["60"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
+
+	/*
 	var ol12 = (PMT2( f["Intr"]/12, 12, -val, f["FV 12"] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
 	var ol24 = (PMT2( f["Intr"]/12, 24, -val, f["FV 24"] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
 	var ol36 = (PMT2( f["Intr"]/12, 36, -val, f["FV 36"] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
 	var ol48 = (PMT2( f["Intr"]/12, 48, -val, f["FV 48"] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
 	var ol60 = (PMT2( f["Intr"]/12, 60, -val, f["FV 60"] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
+	*/
 
+	/*
 	var ol12p = ( ol12 / val * 100 ).toFixed(2);
 	var ol24p = ( ol24 / val * 100 ).toFixed(2);
 	var ol36p = ( ol36 / val * 100 ).toFixed(2);
 	var ol48p = ( ol48 / val * 100 ).toFixed(2);
 	var ol60p = ( ol60 / val * 100 ).toFixed(2);
+	*/
 
 	$('#leasing-value-ol12').html(ol12);
-	$('#leasing-value-ol12p').html(!isNaN(ol12p)?ol12p:0);
+	//$('#leasing-value-ol12p').html(!isNaN(ol12p)?ol12p:0);
 	$('#leasing-value-ol24').html(ol24);
-	$('#leasing-value-ol24p').html(!isNaN(ol24p)?ol24p:0);
+	//$('#leasing-value-ol24p').html(!isNaN(ol24p)?ol24p:0);
 	$('#leasing-value-ol36').html(ol36);
-	$('#leasing-value-ol36p').html(!isNaN(ol36p)?ol36p:0);
+	//$('#leasing-value-ol36p').html(!isNaN(ol36p)?ol36p:0);
 	$('#leasing-value-ol48').html(ol48);
-	$('#leasing-value-ol48p').html(!isNaN(ol48p)?ol48p:0);
+	//$('#leasing-value-ol48p').html(!isNaN(ol48p)?ol48p:0);
 	$('#leasing-value-ol60').html(ol60);
-	$('#leasing-value-ol60p').html(!isNaN(ol60p)?ol60p:0);
+	//$('#leasing-value-ol60p').html(!isNaN(ol60p)?ol60p:0);
 
+	/*
 	var fl36 = (PMT2( f["Intr"]/12, 36, -val, 0, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
 	var fl48 = (PMT2( f["Intr"]/12, 48, -val, 0, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
 	var fl60 = (PMT2( f["Intr"]/12, 60, -val, 0, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
@@ -121,14 +160,88 @@ function calculate() {
 	$('#leasing-value-fl48p').html(!isNaN(fl48p)?fl48p:0);
 	$('#leasing-value-fl60').html(fl60);
 	$('#leasing-value-fl60p').html(!isNaN(fl60p)?fl60p:0);
+	*/
 }
 
 function processLeasing() {
 	
 	if ( validateLeasing() ) {
+		$('#form-pod-predmet').val( $('#leasing-predmet').val().trim() ); 
 		$('#calc').slideUp();
 		$('#form').slideDown( { complete: function () { scrollToAnchor('form') } } );
 	}
+}
+
+function validateModal() {
+
+	$('.formFailedmessage').fadeOut();
+
+	var error_anchor = undefined;
+		
+	if ( $('#leasing-cena').val().trim() == "" ) {
+		if ( !error_anchor ) error_anchor = "leasing-cena";
+		$('#leasing-cena-error').html('Vyplňte cenu');
+		$('#leasing-cena-error').fadeIn();
+	} else {
+		var val = $('#leasing-cena').val();
+		val = val.replace(/\sKč/g, '').trim();
+		val = val.replace(/\s/g, '').trim();
+		val = parseFloat(val);
+		if ( isNaN(val) ) {
+			if ( !error_anchor ) error_anchor = "leasing-cena";
+			$('#leasing-cena-error').html('Špatná cena');
+			$('#leasing-cena-error').fadeIn();
+		} else {
+			if ( val < 25000 ) {
+				if ( !error_anchor ) error_anchor = "leasing-cena";
+				$('#leasing-cena-error').html('Minimálna cena je 25 000 Kč');
+				$('#leasing-cena-error').fadeIn();
+			}
+		}
+	}
+
+	if ( $('#leasing-predmet').val().trim() == "6" && $('#leasing-predmet-desc').val().trim() == "" ) {
+		if ( !error_anchor ) error_anchor = "leasing-predmet";
+		$('#leasing-predmet-error').html('Prosím upřesněte');
+		$('#leasing-predmet-error').fadeIn();
+	}
+
+	if (
+		!$('#leasing-leasing-ol-12').is(':checked') &&
+		!$('#leasing-leasing-ol-24').is(':checked') &&
+		!$('#leasing-leasing-ol-36').is(':checked') &&
+		!$('#leasing-leasing-ol-48').is(':checked') &&
+		!$('#leasing-leasing-ol-60').is(':checked')
+	) {
+		if ( !error_anchor ) error_anchor = "leasing";
+		$('#leasing-leasing-error').html('Vyberte leasing');
+		$('#leasing-leasing-error').fadeIn();
+
+	}
+
+	if ( $('#leasing-email').val().trim() == "" || !checkEmail($('#leasing-email').val().trim()) ) {
+		if ( !error_anchor ) error_anchor = "leasing-email";
+		$('#leasing-email-error').html('Vyplňte správně email');
+		$('#leasing-email-error').fadeIn();
+	}
+
+
+	/*
+	var group = $('input[name=leasing-group]:checked').val();
+	var leasings = $('input[name=leasing-leasing]:checked');
+	if ( leasings.length == 0 ) {
+		if ( !error_anchor ) error_anchor = "leasing";
+		$('#leasing-leasing-error').html('Vyberte leasing');
+		$('#leasing-leasing-error').fadeIn();
+	}
+	*/
+
+	if ( error_anchor ) {
+		scrollToAnchor(error_anchor);
+		return false;
+	}
+
+	return true;
 }
 
 function validateLeasing() {
@@ -199,9 +312,9 @@ function validateForm() {
 		$('#form-adresa-error').fadeIn();
 	}
 
-	if ( $('#form-psc').val().trim() == "" ) {
+	if ( $('#form-psc').val().trim() == "" || !checkPsc($('#form-psc').val().trim()) ) {
 		if ( !error_anchor ) error_anchor = "form-psc";
-		$('#form-psc-mesto-error').html('Vyplňte PSČ');
+		$('#form-psc-mesto-error').html('Vyplňte správně PSČ');
 		$('#form-psc-mesto-error').fadeIn();
 	}
 
@@ -211,15 +324,15 @@ function validateForm() {
 		$('#form-psc-mesto-error').fadeIn();
 	}
 
-	if ( $('#form-telefon').val().trim() == "" ) {
+	if ( $('#form-telefon').val().trim() == "" || !checkPhoneNumber($('#form-telefon').val().trim()) ) {
 		if ( !error_anchor ) error_anchor = "form-telefon";
-		$('#form-telefon-error').html('Vyplňte telefon');
+		$('#form-telefon-error').html('Vyplňte správně telefon');
 		$('#form-telefon-error').fadeIn();
 	}
 
-	if ( $('#form-email').val().trim() == "" ) {
+	if ( $('#form-email').val().trim() == "" || !checkEmail($('#form-email').val().trim())) {
 		if ( !error_anchor ) error_anchor = "form-email";
-		$('#form-email-error').html('Vyplňte email');
+		$('#form-email-error').html('Vyplňte správně email');
 		$('#form-email-error').fadeIn();
 	}
 
@@ -285,7 +398,7 @@ function validateForm() {
 		$('#form-pod-adresa-error').fadeIn();
 	}
 
-	if ( $('#form-pod-psc').val().trim() == "" ) {
+	if ( $('#form-pod-psc').val().trim() == ""  || !checkPsc($('#form-pod-psc').val().trim()) ) {
 		if ( !error_anchor ) error_anchor = "form-pod-psc";
 		$('#form-pod-psc-mesto-error').html('Vyplňte PSČ');
 		$('#form-pod-psc-mesto-error').fadeIn();
@@ -317,9 +430,9 @@ function validateForm() {
 	}
 	*/
 
-	if ( $('#form-dod-email').val().trim() == "" ) {
+	if ( $('#form-dod-email').val().trim() == ""  || !checkEmail($('#form-dod-email').val().trim())) {
 		if ( !error_anchor ) error_anchor = "form-dod-email";
-		$('#form-dod-email-error').html('Vyplňte email podnikání');
+		$('#form-dod-email-error').html('Vyplňte správně email podnikání');
 		$('#form-dod-email-error').fadeIn();
 	}
 
@@ -330,6 +443,42 @@ function validateForm() {
 
 	return true;
 
+}
+
+function sendCalcFormModal() {
+	$('#formOKmessage').fadeOut();
+	$('#formFailedmessage').fadeOut();
+
+	if ( !validateModal() ) return;
+
+	var splatky = [];
+	if ( $('#leasing-leasing-ol-12').is(':checked') ) splatky.push( "12" );
+	if ( $('#leasing-leasing-ol-24').is(':checked') ) splatky.push( "24" );
+	if ( $('#leasing-leasing-ol-36').is(':checked') ) splatky.push( "36" );
+	if ( $('#leasing-leasing-ol-48').is(':checked') ) splatky.push( "48" );
+	if ( $('#leasing-leasing-ol-60').is(':checked') ) splatky.push( "60" );
+
+	data = {
+		"form-predmet": $("#leasing-predmet option:selected").text(),
+		"form-cena": $('#leasing-cena').val(),
+		"form-splatky": splatky.join(', '),
+		"form-telefon": $('#leasing-telefon').val(),
+		"form-email": $('#leasing-email').val(),
+		"form-ico": $('#leasing-ico').val(),
+		"form-firma": $('#leasing-firma').val(),
+		"form-predmet-desc": $('#leasing-predmet-desc').val(),
+	}
+
+	$.ajax({
+		type: "POST",
+		url: 'https://jtleasing.jtfg.com/post/calc.php',
+		data: data,
+		dataType: 'jsonp',
+		jsonp: false,
+    	jsonpCallback: "myJsonMethod",
+    	success : sendingCalcOK,
+    	error : sendingCalcFailed,
+	});
 }
 
 function sendCalcForm() {
@@ -380,19 +529,19 @@ function sendCalcForm() {
 function sendingCalcOK( data ) {
 
 	if ( data.error == '' ) {
-		$('#formOKmessage').html('Poslané. Ozveme se vám.');
-		$('#formOKmessage').fadeIn();
+		$('#leasingOKmessage').html('Poslané. Ozveme se vám.');
+		$('#leasingOKmessage').fadeIn();
 		setTimeout( function() { 
-			$('#contactModal').modal('hide');
-			$('#formOKmessage').fadeOut();
-			$('#formFailedmessage').fadeOut();
+			$('#calcModal').modal('hide');
+			$('#leasingOKmessage').fadeOut();
+			$('#leasingFailedmessage').fadeOut();
 		}, 3000);
 	} else sendingCalcFailed();
 }
 
 function sendingCalcFailed(httpReq,status,exception) {
-	$('#formFailedmessage').html('Nastala chyba. Skuste to znovu pozdeji.');
-	$('#formFailedmessage').fadeIn();
+	$('#leasingFailedmessage').html('Nastala chyba. Skuste to znovu pozdeji.');
+	$('#leasingFailedmessage').fadeIn();
 }
 
 
@@ -439,3 +588,32 @@ function PMT2(rate, nperiod, pv, fv, type) {
     return pmt;
 }
 
+function checkPsc(value) {
+	return checkRegexRule(value, /^[\d]{5}$/);
+}
+
+function checkPhoneNumber(value) {
+	return checkRegexRule(value, /^[+]?[0-9 ]{7,20}$/);
+}
+
+function checkEmail(value) {
+	return checkRegexRule(value, /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+}
+
+function checkRegexRule(value, regex) {
+	var regexRule = new RegExp(regex);
+	if (regexRule.test(value)) {
+		return true; // ok
+	}
+	return false; // not ok
+}
+
+function getCompany( el ) {
+	var val = $(el).val();
+	$.get(
+		"https://jtleasing.jtfg.com/post/ares.php?ico_ajax_send="+val,
+		function(data) {
+			$('#leasing-firma').val(data);
+		}
+	);
+}

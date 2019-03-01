@@ -14,33 +14,19 @@ require 'src/PHPMailer.php';
 require 'src/Exception.php';
 require 'src/SMTP.php';
 
-$formjmeno = trim(strip_tags($_REQUEST['form-jmeno']));
-$formadresa = trim(strip_tags($_REQUEST['form-adresa']));
-$formpsc = trim(strip_tags($_REQUEST['form-psc']));
-$formmesto = trim(strip_tags($_REQUEST['form-mesto']));
+$formpredmet = trim(strip_tags($_REQUEST['form-predmet']));
+$formcena = trim(strip_tags($_REQUEST['form-cena']));
+$formsplatky = trim(strip_tags($_REQUEST['form-splatky']));
 $formtelefon = trim(strip_tags($_REQUEST['form-telefon']));
 $formemail = trim(strip_tags($_REQUEST['form-email']));
-$formic = trim(strip_tags($_REQUEST['form-ic']));
-$formdic = trim(strip_tags($_REQUEST['form-dic']));
-$formucet = trim(strip_tags($_REQUEST['form-ucet']));
-$formbanka = trim(strip_tags($_REQUEST['form-banka']));
-$formstorgan = trim(strip_tags($_REQUEST['form-storgan']));
-$formstorgannar = trim(strip_tags($_REQUEST['form-storgannar']));
-$formpredpod = trim(strip_tags($_REQUEST['form-predpod']));
-$formdatpod = trim(strip_tags($_REQUEST['form-datpod']));
-$formpodpredmet = trim(strip_tags($_REQUEST['form-pod-predmet']));
-$formpodadresa = trim(strip_tags($_REQUEST['form-pod-adresa']));
-$formpodpsc = trim(strip_tags($_REQUEST['form-pod-psc']));
-$formpodmesto = trim(strip_tags($_REQUEST['form-pod-mesto']));
-$formdodjmeno = trim(strip_tags($_REQUEST['form-dod-jmeno']));
-$formdodadresa = trim(strip_tags($_REQUEST['form-dod-adresa']));
-$formdodtelefon = trim(strip_tags($_REQUEST['form-dod-telefon']));
-$formdodemail = trim(strip_tags($_REQUEST['form-dod-email']));
+$formico = trim(strip_tags($_REQUEST['form-ico']));
+$formfirma = trim(strip_tags($_REQUEST['form-firma']));
+$formpredmetdesc = trim(strip_tags($_REQUEST["form-predmet-desc"]));
 
 $check = $_REQUEST['surname'];
 if ( $check != "" ) exit;
 
-if ($name == '' || ($email == '' && $phone == '')) {
+if ($formcena == '' || $formsplatky == '' || $formemail == '' || ( $formpredmet == "ostatní" &&  $formpredmetdesc == "" ) ) {
     echo 'myJsonMethod('.json_encode(array('message' => 'empty', 'error' => 'Missing data'), JSON_HEX_APOS).')';
     exit;
 }
@@ -57,15 +43,16 @@ try {
 
     //Recipients
     $mail->setFrom('jtleasing@jtb.com', 'JTLeasing');
-    //$mail->addAddress('info@jtleasing.cz', 'Info');     // Add a recipient
+    //$mail->addAddress('obchod@jtleasing.cz', 'Info');     // Add a recipient
     $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
+    $mail->addAddress('tyrpak@jtleasing.cz', 'Tyrpák Josef');     // Add a recipient
     //$mail->addAddress('malek@jtbank.cz', 'Petr Malek');     // Add a recipient
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Žádost o kontakt z jtleasing.cz';
-    $mail->Body = "Žádost o kontakt z jtleasing.cz od <br>\n<br>\n".$name."<br>\n".$email."<br>\n".$phone."<br>\n".$desc."<br>\n";
-    $mail->AltBody = "Žádost o kontakt z jtleasing.cz od \n\n".$name."\n".$email."\n".$phone."\n".$desc."\n";
+    $mail->Body = "Žádost o kontakt z jtleasing.cz od <br>\n<br>\nEmail: ".$formemail."<br>\nPredmět: ".$formpredmet."<br>\nCena: ".$formcena."<br>\nSplatky: ".$formsplatky." m.<br>\nTelefon: ".$formtelefon."<br>\nICO: ".$formico."<br>\nFirma: ".$formfirma."<br>\nPredmet upřesnení: ".$formpredmetdesc."<br>\n";
+    $mail->AltBody = "Žádost o kontakt z jtleasing.cz od \n\nEmail: ".$formemail."\n".$formpredmet."\nCena: ".$formcena."\Splatky: ".$formsplatky." m.\nTelefon: ".$formtelefon."\nICO: ".$formico."\nFirma: ".$formfirma."\nPredmet upřesnení: ".$formpredmetdesc."\n";
 
     $mail->SMTPOptions = array(
         'ssl' => array(
@@ -80,3 +67,4 @@ try {
 } catch (Exception $e) {
     echo 'myJsonMethod('.json_encode(array('message' => 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo, 'error' => 'Error sending')).')';
 }
+

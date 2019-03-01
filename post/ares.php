@@ -1,5 +1,9 @@
 <?php
 
+header('Access-Control-Allow-Origin: *', false);
+header_remove('X-Frame-Options');
+
+
 $ares_ico_fin = '';
 $ares_dic_fin = '';
 $ares_firma_fin = '';
