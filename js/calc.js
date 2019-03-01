@@ -50,6 +50,7 @@ $(document).ready(
 					$('#leasing-predmet-desc-form-value').fadeOut();
 					$('#leasing-predmet-desc').val('');
 				}
+				calculate();
 			}
 		);
 
@@ -102,7 +103,7 @@ var devices = {
 
 function calculate() {
 	var val = $('#leasing-cena').val();
-	var predmet = $('#leasing-predmet').val();
+	var predmet = parseInt($('#leasing-predmet').val()) - 1;
 	val = val.replace(/\sKč/g, '').trim();
 	val = val.replace(/\s/g, '').trim();
 	val = parseFloat(val);
@@ -112,6 +113,11 @@ function calculate() {
 		f = factors["150000"];
 	}
 
+	var a = devices["12"][predmet] * val;
+	var a = devices["24"][predmet] * val;
+	var a = devices["36"][predmet] * val;
+	var a = devices["48"][predmet] * val;
+	var a = devices["60"][predmet] * val;
 	var ol12 = (PMT2( f["Intr"]/12, 12, -val, devices["12"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
 	var ol24 = (PMT2( f["Intr"]/12, 24, -val, devices["24"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
 	var ol36 = (PMT2( f["Intr"]/12, 36, -val, devices["36"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
