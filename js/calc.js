@@ -2,6 +2,18 @@ $(document).ready(
 
 	function() {
 
+		$('#calcModal').on('hidden.bs.modal', function () {
+			
+			$('.modal-variant').prop( "checked", false );
+			$('#leasing-cena').val('0 Kč');
+			$('#leasing-predmet').val(1);
+    		$('#leasing-predmet-desc').val('');
+			$('#leasing-email').val('');
+			$('#leasing-phone').val('');
+			$('#leasing-ico').val('');
+			$('#leasing-firma').val('');
+		});
+
 		$('#leasing-cena').focus(
 			function() {
 				var val = $('#leasing-cena').val();
@@ -14,9 +26,18 @@ $(document).ready(
 		$('#leasing-cena').change(
 			function() {
 				var val = $('#leasing-cena').val();
+				val = val.replace(/Kč/g, '').trim();
+				val = val.replace(/\s/g, '').trim();
+				/*
 				if ( val.substring(val.length - 3, val.length) != " Kč" ) {
 					$('#leasing-cena').val( $('#leasing-cena').val()+ ' Kč' );
 				}
+				*/
+				//var string = numeral(parseFloat(val)).format('0.0[,]00 Kč');
+				var string = accounting.formatMoney(parseFloat(val), { symbol: "Kč",  format: "%v %s", decimal : ",", thousand: " ", precision : 0 });
+				$('#leasing-cena').val( string );
+
+				validatePrice();
 				calculate();
 			}
 		);
@@ -40,19 +61,33 @@ $(document).ready(
 			}
 		);
 
-		$('#leasing-predmet').change(
+		$('#leasing-ico').change(
+			function() {
+				getCompany(this);
+			}
+		);
+
+		/* $('#leasing-predmet').change(
 			function() {
 				if ( $(this).val()=="6" ) {
 					$('#leasing-predmet-desc-form-label').fadeIn();
 					$('#leasing-predmet-desc-form-value').fadeIn();
+					$('#leasing-predmet-desc').focus();
 				} else {
 					$('#leasing-predmet-desc-form-label').fadeOut();
 					$('#leasing-predmet-desc-form-value').fadeOut();
 					$('#leasing-predmet-desc').val('');
 				}
+	
 				calculate();
 			}
-		);
+		); */
+
+		autosize($('#leasing-predmet-desc'));
+		autosize($('#leasing-email'));
+		autosize($('#leasing-phone'));
+		autosize($('#leasing-ico'));
+		autosize($('#leasing-firma'));
 
 		/*
 		$('#leasing-interested').click(
@@ -96,8 +131,8 @@ var factors = {
 var devices = {
 	"12": [0.28,0.20,0.20,0.20,0.35,0.20],
 	"24": [0.22,0.15,0.15,0.15,0.28,0.15],
-	"36": [0.15,0.5,0.5,0.5,0.17,0.5],
-	"48": [0.8,0.0,0.0,0.0,0.8,0.0],
+	"36": [0.15,0.05,0.05,0.05,0.17,0.05],
+	"48": [0.08,0.0,0.0,0.0,0.08,0.0],
 	"60": [0.0,0.0,0.0,0.0,0.0,0.0],
 };
 
@@ -118,11 +153,18 @@ function calculate() {
 	var a = devices["36"][predmet] * val;
 	var a = devices["48"][predmet] * val;
 	var a = devices["60"][predmet] * val;
+
 	var ol12 = (PMT2( f["Intr"]/12, 12, -val, devices["12"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
-	var ol24 = (PMT2( f["Intr"]/12, 24, -val, devices["24"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
-	var ol36 = (PMT2( f["Intr"]/12, 36, -val, devices["36"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
-	var ol48 = (PMT2( f["Intr"]/12, 48, -val, devices["48"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
-	var ol60 = (PMT2( f["Intr"]/12, 60, -val, devices["60"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);;
+	var ol24 = (PMT2( f["Intr"]/12, 24, -val, devices["24"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
+	var ol36 = (PMT2( f["Intr"]/12, 36, -val, devices["36"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
+	var ol48 = (PMT2( f["Intr"]/12, 48, -val, devices["48"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
+	var ol60 = (PMT2( f["Intr"]/12, 60, -val, devices["60"][predmet] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
+
+	ol12 = accounting.formatMoney(parseFloat(ol12), { symbol: "Kč",  format: "%v %s", decimal : ",", thousand: " ", precision : 0 });
+	ol24 = accounting.formatMoney(parseFloat(ol24), { symbol: "Kč",  format: "%v %s", decimal : ",", thousand: " ", precision : 0 });
+	ol36 = accounting.formatMoney(parseFloat(ol36), { symbol: "Kč",  format: "%v %s", decimal : ",", thousand: " ", precision : 0 });
+	ol48 = accounting.formatMoney(parseFloat(ol48), { symbol: "Kč",  format: "%v %s", decimal : ",", thousand: " ", precision : 0 });
+	ol60 = accounting.formatMoney(parseFloat(ol60), { symbol: "Kč",  format: "%v %s", decimal : ",", thousand: " ", precision : 0 });
 
 	/*
 	var ol12 = (PMT2( f["Intr"]/12, 12, -val, f["FV 12"] * val, 0 ) + ( ( f["INR (p.m.)"] / 12 ) * val ) ).toFixed(0);
@@ -178,6 +220,24 @@ function processLeasing() {
 	}
 }
 
+function validatePrice () {
+	var val = $('#leasing-cena').val();
+	val = val.replace(/\sKč/g, '').trim();
+	val = val.replace(/Kč/g, '').trim();
+	val = val.replace(/\s/g, '').trim();
+	val = parseFloat(val);
+	$('#leasing-cena-error').fadeOut();
+	if ( isNaN(val) ) {
+		$('#leasing-cena-error').html('Špatná cena');
+		$('#leasing-cena-error').fadeIn();
+	} else {
+		if ( val < 25000 ) {
+			$('#leasing-cena-error').html('Minimální cena je 25 000 Kč');
+			$('#leasing-cena-error').fadeIn();
+		}
+	}
+}
+
 function validateModal() {
 
 	$('.formFailedmessage').fadeOut();
@@ -191,6 +251,7 @@ function validateModal() {
 	} else {
 		var val = $('#leasing-cena').val();
 		val = val.replace(/\sKč/g, '').trim();
+		val = val.replace(/Kč/g, '').trim();
 		val = val.replace(/\s/g, '').trim();
 		val = parseFloat(val);
 		if ( isNaN(val) ) {
@@ -200,7 +261,7 @@ function validateModal() {
 		} else {
 			if ( val < 25000 ) {
 				if ( !error_anchor ) error_anchor = "leasing-cena";
-				$('#leasing-cena-error').html('Minimálna cena je 25 000 Kč');
+				$('#leasing-cena-error').html('Minimální cena je 25 000 Kč');
 				$('#leasing-cena-error').fadeIn();
 			}
 		}
@@ -220,7 +281,7 @@ function validateModal() {
 		!$('#leasing-leasing-ol-60').is(':checked')
 	) {
 		if ( !error_anchor ) error_anchor = "leasing";
-		$('#leasing-leasing-error').html('Vyberte leasing');
+		$('#leasing-leasing-error').html('Vyberte variantu');
 		$('#leasing-leasing-error').fadeIn();
 
 	}
@@ -452,10 +513,16 @@ function validateForm() {
 }
 
 function sendCalcFormModal() {
+
+
 	$('#formOKmessage').fadeOut();
 	$('#formFailedmessage').fadeOut();
 
 	if ( !validateModal() ) return;
+
+	rotatetimeout = window.setTimeout(rotate, 100);
+	$('#modal-button').hide();
+	$('#modal-progress').show();
 
 	var splatky = [];
 	if ( $('#leasing-leasing-ol-12').is(':checked') ) splatky.push( "12" );
@@ -465,10 +532,10 @@ function sendCalcFormModal() {
 	if ( $('#leasing-leasing-ol-60').is(':checked') ) splatky.push( "60" );
 
 	data = {
-		"form-predmet": $("#leasing-predmet option:selected").text(),
+		"form-predmet": $("#leasing-predmet-text").val(),
 		"form-cena": $('#leasing-cena').val(),
 		"form-splatky": splatky.join(', '),
-		"form-telefon": $('#leasing-telefon').val(),
+		"form-telefon": $('#leasing-phone').val(),
 		"form-email": $('#leasing-email').val(),
 		"form-ico": $('#leasing-ico').val(),
 		"form-firma": $('#leasing-firma').val(),
@@ -535,19 +602,27 @@ function sendCalcForm() {
 function sendingCalcOK( data ) {
 
 	if ( data.error == '' ) {
-		$('#leasingOKmessage').html('Poslané. Ozveme se vám.');
+		$('#leasingOKmessage').html('Vaše žádost o nabídku byla odeslána. Děkujeme, ozveme se Vám.');
 		$('#leasingOKmessage').fadeIn();
 		setTimeout( function() { 
 			$('#calcModal').modal('hide');
 			$('#leasingOKmessage').fadeOut();
 			$('#leasingFailedmessage').fadeOut();
 		}, 3000);
-	} else sendingCalcFailed();
+		clearTimeout(rotatetimeout);
+		$('#modal-button').show();
+		$('#modal-progress').hide();
+	} else {
+		sendingCalcFailed();
+		$('#modal-button').show();
+		$('#modal-progress').hide();
+	}
 }
 
 function sendingCalcFailed(httpReq,status,exception) {
 	$('#leasingFailedmessage').html('Nastala chyba. Skuste to znovu pozdeji.');
 	$('#leasingFailedmessage').fadeIn();
+	clearTimeout(rotatetimeout);
 }
 
 
@@ -620,6 +695,54 @@ function getCompany( el ) {
 		"https://jtleasing.jtfg.com/post/ares.php?ico_ajax_send="+val,
 		function(data) {
 			$('#leasing-firma').val(data);
+			autosize.update($('#leasing-firma'));
 		}
 	);
+}
+
+var rotatecount = 0;
+var rotatetimeout;
+function rotate() {
+	var elem5 = document.getElementById('div5');
+	elem5.style.MozTransform = 'scale(0.5) rotate('+rotatecount+'deg)';
+	elem5.style.WebkitTransform = 'scale(0.5) rotate('+rotatecount+'deg)';
+	if (rotatecount==360) { rotatecount = 0 }
+	rotatecount+=45;
+	rotatetimeout = window.setTimeout(rotate, 100);
+}
+
+function predmetSelected( id ) {
+
+	switch ( id ) {
+		case 1:
+		$("#leasing-predmet-text").val('Servery a storage');
+		break;
+		case 2:
+		$("#leasing-predmet-text").val('Koncová zařízení (notebooky, PC, monitory)');
+		break;
+		case 3:
+		$("#leasing-predmet-text").val('Tiskárny');
+		break;
+		case 4:
+		$("#leasing-predmet-text").val('Mobily a tablety');
+		break;
+		case 5:
+		$("#leasing-predmet-text").val('Síťové prvky');
+		break;
+		case 6:
+		$("#leasing-predmet-text").val('Síťové prvky');
+		break;
+	}
+	$('.predmetselect.active').removeClass('active');
+	$('.predmetselect-'+id).addClass('active');
+	$("#leasing-predmet").val(id);
+	if ( id=="6" ) {
+		$('#leasing-predmet-desc-form').fadeIn();
+		$('#leasing-predmet-desc').focus();
+	} else {
+		$('#leasing-predmet-desc-form').fadeOut();
+		$('#leasing-predmet-desc').val('');
+	}
+
+	calculate();
 }

@@ -15,12 +15,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 	 crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/accounting.min.js"></script>
+	<script src="js/autosize.min.js"></script>
 
-	<link rel="stylesheet" href="css/style.css?ver=7">
-	<script src="js/jquery-ui.js?ver=7"></script>
-	<script src="js/style.js?ver=7"></script>
-	<script src="js/jquery.selectrange.js?ver=7"></script>
-	<script src="js/calc.js?ver=7"></script>
+	<link rel="stylesheet" href="css/style.css?ver=11">
+	<script src="js/jquery-ui.js?ver=11"></script>
+	<script src="js/style.js?ver=11"></script>
+	<script src="js/jquery.selectrange.js?ver=11"></script>
+	<script src="js/calc.js?ver=11"></script>
 
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -697,69 +699,72 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<br><br>
+					
 					<div class="cols">
 						<div class="title">Kalkulace operativního leasingu</div>
+						<div style="position: relative">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: -5px; right: -5px;">
+								<img src="images/x.png">
+							</button>
+						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">
-							<dl class="row">
-								<dt class="col-sm-5">Cena předmětu (bez DPH)</dt>
-								<dd class="col-sm-7"><input type="text" placeholder="cena" name="leasing-cena" id="leasing-cena" value="0 Kč"><div class="formFailedmessage" id="leasing-cena-error"></div></dd>
-								<dt class="col-sm-5">Předmět leasingu</dt>
-								<dd class="col-sm-7">
-									<select type="text" placeholder="předmět" name="leasing-predmet" id="leasing-predmet">
-										<option value="1">Servery a storage</option>
-										<option value="2">Koncová zařízení (notebooky, PC, monitory)</option>
-										<option value="3">Tiskárny</option>
-										<option value="4">Mobily a tablety</option>
-										<option value="5">Síťové prvky</option>
-										<option value="6">ostatní</option>
-									</select>
-								</dd>
-								<dt class="col-sm-5" id="leasing-predmet-desc-form-label" style="display: none">prosím upřesněte</dt>
-								<dd class="col-sm-7" id="leasing-predmet-desc-form-value" style="display: none">
-									<textarea style="width: 100%;" id="leasing-predmet-desc"></textarea>
-									<div class="formFailedmessage" id="leasing-predmet-error"></div>
-								</dd>
-							</dl>
+						<div class="col-md-6">Cena předmětu (bez DPH)</div>
+						<div class="col-md-6"><input type="text" placeholder="cena" name="leasing-cena" id="leasing-cena" value="0 Kč"><div class="formFailedmessage" id="leasing-cena-error"></div></div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">Předmět leasingu
+							<div id="leasing-predmet-desc-form" style="display: none"><br><br>prosím upřesněte<br>
+								<textarea style="width: 100%; margin-top: 11px;" id="leasing-predmet-desc" rows=1></textarea>
+								<div class="formFailedmessage" id="leasing-predmet-error"></div>
+							</div>
 						</div>
+						<div class="col-md-6">
+							<ul>
+								<li>→ <a href="javascript: predmetSelected( 1)" target="_blank" class="predmetselect predmetselect-1 active">Servery a storage</a></li>
+								<li>→ <a href="javascript: predmetSelected( 2)" target="_blank" class="predmetselect predmetselect-2">Koncová zařízení (notebooky, PC, monitory)</a></li>
+								<li>→ <a href="javascript: predmetSelected( 3)" target="_blank" class="predmetselect predmetselect-3">Tiskárny</a></li>
+								<li>→ <a href="javascript: predmetSelected( 4)" target="_blank" class="predmetselect predmetselect-4">Mobily a tablety</a></li>
+								<li>→ <a href="javascript: predmetSelected( 5)" target="_blank" class="predmetselect predmetselect-5">Síťové prvky</a></li>
+								<li>→ <a href="javascript: predmetSelected( 6)" target="_blank" class="predmetselect predmetselect-6">ostatní</a></li>
+							</ul>
+							<input type="hidden" id="leasing-predmet" name="leasing-predmet" value="1">
+							<input type="hidden" id="leasing-predmet-text" name="leasing-predmet-text" value="Servery a storage">
+						</div>
+
 					</div>
 					<div class="row" id="leasing">
 						<div class="col-md-12">
-							<table class="table">
+							<table class="table data">
 								<tr>
-									<th><span class="labels">Volba</span></th>
+									<th><span class="labels">Preferovaná varianta</span></th>
 									<th><span class="labels">Počet splátek</span></th>
 									<th><span class="labels">Výše splátky</span></th>
 								</tr>
 								<tr>
-									<td><input type="checkbox" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
+									<td><input type="checkbox" class="modal-variant" name="leasing-leasing" id="leasing-leasing-ol-12"></td>
 									<td>12</td>
-									<td><span id="leasing-value-ol12"></span> Kč</td>
+									<td><span id="leasing-value-ol12"></span></td>
 								</tr>
 								<tr>
-									<td><input type="checkbox" name="leasing-leasing" id="leasing-leasing-ol-24"></td>
+									<td><input type="checkbox" class="modal-variant" name="leasing-leasing" id="leasing-leasing-ol-24"></td>
 									<td>24</td>
-									<td><span id="leasing-value-ol24"></span> Kč</td>
+									<td><span id="leasing-value-ol24"></span></td>
 								</tr>
 								<tr>
-									<td><input type="checkbox" name="leasing-leasing" id="leasing-leasing-ol-36"></td>
+									<td><input type="checkbox" class="modal-variant" name="leasing-leasing" id="leasing-leasing-ol-36"></td>
 									<td>36</td>
-									<td><span id="leasing-value-ol36"></span> Kč</td>
+									<td><span id="leasing-value-ol36"></span></td>
 								</tr>
 								<tr>
-									<td><input type="checkbox" name="leasing-leasing" id="leasing-leasing-ol-48"></td>
+									<td><input type="checkbox" class="modal-variant" name="leasing-leasing" id="leasing-leasing-ol-48"></td>
 									<td>48</td>
-									<td><span id="leasing-value-ol48"></span> Kč</td>
+									<td><span id="leasing-value-ol48"></span></td>
 								</tr>
 								<tr>
-									<td><input type="checkbox" name="leasing-leasing" id="leasing-leasing-ol-60"></td>
+									<td><input type="checkbox" class="modal-variant" name="leasing-leasing" id="leasing-leasing-ol-60"></td>
 									<td>60</td>
-									<td><span id="leasing-value-ol60"></span> Kč</td>
+									<td><span id="leasing-value-ol60"></span></td>
 								</tr>
 							</table>
 							<div class="formFailedmessage" id="leasing-leasing-error"></div>
@@ -767,34 +772,46 @@
 					</div><!-- row -->
 					<div class="row">
 						<div class="col-md-6">
-							<table class="table">
+							<table class="table centered noborder">
 								<tr>
 									<td>Kontaktní email</td>
-									<td><input type="text" placeholder="email" name="leasing-email" id="leasing-email" value=""></td>
+									<td><textarea type="text" placeholder="email" name="leasing-email" id="leasing-email" value="" rows=1></textarea></td>
 								</tr>
 								<tr>
-									<td>Kontaktní telefón</td>
-									<td><input type="text" placeholder="telefon" name="leasing-phone" id="leasing-phone" value=""></td>
+									<td>IČO firmy</td>
+									<td><textarea type="text" placeholder="IČO" name="leasing-ico" id="leasing-ico" value="" rows=1></textarea></td>
 								</tr>
 							</table>
 							<div class="formFailedmessage" id="leasing-email-error"></div>
 						</div>
 						<div class="col-md-6">
-							<table class="table">
+							<table class="table centered noborder">
 								<tr>
-									<td>IČO firmy</td>
-									<td><input type="text" placeholder="IČO" name="leasing-ico" id="leasing-ico" value=""></td>
+									<td>Kontaktní telefon</td>
+									<td><textarea type="text" placeholder="telefon" name="leasing-phone" id="leasing-phone" value="" rows=1></textarea></td>
 								</tr>
 								<tr>
 									<td>Název firmy</td>
-									<td><input type="text" placeholder="" name="leasing-firma" id="leasing-firma" value="" disabled></td>
+									<td><textarea type="text" placeholder="" name="leasing-firma" id="leasing-firma" value="" disabled rows=1></textarea></td>
 								</tr>
 							</table>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-12" id="modal-button">
 							<button class="dark" onclick="sendCalcFormModal()">Kontaktujte mě s nabídkou <sup>*</sup></button>
+						</div>
+						<div class="col-md-12" id="modal-progress" style="display: none">
+							<div id="div5" style="transform: scale(0.5) rotate(225deg);">
+								<div class="bar1"></div>
+								<div class="bar2"></div>
+								<div class="bar3"></div>
+								<div class="bar4"></div>
+								<div class="bar5"></div>
+								<div class="bar6"></div>
+								<div class="bar7"></div>
+								<div class="bar8"></div>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -810,11 +827,9 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<p>
-								<sup>*</sup> Beru na vědomí, že kalkulací nevzniká nárok na poskytnutí leasingu. Výpočet je pouze orientační a může být dodatečně upřesněn.<br>
-							</p>
-							<p>
-								Odesláním žádosti o sdělení nabídky, souhlasím s poskytnutím a zpracováním výše uvedených osobních údajů společností J&T Leasing, a.s., IČ: 284 27 980, se sídlem Pobřežní 297/14, PSČ 186 00, Praha 8 – Karlín (dále jen společnost „JTLS“), a to za  účelem zasílání nabídek, informací a jiných obchodních sdělení. Jsem si vědom/a, že poskytnutý souhlas mohu kdykoliv odvolat, a to odesláním odvolání souhlasu se zpracováním osobních údajů na emailovou adresu info@jtleasing.cz. Beru na vědomí, že informace o zpracování osobních údajů poskytuje společnost JTLS prostřednictvím informačního dokumentu o zpracování osobních údajů umístěného na internetových stránkách společnosti www.jtleasing.cz, v sekci "O společnosti". 									
+							<p style="text-align: justify;">
+								<sup>*</sup> Beru na vědomí, že kalkulací nevzniká nárok na poskytnutí leasingu. Výpočet je pouze orientační a může být dodatečně upřesněn. 
+								Ve splátkách není zahrnuto pojištění. Pojištění předmětu financování je povinné. Sazby pojištění obdržíte na vyžádání. Odesláním žádosti o sdělení nabídky, souhlasím s poskytnutím a zpracováním výše uvedených osobních údajů společností J&T Leasing, a.s., IČ: 284 27 980, se sídlem Pobřežní 297/14, PSČ 186 00, Praha 8 – Karlín (dále jen společnost „JTLS“), a to za  účelem zasílání nabídek, informací a jiných obchodních sdělení. Jsem si vědom/a, že poskytnutý souhlas mohu kdykoliv odvolat, a to odesláním odvolání souhlasu se zpracováním osobních údajů na emailovou adresu info@jtleasing.cz. Beru na vědomí, že informace o zpracování osobních údajů poskytuje společnost JTLS prostřednictvím informačního dokumentu o zpracování osobních údajů umístěného na internetových stránkách společnosti www.jtleasing.cz, v sekci "O společnosti". 									
 							</p>
 
 						</div>

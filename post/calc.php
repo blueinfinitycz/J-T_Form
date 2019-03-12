@@ -42,17 +42,18 @@ try {
     $mail->CharSet = 'UTF-8';
 
     //Recipients
-    $mail->setFrom('jtleasing@jtb.com', 'JTLeasing');
+    $mail->setFrom('jtleasing@jtb.com', 'J&T Leasing');
     //$mail->addAddress('obchod@jtleasing.cz', 'Info');     // Add a recipient
     $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
-    $mail->addAddress('tyrpak@jtleasing.cz', 'Tyrpák Josef');     // Add a recipient
+    $mail->addAddress('info@jtleasing.cz', 'Tyrpák Josef');     // Add a recipient
+    $mail->addAddress('obchod@jtleasing.cz', 'J&T Leasing');     // Add a recipient
     //$mail->addAddress('malek@jtbank.cz', 'Petr Malek');     // Add a recipient
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Žádost o kontakt z jtleasing.cz';
-    $mail->Body = "Žádost o kontakt z jtleasing.cz od <br>\n<br>\nEmail: ".$formemail."<br>\nPredmět: ".$formpredmet."<br>\nCena: ".$formcena."<br>\nSplatky: ".$formsplatky." m.<br>\nTelefon: ".$formtelefon."<br>\nICO: ".$formico."<br>\nFirma: ".$formfirma."<br>\nPredmet upřesnení: ".$formpredmetdesc."<br>\n";
-    $mail->AltBody = "Žádost o kontakt z jtleasing.cz od \n\nEmail: ".$formemail."\n".$formpredmet."\nCena: ".$formcena."\Splatky: ".$formsplatky." m.\nTelefon: ".$formtelefon."\nICO: ".$formico."\nFirma: ".$formfirma."\nPredmet upřesnení: ".$formpredmetdesc."\n";
+    $mail->Body = "Kontaktujte, prosím, níže uvedeného žadatele s nabídkou operativního leasingu. <br>\n<br>\nEmail žadatele: ".$formemail."<br>\nPredmět OL: ".$formpredmet."<br>\nUpřesnění předmětu OL: ".$formpredmetdesc."<br>\nCena OL: ".$formcena."<br>\nPožadované splátky: ".$formsplatky." m.<br>\nTelefon žadatele: ".$formtelefon."<br>\nIČO firmy žadatele: ".$formico."<br>\nFirma žadatele: ".$formfirma."<br>\n";
+    $mail->AltBody = "Kontaktujte, prosím, níže uvedeného žadatele s nabídkou operativního leasingu. \n\nEmail žadatele: ".$formemail."\nPredmět OL: ".$formpredmet."\nUpřesnění předmětu OL: ".$formpredmetdesc."\nCena OL: ".$formcena."\nPožadované splátky: ".$formsplatky." m.\nTelefon žadatele: ".$formtelefon."\nIČO firmy žadatele: ".$formico."\nFirma žadatele: ".$formfirma."\n";
 
     $mail->SMTPOptions = array(
         'ssl' => array(

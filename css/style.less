@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "fedra";
+@import "progress"; 
 
 
 //	colors
@@ -161,9 +162,15 @@ section.grey {
 	justify-content: stretch;
 }
 
-#segments .segment.open .cols {
+#segments .segment.open .cols,
+.modal .cols {
 	display: flex;
 	padding-top: 32px;
+}
+
+.modal .cols {
+	display: flex;
+	padding-top: 12px;
 }
 
 #segments .segment .cols > div,
@@ -342,7 +349,7 @@ section#loginform {
 }
 
 
-input {
+input, textarea {
     width: 200px;
     border: 0;
     background: transparent;
@@ -355,7 +362,8 @@ input[type=checkbox] {
 	width: 40px;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
 	outline: none;
 	border-bottom: 1px solid @dark-blue;
 }
@@ -368,7 +376,8 @@ button:focus {
 	outline: none;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
     color: @font-color-dark;
 	opacity: 0.3;
 }
@@ -417,6 +426,7 @@ section#contact {
 	width: 100%;
 	margin-left: 0;
 	margin-right: 0;
+	padding-top: 10px;
 }
 
 .modal select {
@@ -434,7 +444,8 @@ section#contact {
 #leasingOKmessage {
 	display: none;
 	border: 2px solid @blue;
-	color: @blue;
+	background-color: @blue;
+	color: white;
 	padding: 10px;
 }
 
@@ -442,14 +453,16 @@ section#contact {
 #leasingFailedmessage {
 	display: none;
 	border: 2px solid @purple;
-	color: @purple;
+	background-color: @purple;
+	color: white;
 	padding: 10px;
 }
 
 .formFailedmessage {
 	display: none;
 	border: 2px solid @purple;
-	color: @purple;
+	background-color: @purple;
+	color: white;
 	padding: 10px;
 }
 
@@ -459,6 +472,67 @@ input[id="surname"] {
 
 .modal-content .cols > div.title input {
     width: 100%;
+}
+
+.modal ul li a {
+    color: #000d5b;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+.modal ul li a.active {
+    color: #000d5b;
+    text-decoration: underline;
+    font-weight: 100;
+}
+
+
+.modal input,
+.modal textarea {
+	font-size: @font-size-text;
+	font-weight: 100;
+	width:100%;
+}
+
+dl.centered dt {
+	padding-top: 8px;
+}
+
+.table.centered tr td,
+.table.centered tr td:first-child {
+	vertical-align: middle;
+}
+
+.table.noborder td {
+	border-top: 0;
+	padding: .25rem;
+}
+
+.table.data tr td:first-child,
+.table.data tr th:first-child {
+	text-align: left;
+}
+
+.table.data tr td,
+.table.data tr th {
+	text-align: center;
+	padding: .25rem;
+	border-top: 0;
+	font-weight: 100;
+}
+
+.table.data tr td:last-child,
+.table.data tr th:last-child {
+	text-align: right;
+}
+
+.table.data input[type=checkbox] {
+	margin-left: 10px;
+}
+
+.table.data tr {
+	border: 0;
+	border-bottom: 1px solid @font-color-dark;
 }
 
 @media (min-width: 991px) {
