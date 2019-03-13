@@ -518,6 +518,10 @@ section#contact {
 input[id="surname"] {
   display: none;
 }
+.modal-content .cols > div.title {
+  margin-left: 16px;
+  padding-left: 0;
+}
 .modal-content .cols > div.title input {
   width: 100%;
 }
@@ -536,6 +540,7 @@ input[id="surname"] {
   font-size: 14px;
   font-weight: 100;
   width: 100%;
+  margin-top: 6px;
 }
 dl.centered dt {
   padding-top: 8px;
@@ -551,11 +556,12 @@ dl.centered dt {
 .table.data tr td:first-child,
 .table.data tr th:first-child {
   text-align: left;
+  width: 382px;
 }
 .table.data tr td,
 .table.data tr th {
-  text-align: center;
-  padding: .25rem;
+  text-align: left;
+  padding: .25rem 0 .25rem 0;
   border-top: 0;
   font-weight: 100;
 }
@@ -564,7 +570,7 @@ dl.centered dt {
   text-align: right;
 }
 .table.data input[type=checkbox] {
-  margin-left: 10px;
+  margin-left: -2px;
 }
 .table.data tr {
   border: 0;
