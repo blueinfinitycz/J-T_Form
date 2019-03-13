@@ -493,12 +493,16 @@ input[id="surname"] {
 }
 
 
-.modal input,
+.modal input[type=text],
 .modal textarea {
 	font-size: @font-size-text;
 	font-weight: 100;
 	width:100%;
 	margin-top: 6px;
+}
+
+.modal input[type=checkbox] {
+	width: auto;
 }
 
 dl.centered dt {
