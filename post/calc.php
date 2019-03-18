@@ -44,9 +44,16 @@ try {
     //Recipients
     $mail->setFrom('jtleasing@jtb.com', 'J&T Leasing');
     //$mail->addAddress('obchod@jtleasing.cz', 'Info');     // Add a recipient
-    $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
-    $mail->addAddress('info@jtleasing.cz', 'Tyrpák Josef');     // Add a recipient
-    $mail->addAddress('obchod@jtleasing.cz', 'J&T Leasing');     // Add a recipient
+    if ( strpos( $_SERVER['HTTP_REFERER'], "localhost" ) !== false ) {
+        $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
+    } else {
+        if ( strpos( $_SERVER['HTTP_REFERER'], "hcfintest.cz" ) !== false ) {
+        $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
+            $mail->addAddress('info@jtleasing.cz', 'Tyrpák Josef');     // Add a recipient
+        } else {
+            $mail->addAddress('obchod@jtleasing.cz', 'J&T Leasing');     // Add a recipient
+        }
+    }
     //$mail->addAddress('malek@jtbank.cz', 'Petr Malek');     // Add a recipient
 
     //Content
