@@ -48,7 +48,7 @@ try {
         $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
     } else {
         if ( strpos( $_SERVER['HTTP_REFERER'], "hcfintest.cz" ) !== false ) {
-        $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
+	        $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
             $mail->addAddress('info@jtleasing.cz', 'Tyrpák Josef');     // Add a recipient
         } else {
             $mail->addAddress('obchod@jtleasing.cz', 'J&T Leasing');     // Add a recipient
