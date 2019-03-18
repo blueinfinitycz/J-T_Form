@@ -43,7 +43,6 @@ try {
 
     //Recipients
     $mail->setFrom('jtleasing@jtb.com', 'J&T Leasing');
-    //$mail->addAddress('obchod@jtleasing.cz', 'Info');     // Add a recipient
     if ( strpos( $_SERVER['HTTP_REFERER'], "localhost" ) !== false ) {
         $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
     } else {
@@ -54,7 +53,6 @@ try {
             $mail->addAddress('obchod@jtleasing.cz', 'J&T Leasing');     // Add a recipient
         }
     }
-    //$mail->addAddress('malek@jtbank.cz', 'Petr Malek');     // Add a recipient
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
