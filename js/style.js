@@ -81,6 +81,17 @@ function hideMoreAboutUs() {
 	$('#moreaboutus').hide();
 }
 
+function toggleDocsInsurance() {
+	if ( $('#list-docs-insurance').is(':visible') ) {
+		$('#list-docs-insurance').slideUp();
+		$('#arrow-docs-product').html('↓')
+	} else {
+		$('#list-docs-insurance').slideDown();
+		$('#arrow-docs-insurance').html('↑')
+	}
+
+}
+
 function toggleDocsProdukt() {
 	if ( $('#list-docs-product').is(':visible') ) {
 		$('#list-docs-product').slideUp();
