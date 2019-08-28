@@ -245,13 +245,20 @@ section.grey {
 	padding-bottom: 80px;
 }
 
-section.grey .title {
+section.grey .title,
+section.grey .form  {
 	font-size: 44px;
 	width: 100%;
 	font-weight: 100;
 	line-height: 100%;
 }
-section.grey .title a {
+
+section.grey .cols > div.form  {
+	padding-top: 100px;
+}
+
+section.grey .title a,
+section.grey .form a  {
 	font-size: 12px;
 }
 
@@ -343,11 +350,12 @@ section#prodinfo p.normal {
 	font-size: @font-size-text;
 }
 
+/*
 section#loginform {
 	padding-top: 200px;
 	padding-bottom: 200px;
 }
-
+*/
 
 input, textarea {
     width: 200px;
