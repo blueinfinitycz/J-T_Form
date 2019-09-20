@@ -4,7 +4,7 @@ nav.navbar {
 p {
   padding-bottom: 4px;
 }
-ul {
+ul.navbar-nav {
   display: flex;
   justify-content: flex-end;
 }
