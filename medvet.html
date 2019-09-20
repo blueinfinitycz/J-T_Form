@@ -19,8 +19,9 @@
 	<script src="js/autosize.min.js"></script>
 
 	<link rel="stylesheet" href="css/style.css?ver=15">
+	<link rel="stylesheet" href="css/medvet.css?ver=15">
 	<script src="js/jquery-ui.js?ver=11"></script>
-	<script src="js/style.js?ver=11"></script>
+	<script src="js/medvet.js?ver=11"></script>
 	<script src="js/jquery.selectrange.js?ver=11"></script>
 	<script src="js/calc.js?ver=11"></script>
 
@@ -60,7 +61,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark">
 		<div class="container">
-			<a class="navbar-brand" href="#"><img src="images/Logo-White.png"></a>
+			<a class="navbar-brand" href="index.html"><img src="images/Logo-White.png"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -68,21 +69,28 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
+					<!--<li class="nav-item">
 						<a class="nav-link" href="#" onclick="return scrollToAnchor('segments')">segmenty</a>
-					</li>
+					</li>-->
 					<li class="nav-item">
-						<a class="nav-link" href="#" onclick="return scrollToAnchor('finprod')">finanční produkty</a>
+						<a class="nav-link" href="#" onclick="return scrollToAnchor('finprod')">financování</a>
 					</li>
+					<!--
+					<li class="nav-item active">
+						<a class="nav-link" href="#" onclick="return scrollToAnchor('zakpod')">základní podmínky <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="#" onclick="return scrollToAnchor('advant')">výhody <span class="sr-only">(current)</span></a>
+					</li>-->
 					<li class="nav-item active">
 						<a class="nav-link" href="#" onclick="return scrollToAnchor('aboutus')">o společnosti <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item">
+					<!--<li class="nav-item">
 						<a class="nav-link" href="#" onclick="return scrollToAnchor('loginform')">pro partnery</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#" data-toggle="modal" data-target="#calcModal">kalkulačka</a>
-					</li>
+					</li>-->
 					<li class="nav-item">
 						<a class="nav-link" href="#" onclick="return scrollToAnchor('contact')">kontakt</a>
 					</li>
@@ -92,75 +100,19 @@
 
 	<section id="segments">
 
-		<div class="segment blue" id="segment-1">
-
-			<div class="title clickable" onclick="openSegment(1)">
-				Technologie<br>
-				<img src="images/down-light.png" alt="" onclick="openSegment(1)">
-			</div>
-
-			<div class="img"><img src="images/up-light.png" alt="" onclick="closeSegment()"></div>
-
-			<div class="container">
-				<div class="cols">
-					<div class="title">Technologie</div>
-					<div>Financujeme informační technologie od běžných počítačů po velká hardwarová i&nbsp;softwarová řešení.
-						Poskytujeme
-						kompletní škálu financování prostřednictvím finančního, operativního i&nbsp;zpětného leasingu, úvěrů nebo
-						faktoringu.
-						I&nbsp;díky tomu jsme vždy schopni najít nejjednodušší a&nbsp;nejvýhodnější řešení. Součástí financování je
-						možnost
-						pojištění financovaných předmětů renomovaným pojišťovacím ústavem.</div>
-					<div>
-						<button data-toggle="modal" data-target="#contactModal">Kontaktujte mě →</button>
-						<br>
-						<br>
-						<button data-toggle="modal" data-target="#calcModal">Kalkulačka</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="segment purple hidden" id="segment-2">
+		<div class="segment purple open" id="segment-2">
+			<!--
 			<div class="title clickable" onclick="openSegment(2)">
-				Medicína a veterina<br>
+				Zdravotnická a&nbsp;veterinární<br>
+				technika a vybavení<br>
 				<img src="images/down-light.png" alt="" onclick="openSegment(2)">
 			</div>
+			-->
 
-			<div class="img"><img src="images/up-light.png" alt="" onclick="closeSegment()"></div>
-
-			<div class="container">
-				<div class="cols">
-					<div class="title">Medicína a veterina<br>
-						technika<br>a vybavení</div>
-					<div>Financujeme nákup zdravotnických a&nbsp;veterinárních přístrojů a&nbsp;zařízení pro veškeré lékařské obory
-						a&nbsp;veterinární praxe, rekonstrukce či nákup již provozovaných ordinací. Financování poskytneme i&nbsp;nově
-						vznikajícím
-						zdravotnickým pracovištím a&nbsp;začínajícím lékařům. Součástí financování je možnost pojištění předmětů přímo
-						ve
-						splátkách.</div>
-					<div><a class="button" href="medvet.html" target="_blank">Více →</a></div>
-				</div>
-			</div>
-		</div>
-
-		<div class="segment tyrkis hidden" id="segment-3">
-			<div class="title clickable" onclick="openSegment(3)">
-				Zdravotní péče<br>
-				<img src="images/down-dark.png" alt="" onclick="openSegment(3)">
-			</div>
-
-			<div class="img"><img src="images/up-dark.png" alt="" onclick="closeSegment()"></div>
+			<div class="img"></div>
 
 			<div class="container">
-				<div class="cols">
-					<div class="title">Zdravotní<br>péče</div>
-					<div>Poskytujeme spotřebitelské úvěry na lékařské zákroky v&nbsp;oboru stomatologie, oftalmologie, dermatologie
-						i&nbsp;plastické chirurgie. Umožňujeme rozložit výdaje za ošetření do několika menších částek a&nbsp;překlenout
-						nedostatek
-						financí při zachování kvalitní a&nbsp;včasné péče.</div>
-					<div><button class="dark" data-toggle="modal" data-target="#contactModal">Kontaktujte mě →</button></div>
-				</div>
+				<div style="text-align: center; width: 100%">Medicína a&nbsp;veterina</div>
 			</div>
 		</div>
 
@@ -170,165 +122,69 @@
 
 		<div class="container">
 			<div class="cols">
-				<div class="title">Finanční produkty</div>
+				<div class="title">Financujeme medicínské a&nbsp;veterinární obory</div>
 				<div>
-					<p><span class="labels">Finanční leasing</span>
-						Pronájem předmětu uzavíraný na dobu určitou, obvykle od 36 do 60 měsíců. Předmět leasingu je po dobu pronájmu ve
-						vlastnictví leasingové společnosti a&nbsp;klient má výhradní právo na jeho užívání za předem dohodnutou výši
-						nájemného. Při ukončení leasingové smlouvy má klient právo předmět odkoupit za předem definovanou cenu.</p>
-					<p><span class="labels">Operativní leasing</span>
-						Nájemní vztah, který se uzavírá na kratší dobu, obvykle od 6&nbsp;do 48 měsíců. Po ukončení doby pronájmu zůstává
-						předmět ve vlastnictví leasingové společnosti, což umožňuje započítat do leasingových splátek pouze rozdíl mezi
-						pořizovací a&nbsp;zůstatkovou hodnotou předmětu. Klient tak zaplatí pouze reálně amortizovanou část pořizovací ceny
-						předmětu.</p>
-					<p><span class="labels">Zpětný leasing</span>
-						Umožňuje profinancování již pořízených předmětů, které klient zpětně prodá leasingové společnosti a&nbsp;následně si
-						pronajme na základě leasingové smlouvy formou finančního nebo operativního leasingu. Získané finance z&nbsp;prodeje
-						předmětu může klient volně použít v&nbsp;rámci své podnikatelské činnosti.</p>
-					<p><span class="labels">Podnikatelský úvěr</span>
-						Jedná se o&nbsp;poskytnutí peněžních prostředků pro účelové financování jednotlivých předmětů nebo investičních
-						projektů. U&nbsp;tohoto druhu financování je předmět ve vlastnictví klienta a&nbsp;leasingová společnost jej obvykle
-						zajišťuje formou zajišťovacího převodu vlastnického práva. Úvěr je řešením i&nbsp;pro financování předmětů a&nbsp;projektů
-						spojených s&nbsp;poskytováním dotací nebo pro financování SW licencí v&nbsp;rámci IT projektů.</p>
-					<p><span class="labels">Odkup pohledávek</span>
-						Podstatou je odkup pohledávek nebo splátkových kalendářů vzniklých dodávkami odběratelům klienta s&nbsp;krátkodobou
-						nebo střednědobou splatností.</p>	
+					<ul>
+					<li>→ Všechny medicínské a&nbsp;veterinární obory v&nbsp;ČR a&nbsp;SR</li>
+					<li>→ Zdravotnické přístroje a&nbsp;techniku (novou i&nbsp;použitou)</li>
+					<li>→ Vybavení ordinací a&nbsp;laboratoří</li>
+					<li>→ Výstavbu a&nbsp;rekonstrukce klinik a&nbsp;ordinací</li>
+					<li>→ Nákupy ordinací, lékařských praxí nebo podílů v&nbsp;nich</li>
+					<li>→ Provozní potřeby ordinací (spotřební materiál, IT a&nbsp;komunikační technika atd.)</li>
+					<li>→ Ostatní potřeby lékařů, zejména automobily</li>
+					<li>→ Atypické projekty	</li>				
+					<li>→ Speciální pozornost věnujeme začínajícím lékařům, kteří si zřizují soukromou praxi</li>
+					</ul>
 				</div>
 				<div>
-					<p><span class="labels">Spotřebitelský úvěr k&nbsp;financování zdravotní péče</span>
-						Úvěr bez poplatků a&nbsp;sankcí za předčasné splacení pro klienty fyzické osoby nepodnikatele poskytovaný na
-						lékařské zákroky v&nbsp;oboru stomatologie, oftalmologie, dermatologie a&nbsp;plastické chirurgie. Standardní doba splácení
-						úvěru je 24 až 36 měsíců, výše úvěru 40 000 až 150 000 Kč.</p>
-					<p><a href="#" onclick="return scrollToAnchor('prodinfo')" style="text-decoration: underline">Produktové informace ke spotřebitelskému úvěru →</a></p>
-					<p><span class="labels">Pojištění financovaných předmětů</span>
-						Součástí nabídky financování je zprostředkování pojištění financovaných předmětů.
-						Pojištění je nabízeno ve variantě ALL RISK, tzn. pojištěna jsou všechna běžná rizika. </p>
-					<p class="normal clickable" onclick="toggleDocsInsurance()" style=" text-decoration: underline;">Dokumenty k pojištění ke stažení <span id="arrow-docs-product">↓</span></p>
-					<div class="normal" style="display: none;" id="list-docs-insurance">
-						<ul>
-							<li>→ <a href="documents/Insurance/CP_VPPMO.pdf" target="_blank">Česká pojišťovna - Všeobecné pojistné podmínky pro pojištění majetku a odpovědnosti</a></li>
-							<li>→ <a href="documents/Insurance/CP_IPID_Informace_o_pojistnem_produktu.pdf" target="_blank">Česká pojišťovna - Informace o pojistném produktu</a></li>
-							<li>→ <a href="documents/Insurance/CP_Informace_o_pojistne_smlouve_limitech_a_pojistiteli.pdf" target="_blank">Česká pojišťovna - Informace o pojistné smlouvě, limitech a pojistiteli </a></li>
-							<li>→ <a href="documents/Insurance/CP_DPPMP.pdf" target="_blank">Česká pojišťovna - Doplňkové pojistné podmínky pro&nbsp;pojištění movitých věcí</a></li>
-							<li>→ <a href="documents/Insurance/CP_DPPEZ.pdf" target="_blank">Česká pojišťovna - Doplňkové pojistné podmínky pro&nbsp;pojištění elektronických zařízení</a></li>
-							<li>→ <a href="documents/Insurance/Direct_VPPOP_2013.pdf" target="_blank">Direct - Všeobecné pojistné podmínky pro pojištění občanů a podnikatelů</a></li>
-							<li>→ <a href="documents/Insurance/Direct_IPID_Informace_o_pojistnem_produktu.pdf" target="_blank">Direct - Informace o pojistném produktu</a></li>
-							<li>→ <a href="documents/Insurance/Direct_Informace_o_pojistne_smlouve_limitech_a_pojistiteli.pdf" target="_blank">Direct - Informace o pojistné smlouvě, limitech a pojistiteli</a></li>					
-							<li>→ <a href="documents/Insurance/Direct_DPEZ_2014.pdf" target="_blank">Direct - Doplňkové pojistné podmínky pro škodové pojištění elektroniky</a></li>
-							<li>→ <a href="documents/Insurance/Uniqa_VPP_UCZ_14.pdf" target="_blank">Uniqa - Všeobecné pojistné podmínky - Soubor pojistných podmínek pro pojištění podnikatelů</a></li>
-							<li>→ <a href="documents/Insurance/Uniqa_IPID_Informace_o_pojistnem_produktu.pdf" target="_blank">Uniqa - Informace o pojistném produktu</a></li>
-							<li>→ <a href="documents/Insurance/Uniqa_Informace_o_pojistne_smlouve_limitech_a_pojistiteli.pdf" target="_blank">Uniqa - Informace o pojistné smlouvě, limitech a pojistiteli</a></li>
-							<li>→ <a href="https://www.axa-assistance.cz/cestovni-pojisteni/?externalpartner=03000782" target="_blank">Cestovní pojištění AXA ASSISTANCE</a></li>
-						</ul>
-					</div>
+					<p><button class="dark" data-toggle="modal" data-target="#contactModal">Kontaktujte mě →</button></p>		
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="prodinfo" class="grey">
+	<section id="zakpod" class="grey">
 
 		<div class="container">
 			<div class="cols">
-				<div class="title">Produktové informace:<br>Spotřebitelské úvěry</div>
+				<div class="title">Jsme flexibilní a&nbsp;nabízíme komplexní službu</div>
 				<div>
-					<p><span class="labels">Druh spotřebitelského úvěru:</span>
-						Spotřebitelský úvěr poskytovaný pouze v domácí měně (CZK), jehož účel je určen výhradně na úhradu úkonů
-						zdravotní péče.</p>
-					<p><span class="labels">Doba trvání spotřebitelského úvěru:</span>
-						Úvěr je sjednáván na dobu určitou, a&nbsp;to na 24 nebo 36 měsíců.</p>
-					<p><span class="labels">Typ úrokové sazby:</span>
-						Úroková sazba je stanovena jako pevná roční úroková sazba, která je platná po celou dobu trvání úvěrového vztahu.</p>
-					<p><span class="labels">Reprezentativní příklad poskytnutého úvěru:</span>
-						<dl class="row">
-							<dt class="col-sm-8">Celková částka úvěru</dt>
-							<dd class="col-sm-4">70&nbsp;000&nbsp;Kč</dd>
-							<dt class="col-sm-8">Doba trvání úvěru</dt>
-							<dd class="col-sm-4">36&nbsp;(měsíců)</dd>
-							<dt class="col-sm-8">Úroková sazba</dt>
-							<dd class="col-sm-4">9,90&nbsp;%&nbsp;p. a.</dd>
-							<dt class="col-sm-8">Četnost plateb</dt>
-							<dd class="col-sm-4">měsíčně</dd>
-							<dt class="col-sm-8">Výše pravidelné platby</dt>
-							<dd class="col-sm-4">2&nbsp;255&nbsp;Kč</dd>
-							<dt class="col-sm-8">Poplatek za sjednání úvěru</dt>
-							<dd class="col-sm-4">0&nbsp;Kč</dd>
-							<dt class="col-sm-8">RPSN</dt>
-							<dd class="col-sm-4">10,42 %</dd>
-							<dt class="col-sm-8">Celková částka splatná klientem</dt>
-							<dd class="col-sm-4">81&nbsp;180&nbsp;Kč</dd>
-							<dt class="col-sm-8">Datum kalkulace úvěru</dt>
-							<dd class="col-sm-4">19. 12. 2018</dd>
-						</dl>
-						<p><span class="labels">Náklady úvěru nezahrnuté do celkových nákladů úvěru:</span>
-							J&amp;T Leasingová společnost, a.&nbsp;s., nepožaduje od klientů úhradu jakýchkoli dodatečných nákladů nad rámec
-							nákladů poskytnutého úvěru.</p>
-						<p><span class="labels">Splátky a&nbsp;způsob rozdělení splátek:</span>
-							Úvěr je splácen v&nbsp;neměnných a&nbsp;pravidelných měsíčních splátkách, dle stanoveného harmonogramu splátek. Úroky
-							jsou spláceny společně se splátkou jistiny. Úhradou všech splátek stanovených v&nbsp;harmonogramu splátek dochází ke
-							splacení celkové výše spotřebitelského úvěru.</p>
-						<p><span class="labels">Podklady nezbytné k&nbsp;posouzení úvěruschopnosti:</span>
-							J&amp;T Leasingová společnost, a.&nbsp;s., před poskytnutím úvěru vyžaduje od klientů vyplnit elektronickou <a href="documents/žádost_JTLS.pdf"
-							 target="_blank">Žádost o úvěr</a>. V žádosti jsou uvedeny informace týkající se osobních a&nbsp;identifikačních
-							údajů klienta (ověřitelných z&nbsp;dokladu totožnosti), kontaktní údaje (adresa, telefon, e-mail) a&nbsp;údaje o&nbsp;životní
-							a&nbsp;rodinné situaci (typ domácnosti, počet členů domácnosti, typ bydlení, zdroj a&nbsp;výše příjmů, výše měsíčních
-							splátek a&nbsp;výdajů). Údaje o&nbsp;životní a&nbsp;rodinné situaci jsou následně přeneseny mezi přílohy návrhu úvěrové
-							smlouvy. Výši pravidelného příjmu klient dokládá na samostatném zaměstnavatelem stvrzeném formuláři <a href="documents/JTLS_potvrzeni_o_vysi_prijmu.pdf"
-							 target="_blank">Potvrzení o&nbsp;příjmu</a>. Pokud klient nepředloží výše požadované informace,
-							J&amp;T Leasingová společnost, a.s. nebude schopna posoudit
-							úvěruschopnost klienta a úvěr klientovi neposkytne.</p>
+					<ul>
+					<li>→ Úvěr nebo leasing</li>
+					<li>→ Podíl vlastních zdrojů (akontace) od 0%</li>
+					<li>→ Doba splácení 12–120 měsíců</li>
+					<li>→ Individuální přizpůsobení splátek potřebám klienta</li>
+					<li>→ Odklad splátek a&nbsp;nerovnoměrné splácení kopírující ekonomiku ordinace</li>
+					<li>→ Komplexní pojištění předmětů ve splátkách</li>
+					<li>→ Možnost předčasného ukončení a&nbsp;změny smlouvy kdykoli během jejího trvání</li>
+					</ul>
 				</div>
 				<div>
-					<p><span class="labels">Požadované zajištění úvěru:</span>
-						J&amp;T Leasingová společnost, a.&nbsp;s., nevyžaduje zajištění poskytnutého úvěru movitou či nemovitou věcí nebo
-						jinou formu zajištění.</p>
-					<p><span class="labels">Doplňkové služby:</span>
-						Uzavření smlouvy o&nbsp;doplňkových službách, pokud jsou J&amp;T Leasingovou společností, a.&nbsp;s., poskytovány, není
-						podmínkou pro získání spotřebitelského úvěru.</p>
-					<p><span class="labels">Předčasné splacení spotřebitelského úvěru:</span>
-						Klient je oprávněn kdykoliv po čerpání úvěru předčasně splatit celý úvěr nebo jakoukoliv jeho část. K oznámení
-						tohoto požadavku klientem poskytovateli je určen formulář Vzor oznámení o&nbsp;předčasném splacení (k dispozici
-						v&nbsp;dokumentech ke stažení).</p>
-					<p><span class="labels">Důsledky nedodržení smluvních závazků:</span>
-						Pokud je klient v&nbsp;prodlení s&nbsp;úhradou jakékoli splátky úvěru, zavazuje se klient zaplatit J&amp;T Leasingové
-						společnosti, a.&nbsp;s., (dále jen JTLS) úrok z&nbsp;prodlení v&nbsp;souladu se zákonem č. 257/2016 Sb., o&nbsp;spotřebitelském
-						úvěru. V&nbsp;případě, že klient je v prodlení s&nbsp;úhradou splátky úvěru po dobu delší 14 kalendářních dní, JTLS vyzve
-						klienta k uhrazení splátky úvěru a&nbsp;poskytne mu k&nbsp;tomu lhůtu 30 dnů. V&nbsp;případě marného uplynutí uvedené lhůty je
-						JTLS oprávněna úvěr okamžitě zesplatnit. J&amp;T Leasingová společnost, a.&nbsp;s., posuzuje případně zesplatnění
-						individuálně, a&nbsp;to na základě dostupnosti možné dohody s klientem.</p>
-					<p><span class="labels">Proces poskytnutí spotřebitelského úvěru:</span>
-						J&amp;T Leasingová společnost, a.&nbsp;s., před poskytnutím úvěru důkladně vyhodnocuje situaci každého potenciálního
-						klienta. Do žádosti o&nbsp;úvěr klient uvádí informace o&nbsp;své životní, rodinné a finanční situaci, kterou následně
-						dokládá na zaměstnavatelem ověřeném potvrzení o příjmu (k dispozici v dokumentech ke stažení). Výpočtový model
-						J&amp;T Leasingová společnost, a.&nbsp;s., který posuzuje klientem poskytnuté údaje, zahrnuje do svého vyhodnocení
-						(posouzení úvěruschopnosti) také informace z insolvenčního rejstříku, Centrální evidence exekucí, databáze
-						neplatných dokladů MV ČR a databáze zájmového sdružení právnických osob SOLUS (k ověření platební morálky
-						a&nbsp;historii). Výsledek výpočtového modelu je klientovi vždy poskytnut. Kladné vyhodnocení žádosti klienta je
-						dodatečně potvrzeno klientovi e-mailem, a&nbsp;to s&nbsp;uvedením dalších instrukcí k&nbsp;uzavření požadované smlouvy.</p>
-					<p class="normal clickable" onclick="toggleDocsProdukt()" style=" text-decoration: underline;">Dokumenty ke stažení <span id="arrow-docs-product">↓</span></p>
-					<div class="normal" style="display: none;" id="list-docs-product">
-						<ul>
-							<li>→ <a href="documents/Z%CC%8Ca%CC%81dost_SU%CC%81_JTLS_20180620.pdf" target="_blank">Žádost o&nbsp;úvěr
-									a&nbsp;prohlášení klienta</a></li>
-							<!--<li>→ <a href="documents/VOP_JTLS.pdf" target="_blank">Všeobecné obchodní podmínky (do 24.5.2018)</a></li>-->
-							<li>→ <a href="documents/JTLS_VOP_20180525.pdf" target="_blank">Všeobecné obchodní podmínky</a></li>
-							<!--<li>→ <a href="documents/JTLS_smlouva_VZOR.pdf" target="_blank">Vzorová smlouva (do 24.5.2018)</a></li>-->
-							<li>→ <a href="documents/JTLS_smlouva_VZOR_20181130.pdf" target="_blank">Vzorová smlouva</a></li>
-							<li>→ <a href="documents/JTLS_potvrzeni_o_vysi_prijmu.pdf" target="_blank">Potvrzení o&nbsp;příjmu</a></li>
-							<li>→ <a href="documents/JTLS_VZOR_odstoupeni.pdf" target="_blank">Vzor formuláře pro odstoupení od smlouvy</a></li>
-							<li>→ <a href="documents/JTLS_VZOR_splaceni.pdf" target="_blank">Vzor oznámení o&nbsp;předčasném splacení</a></li>
-							<li>→ <a href="documents/JTLS_Souhlas_kopie_ID.pdf" target="_blank">Souhlas s&nbsp;pořízením fotokopie dokladu
-									totožnosti</a></li>
-							<li>→ <a href="documents/JTLS_Souhlas_se_zpracovanim_OU.pdf" target="_blank">Souhlas se zpracováním osobních
-									údajů</a></li>
-							<li>→ <a href="documents/JTLS_Informace_o_zpracovani_OU_SOLUS.pdf" target="_blank">Informace o&nbsp;zpracování
-									údajů v databázi
-									sdružení SOLUS</a></li>
-							<li>→ <a href="documents/Pouceni_o_registrech_Sdruzeni_SOLUS_pro_pouziti_cleny_21_8_2019.pdf" target="_blank">Poučení o registrech sdružení SOLUS</a></li>
-							<li>→ <a href="documents/informace_plneni_zavazku_JTLS.pdf" target="_blank">Informace pro klienty v potížích
-									s plněním svých závazků</a></li>
-						</ul>
-					</div>
+					<p>&nbsp;</p>		
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="advant" class="grey">
+
+		<div class="container">
+			<div class="cols">
+				<div class="title">Srozumitelnost, férovost a&nbsp;profesionalita</div>
+				<div>
+					<ul>
+					<li>→ Srozumitelná nabídka</li>
+					<li>→ Férové a&nbsp;jednoduché podmínky</li>
+					<li>→ Stručná a&nbsp;jasná smluvní dokumentace</li>
+					<li>→ Rychlé a&nbsp;flexibilní poskytnutí financí</li>
+					<li>→ Minimální požadavky na zajištění</li>
+					<li>→ Profesionální a&nbsp;osobní přístup na úrovni privátní banky</li>
+					<li>→ Finanční poradenství</li>
+					<li>→ Zázemí silné česko-slovenské finanční skupiny J&amp;T</li>
+					</ul>
+				</div>
+				<div>
+					<p><button class="dark" data-toggle="modal" data-target="#contactModal">Kontaktujte mě →</button></p>		
 				</div>
 			</div>
 		</div>
@@ -338,33 +194,21 @@
 
 		<div class="container">
 			<div class="cols">
-				<div class="title">O společnosti</div>
+				<div class="title">O&nbsp;společnosti</div>
 				<div>Zaměřujeme se na financování informačních technologií a&nbsp;lékařské péče. Financujeme běžné počítače
 					i&nbsp;kompletní
 					hardwarová a&nbsp;softwarová řešení. Klinikám i&nbsp;lékařům poskytujeme finance na vybavení ordinací, pacientům
 					na nákladnější zdravotní péči. Součástí poskytovaných služeb je i&nbsp;pojištění.<br><br>
-					Zakládáme si na rychlém a srozumitelném sjednání úvěru, finančního nebo operativního leasingu. Máme silné zázemí,
+					Zakládáme si na rychlém a&nbsp;srozumitelném sjednání úvěru, finančního nebo operativního leasingu. Máme silné zázemí,
 					jsme dceřinou společností J&amp;T Banky a součástí finanční skupiny J&amp;T Finance Group SE.
 				</div>
 				<div>
-					<p class="normal clickable" onclick="toggleDocsCompany()" style=" text-decoration: underline;">Dokumenty ke stažení <span id="arrow-docs-company">↓</span></p>
-					<div class="normal" style="display: none; text-decoration: underline;" id="list-docs-company">
-						<ul>
-							<li>→ <a href="documents/SJTF_7_2018_V2_P4e_Reklamacni_rad_JTLS.pdf" target="_blank">Reklamační řád (s účinností od
-									1.9.2018)</a></li>
-							<li>→ <a href="documents/Osobni_udaje_informace_JTLS.pdf" target="_blank">Osobní údaje</a></li>
-							<li>→ <a href="documents/JTLS_VOP_20180525.pdf" target="_blank">Všeobecné obchodní podmínky JTLS</a></li>
-							<li>→ <a href="documents/SmObchodníPodmínky_2018_11_13_sloupce_final.pdf" target="_blank">Obchodní podmínky pro poskytování leasingů „RAPID“</a></li>
-							<li>→ <a href="documents/Sazebnik_poplatku_JTLS_2019_04_01.pdf" target="_blank">Sazebník poplatků J&T Leasingová společnost, a.s.</a></li>
-							<li>→ <a href="documents/Sazebník - příloha opotřebení.pdf" target="_blank">Příloha sazebníku poplatků - poplatek za nadměrné opotřebení</a></li>
-						</ul>
-					</div>
 				</div>
 			</div>
 			<div id="moreaboutus-switcher" class="cols">
 				<div></div>
 				<div>
-					<div class="more" onclick="showMoreAboutUs()"><img src="images/plus.png"><br>Více o&nbsp;společnosti</div>
+					<div class="more" ><a href="index.html#aboutus" target="_blank" style="text-decoration: none;"><img src="images/plus.png"><br>Více o&nbsp;společnosti</a></div>
 					<div class="less" onclick="hideMoreAboutUs()"><img src="images/x.png"></div>
 				</div>
 				<div></div>
@@ -374,7 +218,7 @@
 				<div>
 					<p><span class="labels">J&amp;T Leasingová společnost, a.&nbsp;s.</span>
 						Založena 7. ledna 2014.<br>
-						Zapsaná v&nbsp;obchodním rejstříku vedeném Městským soudem v Praze, oddíl B,
+						Zapsaná v&nbsp;obchodním rejstříku vedeném Městským soudem v&nbsp;Praze, oddíl B,
 						vložka 14450.<br>
 						IČO: 284 27 980; DIČ: CZ 284 27 980<br>
 						Statutární orgán: Ing. Vlastimil Nešetřil, Ph.D.</p>
@@ -431,44 +275,6 @@
 		</div>
 	</section>
 
-	<section id="loginform" class="grey">
-
-		<div class="container" id="login">
-			<form action="Default.aspx" method="POST">
-				<div class="cols">
-					<div class="title">Pro partnery</div>
-					<div class="form">
-						<input type="text" placeholder="jméno" name="userName">
-						<input type="password" placeholder="heslo" name="password">
-						<p>
-							<div id="formmessage"></div>
-						</p>
-						<div><a href="#loginform" onclick="openForgotten()">Zapomněli jste heslo?</a>
-						</div>
-					</div>
-					<div style="padding-top: 100px;"><button class="dark">Odeslat →</button>
-					</div>
-				</div>
-			</form>
-		</div>
-		<div class="container" id="forgotten" style="display: none">
-			<form action="RenewalPwd.aspx" method="POST">
-				<div class="cols">
-					<div>&nbsp;</div>
-					<div class="title">
-						Zaslat přihlášení<br>
-						<input type="text" placeholder="jméno" name="userName" id="exampleInputEmail2">
-						<p>
-							<div id="formmessage2"></div>
-						</p>
-					</div>
-					<div><button class="dark">Odeslat →</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</section>
-
 	<section id="contact" class="grey">
 
 		<style>
@@ -491,14 +297,10 @@
 						IČ: 28427980<br>
 						DIČ: CZ28427980<br>
 					</p>
-
 				</div>
 				<div>
-					<p>Obchodní kontakty:</p>
-					<p>obchod@jtleasing.cz<br>
-						+420 221 710 304 (informační technologie)<br>
-						+420 221 710 346 (zdravotní technika a spotřebitelské úvěry)<br>
-						+420 221 710 769 (pojištění)</p>
+					<p>Obchodní kontakt:</p>
+					<p>Martina Kovaříková,<br>+420 602 475 027,<br>medical@jtleasing.cz</p>
 				</div>
 			</div>
 			<script>

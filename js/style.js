@@ -32,6 +32,9 @@ $(document).ready(
 			}
 			setTimeout( function() { scrollToAnchor('loginform'); }, 500 );
 		}
+
+		var hash = window.location.hash;
+		if ( hash ) scrollToAnchor(hash.replace("#",""));
 	}
 );
 
@@ -116,7 +119,7 @@ function toggleDocsCompany() {
 
 function scrollToAnchor(aid){
     var aTag = $("*[id='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top - 86 },'slow');
+    $('html,body').animate({scrollTop: aTag.offset().top - 60 },'slow');
 	$('.navbar-collapse').collapse('hide');
     return false;
 }
