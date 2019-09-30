@@ -2,25 +2,9 @@
 
 @import "fedra";
 @import "progress"; 
+@import "variables"; 
 
 
-//	colors
-//@blue: #6dbef2;
-@blue: rgb(109, 190, 242);
-//@purple: #9479f0;
-@purple: rgb(148, 121, 240);
-//@tyrkis: #9de6fe;
-@tyrkis: rgb(25, 230, 226);
-//@dark-blue: #000d5b;
-@dark-blue: rgb(0, 13, 91);
-@white: white;
-@grey: #eceded;
-
-@font-color-light: @white;
-@font-color-dark: @dark-blue;
-
-@font-size-text: 14px;
-@font-size-text-small: 12px;
 
 body {
 	padding: 0px;
@@ -235,6 +219,10 @@ button, a.button {
 	font-weight: 400;
 }
 
+section.grey a.button {
+	text-decoration: none;
+}
+
 a.button:hover {
 	text-decoration: none;
 }
@@ -244,7 +232,8 @@ button:disabled {
 	opacity: 0.2;
 }
 
-button.dark {
+button.dark,
+a.button.dark {
 	border: 1px solid @font-color-dark;
 	color: @font-color-dark;	
 }

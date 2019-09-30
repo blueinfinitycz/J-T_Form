@@ -2,17 +2,18 @@ $(document).ready(
 	function() {
 
 		//if ( $(window).width() > 991 ) {
-			$('#segments').height( $(window).outerHeight()  * 1.0 );
-			$('#contact').height( $(window).outerHeight() - 50 );
+		//	$('#segments').height( window.innerHeight  * 1.0 );
+			$('#contact').height( window.innerHeight - 50 );
 		//}
+
 
 		$( window ).resize(function() {
   			if ( $(window).width() > 991 ) {
-				$('#segments').height( $(window).outerHeight()  * 1.0 );
-				$('#contact').height( $(window).outerHeight() - 50 );
+				//$('#segments').height( window.innerHeight  * 1.0 );
+				$('#contact').height( window.innerHeight - 50 );
 			}
 			else {
-				$('#segments').css('height', 'auto');
+				//$('#segments').css('height', 'auto');
 				$('#contact').css('height', 'auto');
 			}
 		});
@@ -23,9 +24,19 @@ $(document).ready(
 			if (opacity<0) opacity = 0;
 			if (opacity>1) opacity = 1;
 			$('nav.navbar').css('background','rgba(148, 121, 240,'+opacity+')');
+
+			
+			var finprod = $('#finprod').offset().top;
+			var aboutus = $('#aboutus').offset().top;
+			if ( scroll > ( finprod - 50 ) /* && scroll < aboutus - 150 */ ) {
+				$('button.fixed').show();
+			} else {
+				$('button.fixed').hide();
+			}
     		// Do something
 		});
 
+		$(".owl-carousel").owlCarousel({items: 1, dots: true, nav: false, autoplay: true, loop: true, autoplayTimeout: 3000, slideSpeed:1500, paginationSpeed: 1500, smartSpeed: 1500});
 	}
 );
 
@@ -45,10 +56,11 @@ function sendForm() {
 		"email": $('#email').val(),
 		"phone": $('#phone').val(),
 		"desc": $('#desc').val(),
+		"source": "medvet"
 	}
 	$.ajax({
 		type: "POST",
-		url: 'https://jtleasing.jtfg.com/post',
+		url: 'https://jtleasing.jtfg.com/post/index.php',
 		data: data,
 		dataType: 'jsonp',
 		jsonp: false,
@@ -73,7 +85,7 @@ function sendingOK( data ) {
 }
 
 function sendingFailed(httpReq,status,exception) {
-	$('#formFailedmessage').html('Nastala chyba. Skuste to znovu pozdeji.');
+	$('#formFailedmessage').html('Nastala chyba. Zkuste to znovu pozdeji.');
 	$('#formFailedmessage').fadeIn();
 }
 

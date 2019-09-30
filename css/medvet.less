@@ -1,3 +1,13 @@
+@charset "UTF-8";
+
+@import "variables"; 
+
+body {
+	height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
 nav.navbar {
 	background: transparent;
 }
@@ -19,24 +29,56 @@ button {
 	margin-left: 20px;
 }
 
+button.fixed {
+	display: none;
+	position: fixed;
+	top: 100px;
+	background: @grey;
+	z-index: 1000;
+}
+
 .navbar-nav .nav-item {
 	flex: none;
 	margin-left: 50px;
+	text-align: right;
 }
 
 
 #segments {
 	padding-top: 0;
-	height: 130%;
+	height: 100%;
 }
 
 #segments .segment:nth-child(1) .img {
 	background-image: url(../images/technika.png);
 	background-size: cover;
 	background-position-y: center;	
+	background-position-x: center;	
 	flex: 2;
 	display: flex;
 	align-items: center;
+	height: 100%;
+}
+
+#segments .segment:nth-child(1) .owl-item .img.two {
+	background-image: url(../images/sonar.png);
+	background-size: cover;
+	background-position-y: center;	
+	background-position-x: center;	
+}
+
+#segments .segment:nth-child(1) .owl-item .img.three {
+	background-image: url(../images/monitor.png);
+	background-size: cover;
+	background-position-y: center;	
+	background-position-x: center;	
+}
+
+#segments .segment:nth-child(1) .owl-item .img.four {
+	background-image: url(../images/mikroskop.png);
+	background-size: cover;
+	background-position-y: center;	
+	background-position-x: center;	
 }
 
 #segments .segment:nth-child(1) .img div {
@@ -45,6 +87,35 @@ button {
 	font-size: 44px;
 	font-family: 'Fedra';
 	font-weight: 100;
+}
+
+#segments .segment.open .owl-carousel {
+	flex: 2;
+}
+
+#segments .segment.open .owl-carousel .owl-item,
+#segments .segment.open .owl-carousel .owl-item, .owl-stage,
+#segments .segment.open .owl-carousel .owl-item, .owl-stage-outer {
+	height: 100%;
+}
+
+
+#segments .segment.open .owl-carousel .owl-dots {
+	position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+#segments .segment.open .owl-carousel .owl-dot {
+
+	background: white;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+}
+
+#segments .segment.open .owl-carousel .owl-dot.active {
+
+	background: #acacac;
 }
 
 #segments .segment.open .container {
@@ -64,7 +135,7 @@ section.grey {
 
 @media (max-width: 991px){
 	#segments {
-		height: auto;
+		height: 100%;
 		display: flex;
 	}
 }

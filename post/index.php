@@ -18,6 +18,7 @@ $name = trim(strip_tags($_REQUEST['userName']));
 $email = trim(strip_tags($_REQUEST['email']));
 $phone = trim(strip_tags($_REQUEST['phone']));
 $desc = trim(strip_tags($_REQUEST['desc']));
+$source = isset($_REQUEST['source'])?trim(strip_tags($_REQUEST['source'])):"";
 
 $check = $_REQUEST['surname'];
 if ( $check != "" ) exit;
@@ -39,7 +40,13 @@ try {
 
     //Recipients
     $mail->setFrom('jtleasing@jtb.com', 'JTLeasing');
-    //$mail->addAddress('info@jtleasing.cz', 'Info');     // Add a recipient
+    /*
+    if ($source == "medvet") {
+        $mail->addAddress('medical@jtleasing.cz', 'Medical');     // Add a recipient
+    } else {
+        $mail->addAddress('info@jtleasing.cz', 'Info');     // Add a recipient
+    }
+    */
     $mail->addAddress('baca@jtfg.com', 'Ivan Baca');     // Add a recipient
     $mail->addAddress('malek@jtbank.cz', 'Petr Malek');     // Add a recipient
 

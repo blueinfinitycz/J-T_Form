@@ -136,7 +136,7 @@ function sendForm() {
 	}
 	$.ajax({
 		type: "POST",
-		url: 'https://jtleasing.jtfg.com/post',
+		url: 'https://jtleasing.jtfg.com/post/index.php',
 		data: data,
 		dataType: 'jsonp',
 		jsonp: false,
@@ -160,7 +160,7 @@ function sendingOK( data ) {
 }
 
 function sendingFailed(httpReq,status,exception) {
-	$('#formFailedmessage').html('Nastala chyba. Skuste to znovu pozdeji.');
+	$('#formFailedmessage').html('Nastala chyba. Zkuste to znovu pozdeji.');
 	$('#formFailedmessage').fadeIn();
 }
 

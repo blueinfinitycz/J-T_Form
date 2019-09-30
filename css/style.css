@@ -328,13 +328,17 @@ a.button {
   padding: 12px 12px 8px 12px ;
   font-weight: 400;
 }
+section.grey a.button {
+  text-decoration: none;
+}
 a.button:hover {
   text-decoration: none;
 }
 button:disabled {
   opacity: 0.2;
 }
-button.dark {
+button.dark,
+a.button.dark {
   border: 1px solid #000d5b;
   color: #000d5b;
 }
