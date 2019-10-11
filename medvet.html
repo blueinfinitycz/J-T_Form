@@ -76,6 +76,11 @@
 	src="https://www.facebook.com/tr?id=2411975219071544&ev=PageView&noscript=1"
 	/></noscript>
 	<!-- End Facebook Pixel Code -->
+
+	<!-- Global site tag (gtag.js) - Google Ads: 705242546 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-705242546"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-705242546'); </script>
+
+	<!-- Event snippet for Kontakt conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-705242546/2fOsCNqFma0BELLLpNAC', 'event_callback': callback }); return false; } </script>
+
 </head>
 
 <body>
@@ -483,6 +488,8 @@
 			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAnFrPS7tiXptCh90UFJqMW5TgpOYBZiE&callback=initMap">
 			</script>
 		</div>
+		<!-- Měřicí kód Sklik.cz -->
+		<iframe width="119" height="22" frameborder="0" scrolling="no" src="//c.imedia.cz/checkConversion?c=100056332&amp;color=ffffff&amp;v="></iframe>
 	</section>
 
 	<div class="modal" tabindex="-1" role="dialog" id="contactModal">
@@ -510,7 +517,7 @@
 									<div id="formFailedmessage"></div>
 								</p>
 							</div>
-							<div><button type="button" class="dark" onclick="sendForm()" style="position: absolute; bottom: 1rem; right: 1rem;">Odeslat →</button>
+							<div><button type="button" class="dark" onclick="sendForm();" style="position: absolute; bottom: 1rem; right: 1rem;">Odeslat →</button>
 							</div>
 						</div>
 					</form>
@@ -663,6 +670,7 @@
 	</div>
 
 	<iframe name="iframe" style="display: none"></iframe>
+	
 	
 </body>
 
