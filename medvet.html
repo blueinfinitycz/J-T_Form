@@ -77,7 +77,15 @@
 	/></noscript>
 	<!-- End Facebook Pixel Code -->
 
-	<!-- Global site tag (gtag.js) - Google Ads: 705242546 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-705242546"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-705242546'); </script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150227626-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-150227626-1');
+	</script>
 
 	<!-- Event snippet for Kontakt conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-705242546/2fOsCNqFma0BELLLpNAC', 'event_callback': callback }); return false; } </script>
 
@@ -168,7 +176,7 @@
 					</ul>
 				</div>
 				<div>
-					<p><button class="dark fixed" data-toggle="modal" data-target="#contactModal">Kontaktujte mě →</button></p>		
+					<p><button class="dark fixed" data-toggle="modal" data-target="#contactModal" onclick="dataLayer.push({'event':'click', 'promenna':'kontaktujte mne'});">Kontaktujte mě →</button></p>		
 				</div>
 			</div>
 		</div>
@@ -517,7 +525,7 @@
 									<div id="formFailedmessage"></div>
 								</p>
 							</div>
-							<div><button type="button" class="dark" onclick="sendForm();" style="position: absolute; bottom: 1rem; right: 1rem;">Odeslat →</button>
+							<div><button type="button" class="dark" onclick="sendForm(); dataLayer.push({'event':'click', 'promenna':'odeslat'});" style="position: absolute; bottom: 1rem; right: 1rem;">Odeslat →</button>
 							</div>
 						</div>
 					</form>
