@@ -27,11 +27,34 @@ $(document).ready(
 
 			
 			var finprod = $('#finprod').offset().top;
+			var zakpod = $('#zakpod').offset().top;
+			var advant = $('#advant').offset().top;
 			var aboutus = $('#aboutus').offset().top;
+			var contact = $('#contact').offset().top;
 			if ( scroll > ( finprod - 50 ) /* && scroll < aboutus - 150 */ ) {
 				$('button.fixed').show();
 			} else {
 				$('button.fixed').hide();
+			}
+
+			if ( scroll > ( contact - 50 ) ) {
+				dataLayer.push({ "event": "Kontakt"});
+			} else {
+				if ( scroll > ( aboutus - 50 ) ) {
+					dataLayer.push({ "event": "O společnosti"});
+				} else {
+					if ( scroll > ( advant - 50 ) ) {
+						dataLayer.push({ "event": "Srozumitelnost"});
+					} else {
+						if ( scroll > ( zakpod - 50 ) ) {
+							dataLayer.push({ "event": "Flexibilita"});
+						} else {
+							if ( scroll > ( finprod - 50 ) ) {
+								dataLayer.push({ "event": "Financujeme"});
+							}
+						}
+					}
+				}
 			}
     		// Do something
 		});
