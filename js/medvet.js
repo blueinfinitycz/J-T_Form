@@ -39,18 +39,23 @@ $(document).ready(
 
 			if ( scroll > ( contact - 50 ) ) {
 				dataLayer.push({ "event": "Kontakt"});
+				gtag_report_event("Kontakt");
 			} else {
 				if ( scroll > ( aboutus - 50 ) ) {
 					dataLayer.push({ "event": "O společnosti"});
+					gtag_report_event("O společnosti");
 				} else {
 					if ( scroll > ( advant - 50 ) ) {
 						dataLayer.push({ "event": "Srozumitelnost"});
+						gtag_report_event("Srozumitelnost");
 					} else {
 						if ( scroll > ( zakpod - 50 ) ) {
 							dataLayer.push({ "event": "Flexibilita"});
+							gtag_report_event("Flexibilita");
 						} else {
 							if ( scroll > ( finprod - 50 ) ) {
 								dataLayer.push({ "event": "Financujeme"});
+								gtag_report_event("Financujeme");
 							}
 						}
 					}
