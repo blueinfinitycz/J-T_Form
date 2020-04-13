@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>J&amp;T Leasing</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=10,9" />
+	<meta name="keywords"
+		content="Financování IT,Financování výpočetní techniky,Financování lékařů,Leasing IT,Operativní leasing IT">
+	<meta name="description"
+		content="Poskytujeme finanční leasing, operativní leasing a úvěry v oblastech informačních technologií a zdravotnictví. Financujeme velká IT řešení včetně softwaru, lékařské vybavení a zdravotní péči.">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/accounting.min.js"></script>
+	<script src="js/autosize.min.js"></script>
+
+	<link rel="stylesheet" href="css/style.css?ver=17">
+	<script src="js/jquery-ui.js?ver=11"></script>
+	<script src="js/style.js?ver=12"></script>
+	<script src="js/jquery.selectrange.js?ver=11"></script>
+	<script src="js/calc.js?ver=11"></script>
+
+	<link rel="stylesheet" type="text/css"
+		href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+	<script>
+		window.addEventListener("load", function () {
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#9479f0",
+						"text": "white"
+					},
+					"button": {
+						"background": "transparent",
+						"border": "white",
+						"text": "white"
+					}
+				},
+				"content": {
+					"message": "J&amp;T Leasingová společnost a J&amp;T Banka používají cookies na této webové stránce. Chcete-li se dozvědět více, přejděte do sekce",
+					"dismiss": "ROZUMÍM",
+					"link": "Ochrana soukromí a cookie.",
+					"href": "http://www.jtbank.cz/bezpecnostni-informace/"
+				}
+			})
+		});
+	</script>
+	<style type="text/css">
+		.cc-window.cc-banner {
+			padding: 10px 100px;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#"><img src="images/Logo-White.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#segments">segmenty</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#finprod">finanční produkty</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html#aboutus">o společnosti</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#loginform">pro partnery</a>
+					</li>
+					<!--<li class="nav-item">
+						<a class="nav-link" href="index.html#calcModal">kalkulačka</a>
+					</li>-->
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#contact">kontakt</a>
+					</li>
+			</div>
+		</div>
+	</nav>
+
+
+	<section id="finprod" class="grey" style="padding-top: 50px;">
+
+		<div class="container">
+			<div class="cols">
+				<div class="title">Informace pro klienty, kteří potřebují odklad splátek v souvislosti s pandemií COVID-19</div>
+				<div>
+					<h2>VARIANTA 1</h2>
+					<h5>ODKLAD SPLÁTEK DLE ZÁKONA č. X/2020 Sb. ZE DNE DD.MM.2020 O NĚKTERÝCH OPATŘENÍCH V OBLASTI SPLÁCENÍ ÚVĚRŮ V SOUVISLOSTI S PANDEMIÍ COVID-19 (dále jen „Zákon“)</h5>
+					<br><br>
+					<p><span class="labels">Tato varianta bude účinná, jakmile bude schválen zákon č. X/2020 Sb.</span>
+					</p>
+					<p><span class="labels">Základní podmínky:</span>
+						<ol>
+							<li>Typ finančního produktu: úvěr, finanční leasing</li>
+							<li>Datum uzavření smlouvy: před 26.3.2020</li>
+							<li>K 26.3.2020 nesmí být prodlení splácení delší než 30 dní</li>
+							<li>Vyplnění, vytištění, podepsání a odeslání <a href="#" target="_blank">Žádosti o odklad splátek</a> (dále jen „<b>Žádost</b>“) na e-mailovou adresu <a href="mailto:info@jtleasing.cz">info@jtleasing.cz</a></li>
+							<li>Klient v žádosti <b>prohlašuje</b>, že o odklad splátek žádá v souvislosti s pandemií COVID-19</li>
+						</ol>
+					</p>
+					<p>Úprava splátek bude provedena k prvnímu dni měsíce následujícho po dni, kdy bude doručena Žádost. Žádost lze podat od data účinnosti Zákona, tj. od 16.4.2020. Toto prakticky znamená, že nejdříve je možno požádat o odklad splátek za <b>květen 2020</b>.</p>
+					<p>V Žádosti je nutné určit délku tzv. <b>ochranné doby</b>, což je období, ve kterém budou splátky odloženy. Zákon nabízí dvě možnosti – odklad splátek <b>do 31.7.2020</b> nebo <b>do 31.10.2020</b>.</p>
+					<p><span class="labels">Fyzické osoby (spotřebitelé) a OSVČ během ochranné doby:</span>
+						<ul>
+							<li>&#8226;&nbsp;Neplatí jistinu</li>
+							<li>&#8226;&nbsp;Neplatí úroky. Úroky během ochranné doby jsou dále účtovány a jejich platba je odsunuta k termínu konce splácení</li>
+							<li>&#8226;&nbsp;Platí pojištění (pokud bylo pojištění ve smlouvě sjednáno)</li>
+							<li>&#8226;&nbsp;Platí DPH u leasingových smluv</li>
+						</ul>
+					</p>
+					<p>Jakmile ochranná doba skončí, (tj. od 1.8.2020 nebo od 1.11. 2020), vrátí se splátky přesně na původní výši. Doba trvání smlouvy se prodlouží o dobu odkladu.</p>
+					<p><span class="labels">Právnické osoby (firmy) během ochranné doby:</span>
+						<ul>
+							<li>&#8226;&nbsp;Neplatí jistinu</li>
+							<li>&#8226;&nbsp;Platí úroky</li>
+							<li>&#8226;&nbsp;Platí pojištění (pokud bylo pojištění ve smlouvě sjednáno)</li>
+							<li>&#8226;&nbsp;Platí DPH u leasingových smluv</li>
+						</ul>
+					</p>
+					<p>Jakmile ochranná doba skončí, (tj. od 1.8.2020 nebo od 1.11. 2020), vrátí se splátky přesně na původní výši. Doba trvání smlouvy se prodlouží o dobu odkladu.
+					</p>
+					<p><span class="labels">J&T Leasing nebude za změnu splátek účtovat žádné poplatky.</span>
+				</div>
+				<div>
+					<h2>VARIANTA 2</h2>
+					<h5>ODKLAD SPLÁTEK V SOUVISLOSTI S PANDEMIÍ COVID-19 – INDIVIDUÁLNÍ POSTUP</h5>
+					<br><br>
+					<p><span class="labels">Základní podmínky:</span>
+						<ol>
+							<li>Typ finančního produktu: úvěr, finanční leasing, operativní leasing</li>
+							<li>Datum uzavření smlouvy: před 26.3.2020</li>
+							<li>K 26.3.2020 nesmí být prodlení splácení delší než 30 dní</li>
+							<li>Vyplnění, vytištění, podepsání a odeslání <a href="#" target="_blank">Žádosti o odklad splátek</a> (dále jen „Žádost“) na e-mailovou adresu <a href="mailto:info@jtleasing.cz">info@jtleasing.cz</a>.</li>
+							<li>Klient v žádosti <b>zdůvodňuje</b>, jak odklad splátek souvisí s pandemií COVID-19</li>
+						</ol>
+					</p>
+					<p>Odklad splátek bude proveden v měsíci, ve kterém bude doručena Žádost. Toto prakticky znamená, že nejdříve je možno požádat o odklad splátek za <b>duben 2020</b>.</p>
+					<p>Splátky budou odloženy nejdéle <b>do 31.10.2020</b>.</p>
+					<p><span class="labels">Fyzické osoby (spotřebitelé) a OSVČ během doby odkladu:</span>
+						<ul>
+							<li>&#8226;&nbsp;Neplatí jistinu.</li>
+							<li>&#8226;&nbsp;Neplatí úroky. Úroky během doby odkladu splátek jsou dále účtovány a jejich platba je odsunuta k termínu konce splácení.</li>
+							<li>&#8226;&nbsp;Platí pojištění (pokud bylo pojištění ve smlouvě sjednáno)</li>
+							<li>&#8226;&nbsp;Platí DPH u leasingových smluv</li>
+						</ul>
+					</p>
+					<p>Jakmile ochranná doba skončí, (tj. od 1.11. 2020), vrátí se splátky přesně na původní výši. Doba trvání smlouvy se prodlouží o dobu odkladu.</p>
+					<p><span class="labels">Právnické osoby (firmy) během doby odkladu splátek:</span>
+						<ul>
+							<li>&#8226;&nbsp;Neplatí jistinu.</li>
+							<li>&#8226;&nbsp;Platí úroky.</li>
+							<li>&#8226;&nbsp;Platí pojištění (pokud bylo pojištění ve smlouvě sjednáno)</li>
+							<li>&#8226;&nbsp;latí DPH u leasingových smluv.</li>
+						</ul>
+					</p>
+					<p>Jakmile ochranná doba skončí, (tj. od 1.11. 2020), vrátí se splátky přesně na původní výši. Doba trvání smlouvy se prodlouží o dobu odkladu.
+					</p>
+					<p><span class="labels">J&T Leasing nebude za změnu splátek účtovat žádné poplatky.</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="contact" class="grey" style="display: none">
+
+		<style>
+			#map {
+				height: 600px;
+				width: 100%;
+			}
+		</style>
+
+		<div class="block block-map" id="map"></div>
+		<div class="container">
+			<div class="cols">
+				<div>
+					<p>J&amp;T Leasingová společnost, a.&nbsp;s.</p>
+					<p>Pobřežní 297/14<br>
+						186 00 Praha 8<br>
+						Česká republika<br>
+						info@jtleasing.cz<br>
+						<br>
+						IČ: 28427980<br>
+						DIČ: CZ28427980<br>
+					</p>
+
+				</div>
+				<div style="flex: 2">
+					<p>Obchodní kontakty:</p>
+					<p>obchod@jtleasing.cz<br>
+						<table>
+							<tr>
+								<td>Informační technologie</td>
+								<td>+420 606 048 774, <a href="mailto:vojtek@jtleasing.cz">
+										vojtek@jtleasing.cz</a></td>
+							</tr>
+							<tr>
+								<td>Zdravotní technika</td>
+								<td>+420 602 475 027, <a href="mailto:kovarikova@jtleasing.cz">
+										kovarikova@jtleasing.cz</a></td>
+							</tr>
+							<tr>
+								<td>Spotřebitelské úvěry (zdrav. péče)</td>
+								<td>+420 722 938 099, <a href="mailto:hodanova@jtleasing.cz">
+										hodanova@jtleasing.cz</a></td>
+							</tr>
+							<tr>
+								<td>Spotřebitelské úvěry</td>
+								<td>+420 602 738 936, <a href="mailto:nesetril@jtleasing.cz">
+										nesetril@jtleasing.cz</a></td>
+							</tr>
+							<tr>
+								<td>Pojištění</td>
+								<td>+420 730 595 697, <a href="mailto:malecl@jtleasing.cz">
+										malecl@jtleasing.cz</a></td>
+							</tr>
+						</table>
+				</div>
+			</div>
+			<script>
+				function initMap() {
+
+
+					var styledMapType = new google.maps.StyledMapType(
+						[{
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#eceded"
+								}]
+							},
+							{
+								"elementType": "labels.icon",
+								"stylers": [{
+									"visibility": "off"
+								}]
+							},
+							{
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#000d5b"
+								}]
+							},
+							{
+								"elementType": "labels.text.stroke",
+								"stylers": [{
+									"color": "#eceded"
+								}]
+							},
+							{
+								"featureType": "administrative.land_parcel",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#bdbdbd"
+								}]
+							},
+							{
+								"featureType": "poi",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#eeeeee"
+								}]
+							},
+							{
+								"featureType": "poi",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#9479f0"
+								}]
+							},
+							{
+								"featureType": "poi.park",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#eceded"
+								}]
+							},
+							{
+								"featureType": "poi.park",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#9e9e9e"
+								}]
+							},
+							{
+								"featureType": "road",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#ffffff"
+								}]
+							},
+							{
+								"featureType": "road.arterial",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#19e6e2"
+								}]
+							},
+							{
+								"featureType": "road.highway",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#19e6e2"
+								}]
+							},
+							{
+								"featureType": "road.highway",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#19e6e2"
+								}]
+							},
+							{
+								"featureType": "road.local",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#19e6e2"
+								}]
+							},
+							{
+								"featureType": "transit.line",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#19e6e2"
+								}]
+							},
+							{
+								"featureType": "transit.station",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#eeeeee"
+								}]
+							},
+							{
+								"featureType": "water",
+								"elementType": "geometry",
+								"stylers": [{
+									"color": "#6dbef2"
+								}]
+							},
+							{
+								"featureType": "water",
+								"elementType": "labels.text.fill",
+								"stylers": [{
+									"color": "#9e9e9e"
+								}]
+							}
+						], {
+							name: 'Styled Map'
+						});
+
+
+					var uluru = {
+						lat: 50.092479,
+						lng: 14.440546
+					};
+					var map = new google.maps.Map(document.getElementById('map'), {
+						zoom: 12,
+						center: uluru
+					});
+					var marker = new google.maps.Marker({
+						position: uluru,
+						map: map
+					});
+					map.mapTypes.set('styled_map', styledMapType);
+					map.setMapTypeId('styled_map');
+				}
+			</script>
+			<script async defer
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAnFrPS7tiXptCh90UFJqMW5TgpOYBZiE&callback=initMap">
+			</script>
+		</div>
+	</section>
+
+	<div class="modal" tabindex="-1" role="dialog" id="contactModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<br><br>
+					<form action="http://jtleasing.jtfg.com/post/index.php" method="POST" target="iframe">
+						<div class="cols">
+							<div class="">
+								<input type="text" placeholder="jméno" name="userName"
+									id="userName"><br><br>
+								<input type="text" placeholder="prijmeni" name="surname" id="surname">
+								<input type="text" placeholder="e-mail" name="email" id="email"><br><br>
+								<input type="text" placeholder="telefon" name="phone"
+									id="phone"><br><br>
+								<label>Poznámka</label>
+								<textarea name="desc" id="desc" rows="5" cols="55"></textarea>
+								<p>
+									<div id="formOKmessage"></div>
+								</p>
+								<p>
+									<div id="formFailedmessage"></div>
+								</p>
+							</div>
+							<div><button type="button" class="dark" onclick="sendForm()"
+									style="position: absolute; bottom: 1rem; right: 1rem;">Odeslat
+									→</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="calcModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+
+					<div class="cols">
+						<div class="title">Kalkulace operativního leasingu</div>
+						<div style="position: relative">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+								style="position: absolute; top: -5px; right: 7px;">
+								<img src="images/x.png">
+							</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">Cena předmětu (bez DPH)</div>
+						<div class="col-md-6"><input type="text" placeholder="cena" name="leasing-cena"
+								id="leasing-cena" value="0 Kč">
+							<div class="formFailedmessage" id="leasing-cena-error"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">Předmět leasingu
+							<div id="leasing-predmet-desc-form" style="display: none"><br><br>prosím
+								upřesněte<br>
+								<textarea style="width: 100%; margin-top: 11px;"
+									id="leasing-predmet-desc" rows=1></textarea>
+								<div class="formFailedmessage" id="leasing-predmet-error"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<ul>
+								<li>→ <a href="javascript: predmetSelected( 1 )" target="_blank"
+										class="predmetselect predmetselect-1 active">Servery a
+										storage</a></li>
+								<li>→ <a href="javascript: predmetSelected( 2 )" target="_blank"
+										class="predmetselect predmetselect-2">Koncová zařízení
+										(notebooky, PC, monitory)</a></li>
+								<li>→ <a href="javascript: predmetSelected( 3 )" target="_blank"
+										class="predmetselect predmetselect-3">Tiskárny</a></li>
+								<li>→ <a href="javascript: predmetSelected( 4 )" target="_blank"
+										class="predmetselect predmetselect-4">Mobily a tablety</a>
+								</li>
+								<li>→ <a href="javascript: predmetSelected( 5 )" target="_blank"
+										class="predmetselect predmetselect-5">Síťové prvky</a></li>
+								<li>→ <a href="javascript: predmetSelected( 6 )" target="_blank"
+										class="predmetselect predmetselect-6">Ostatní</a></li>
+							</ul>
+							<input type="hidden" id="leasing-predmet" name="leasing-predmet" value="1">
+							<input type="hidden" id="leasing-predmet-text" name="leasing-predmet-text"
+								value="Servery a storage">
+						</div>
+
+					</div>
+					<div class="row" id="leasing">
+						<div class="col-md-12">
+							<table class="table data">
+								<tr>
+									<th><span class="labels">Preferovaná varianta</span></th>
+									<th><span class="labels">Počet splátek</span></th>
+									<th><span class="labels">Výše splátky</span></th>
+								</tr>
+								<tr>
+									<td><input type="checkbox" class="modal-variant"
+											name="leasing-leasing" id="leasing-leasing-ol-12">
+									</td>
+									<td>12</td>
+									<td><span id="leasing-value-ol12"></span></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" class="modal-variant"
+											name="leasing-leasing" id="leasing-leasing-ol-24">
+									</td>
+									<td>24</td>
+									<td><span id="leasing-value-ol24"></span></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" class="modal-variant"
+											name="leasing-leasing" id="leasing-leasing-ol-36">
+									</td>
+									<td>36</td>
+									<td><span id="leasing-value-ol36"></span></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" class="modal-variant"
+											name="leasing-leasing" id="leasing-leasing-ol-48">
+									</td>
+									<td>48</td>
+									<td><span id="leasing-value-ol48"></span></td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" class="modal-variant"
+											name="leasing-leasing" id="leasing-leasing-ol-60">
+									</td>
+									<td>60</td>
+									<td><span id="leasing-value-ol60"></span></td>
+								</tr>
+							</table>
+							<div class="formFailedmessage" id="leasing-leasing-error"></div>
+						</div><!-- col-md-6 -->
+					</div><!-- row -->
+					<div class="row">
+						<div class="col-md-6">
+							<table class="table centered noborder">
+								<tr>
+									<td>Kontaktní e-mail</td>
+									<td><textarea type="text" placeholder="e-mail"
+											name="leasing-email" id="leasing-email" value=""
+											rows=1></textarea></td>
+								</tr>
+								<tr>
+									<td>IČO firmy</td>
+									<td><textarea type="text" placeholder="IČO" name="leasing-ico"
+											id="leasing-ico" value="" rows=1></textarea></td>
+								</tr>
+							</table>
+							<div class="formFailedmessage" id="leasing-email-error"></div>
+						</div>
+						<div class="col-md-6">
+							<table class="table centered noborder">
+								<tr>
+									<td>Kontaktní telefon</td>
+									<td><textarea type="text" placeholder="telefon"
+											name="leasing-phone" id="leasing-phone" value=""
+											rows=1></textarea></td>
+								</tr>
+								<tr>
+									<td>Název firmy</td>
+									<td><textarea type="text" placeholder="" name="leasing-firma"
+											id="leasing-firma" value="" disabled
+											rows=1></textarea></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12" id="modal-button">
+							<button class="dark" onclick="sendCalcFormModal()">Kontaktujte mě s nabídkou
+								<sup>*</sup></button>
+						</div>
+						<div class="col-md-12" id="modal-progress" style="display: none">
+							<div id="div5" style="transform: scale(0.5) rotate(225deg);">
+								<div class="bar1"></div>
+								<div class="bar2"></div>
+								<div class="bar3"></div>
+								<div class="bar4"></div>
+								<div class="bar5"></div>
+								<div class="bar6"></div>
+								<div class="bar7"></div>
+								<div class="bar8"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p>
+								<div id="leasingOKmessage"></div>
+							</p>
+							<p>
+								<div id="leasingFailedmessage"></div>
+							</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<p style="text-align: justify;">
+								<sup>*</sup> Beru na vědomí, že kalkulací nevzniká nárok na poskytnutí
+								leasingu. Výpočet je pouze orientační a může být dodatečně upřesněn. Ve
+								splátkách není zahrnuto pojištění. Pojištění předmětu financování je
+								povinné. (Sazby pojištění obdržíte na vyžádání.) Odesláním žádosti o
+								sdělení nabídky souhlasím s poskytnutím a zpracováním výše uvedených
+								osobních údajů společností J&T Leasing, a. s., IČO: 284 27 980, se
+								sídlem Pobřežní 297/14, PSČ 186 00, Praha 8 – Karlín (dále jen
+								společnost „JTLS“), a to za účelem zasílání nabídek, informací a jiných
+								obchodních sdělení. Jsem si vědom/a, že poskytnutý souhlas mohu kdykoliv
+								odvolat, a to odesláním odvolání souhlasu se zpracováním osobních údajů
+								na e-mailovou adresu info@jtleasing.cz. Beru na vědomí, že informace o
+								zpracování osobních údajů poskytuje společnost JTLS prostřednictvím
+								informačního dokumentu o zpracování osobních údajů umístěného na
+								internetových stránkách společnosti www.jtleasing.cz, v sekci O
+								společnosti.
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<iframe name="iframe" style="display: none"></iframe>
+
+</body>
+
+</html>
