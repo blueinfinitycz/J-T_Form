@@ -165,6 +165,9 @@ body {
   font-weight: 100;
   background-color: transparent;
 }
+hr {
+  border: 1px solid white;
+}
 ul {
   list-style: none;
   padding: 0;
