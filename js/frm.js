@@ -89,13 +89,10 @@ $(document).ready(function(){
 
                 for(let i=0;i<arr.length;i++){
                     const gotDataArrObj = arr[i].checkValidityInputs();
-                    // console.log("DATA: ",gotDataArrObj, Array.isArray(gotDataArrObj))
                     if(gotDataArrObj.length>0) {
                         resultDataArr.push(gotDataArrObj)
                     }
                 }
-
-                // console.log("DATA: ", JSON.stringify(gotDataArrObj))
                 console.log("DATA: ",resultDataArr)
             }
 
@@ -223,7 +220,13 @@ $(document).ready(function(){
                         CHCKOPTIONAL:  ${this.chckOptional}
                         `)
 
-                         count===(this.containerId === 2 && this.chckOptional===false ? 8 : this.dataContainer.frmElm.length ) ? showHideBtnext = 1 : showHideBtnext = 0;
+                        if(((this.containerId === 2 && this.chckOptional===false) && count===9) || (this.containerId === 2 && this.chckOptional) && count===11){
+                            showHideBtnext = 1
+                        }else{
+                            if(count === this.dataContainer.frmElm.length) {
+                                showHideBtnext = 1
+                            }
+                        }
                          
                         this.showHideBtNext(showHideBtnext)
                        frmStepGetDataObj({state:"checkFrmSteps",id:this.dataContainer.stepFrmId,status:showHideBtnext})
