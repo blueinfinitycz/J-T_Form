@@ -1,0 +1,28 @@
+.frm__container {
+  padding-top: 80px;
+}
+.frm__container .step__container {
+  margin: 20px 0;
+  padding: 0 15px 20px 15px;
+  background-color: #6dbef24f;
+  border: 1px solid #6dbef2;
+}
+.frm__container .step__container .errMsg__container {
+  color: red;
+  height: 15px;
+}
+.frm__container .step__container .frm__container--elm {
+  margin: auto;
+}
+.frm__container .step__container .frm__container--elm .frm_step_title {
+  margin: auto;
+  font-size: 25px;
+  font-weight: bold;
+}
+.frm__container .step__container .frm__container--elm .descr {
+  font-size: 17px;
+}
+.frm__container .step__container .frm__container--elm .checkbox span {
+  display: inline-block;
+  margin-left: 15px;
+}

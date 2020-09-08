@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>J&amp;T Leasing</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=10,9" />
+	<meta name="keywords"
+		content="Financování IT,Financování výpočetní techniky,Financování lékařů,Leasing IT,Operativní leasing IT">
+	<meta name="description"
+		content="Poskytujeme finanční leasing, operativní leasing a úvěry v oblastech informačních technologií a zdravotnictví. Financujeme velká IT řešení včetně softwaru, lékařské vybavení a zdravotní péči.">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"> 
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/accounting.min.js"></script>
+	<script src="js/autosize.min.js"></script>
+
+	<link rel="stylesheet" href="css/style.css?ver=17">
+	<link rel="stylesheet" href="css/bootstrap_custom.min.css">
+
+	<script src="js/jquery-ui.js?ver=11"></script>
+	<script src="js/style.js?ver=12"></script>
+	<script src="js/jquery.selectrange.js?ver=11"></script>
+	<script src="js/calc.js?ver=11"></script>
+
+	<link rel="stylesheet" type="text/css"
+		href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+	<link rel="stylesheet" href="./css/frm.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+	<script src="./js/frm.js"></script>
+	<script>
+		window.addEventListener("load", function () {
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#9479f0",
+						"text": "white"
+					},
+					"button": {
+						"background": "transparent",
+						"border": "white",
+						"text": "white"
+					}
+				},
+				"content": {
+					"message": "J&amp;T Leasingová společnost a J&amp;T Banka používají cookies na této webové stránce. Chcete-li se dozvědět více, přejděte do sekce",
+					"dismiss": "ROZUMÍM",
+					"link": "Ochrana soukromí a cookie.",
+					"href": "http://www.jtbank.cz/bezpecnostni-informace/"
+				}
+            });
+		});
+	</script>
+	<style type="text/css">
+		.cc-window.cc-banner {
+			padding: 10px 100px;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#"><img src="images/Logo-White.png"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#segments">segmenty</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#finprod">finanční produkty</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html#aboutus">o společnosti</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#loginform">pro partnery</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html#contact">kontakt</a>
+					</li>
+			</div>
+		</div>
+	</nav>
+
+    <section class="frm__container" id="frm">
+        <div class="container">
+			<div id="stepContainer1" class="row step__container">
+				<div class="frm__container--elm">
+					<form>
+						<div class="row">
+							<h2 class="frm_step_title">
+								Chci požádat o spotřebitelský úvěr
+							</h2>
+						</div>
+						<div class="row">
+							<p class="descr">Než začnete s vyplňováním žádosti, seznamte se prosím s našimi 
+								<a href="https://www.jtleasing.cz/JTLS/documents/JTLS_VOP_SU_20180525.pdf" target="_blank">obchodními podmínkami.</a>
+							</p>
+						</div>
+						<div class="row center">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="jmeno_inpt">Jméno:</label>
+									<input type="text" class="form-control" id="jmeno_inpt" placeholder="Jméno">
+							  	</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="prijmeni_inpt">Příjmení:</label>
+									<input type="text" class="form-control" id="prijmeni_inpt" placeholder="Příjmení">
+							  	</div>
+							</div>
+						</div>
+						
+						<div class="row center">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="telefon_inpt">Telefon: </label>
+									<input type="tel" maxlength=9 class="form-control" id="tel_inpt" placeholder="123 456 789">
+							  	</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="email_inpt">Email:</label>
+									<input type="email" class="form-control" id="email_inpt" placeholder="Email">
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="checkbox">
+									<label>
+									  <input id="info_chcx" type="checkbox">
+									  <span>O tom, jak pracujeme s vašimi osobními údaji, si přečtěte v dokumentu 
+									  <a href="https://www.jtleasing.cz/JTLS/documents/Osobni_udaje_informace_JTLS.pdf" target="_blank">Informace o zpracování osobních údajů</a>
+									</span>
+									</label>
+								  </div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<p id="errMsg" class="errMsg__container"></p>
+								<button id="btNext" class="btn btn-primary" type="button">Uložit a pokračovat</button>
+							</div>
+						</div>
+						
+					</form>	
+				</div>
+			</div>
+
+			<div id="stepContainer2" class="row step__container">
+				<div class="frm__container--elm">
+					<form>
+						<div class="row">
+							<h2 class="frm_step_title">
+								Osobní údaje a adresa
+							</h2>
+						</div>
+						
+						<div class="row center">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="nationality">Státní občanství:</label>
+									<select class="form-control" name="nationality" id="nationality_select">
+										<option value="0">--- Vyberte ---</option>
+										<option value="cz">Česká republika</option>
+										<option value="sk">Slovenská republika</option>
+									</select>
+							  	</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="cisloOP_inpt">Číslo OP:</label>
+									<input type="number" maxlength=9 class="form-control" id="cisloOP_inpt">
+							  	</div>
+							</div>
+						</div>
+						
+						<div class="row center">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="platnostOP">Platnost OP do:</label>
+									<input type="date" class="form-control" id="platnostOP_inpt">
+							  	</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="rd_inpt">Rodné číslo:</label>
+									<input type="text" maxlength=10 class="form-control" id="rd_inpt" >
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row center">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="mistoNarozeni">Místo narození:</label>
+									<input type="text" class="form-control" id="mistoNarozeni_inpt" placeholder="Místo narození">
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<h2 class="frm_step_title">
+								Adresa trvalého bydliště
+							</h2>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="addr_trv_ulice_inpt">Ulice:</label>
+									<input type="text" class="form-control" id="addr_trv_ulice_inpt" placeholder="Ulice">
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row center">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="addr_trv_psc_inpt">PSČ:</label>
+									<input type="text" maxlength=5 class="form-control" id="addr_trv_psc_inpt">
+							  	</div>
+							</div>
+							
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="addr_trv_mesto_inpt">Město:</label>
+									<input type="text" class="form-control" id="addr_trv_mesto_inpt" placeholder="Město">
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<h2 class="frm_step_title">
+								Korespondenční adresa
+							</h2>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="checkbox">
+									<label>
+									  <input type="checkbox" data-frmCheck='{"prop":"toggle","idFrmPart":"korespondencniAdresa__container"}' id="chckTrvalBydliste_chcx">
+									  <span>je stejná jako adresa trvalého bydliště</span>
+									</label>
+								  </div>
+							</div>
+						</div>
+
+						<div id="korespondencniAdresa__container">
+
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="addr_kores_ulice_inpt">Ulice:</label>
+										<input type="text" data-frmCheck='{"prop":"optional"}' class="form-control" id="addr_kores_ulice_inpt" placeholder="Ulice">
+									</div>
+								</div>
+							</div>
+
+							<div class="row center">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="addr_kores_mesto_inpt">Město:</label>
+										<input type="text" data-frmCheck='{"prop":"optional"}' class="form-control" id="addr_kores_mesto_inpt" placeholder="Město">
+									</div>
+								</div>
+							
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="addr_kores_psc_inpt">PSČ:</label>
+										<input type="text" maxlength=5 data-frmCheck='{"prop":"optional"}' class="form-control" id="addr_kores_psc_inpt">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row center">
+							<div class="col-md-12 text-center">
+								<p id="errMsg" class="errMsg__container"></p>
+								<button id="btNext" class="btn btn-primary" type="button">Uložit a pokračovat</button>
+							</div>
+						</div>
+					</form>	
+				</div>
+			</div>
+
+			
+			<div id="stepContainer3" class="row step__container">
+				<div class="frm__container--elm">
+					<form>
+						<div class="row">
+							<h2 class="frm_step_title">Žádost o půjčku</h2>
+						</div>
+						<div class="row center">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="castka_inpt">Výše částky, kterou si chcete půjčit:</label>
+									<input type="number" class="form-control" id="castka_inpt" placeholder="0">
+							  	</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="splatky_inpt">Doba v měsících, po kterou zvažujete půjčky splácet:</label>
+									<input type="number" class="form-control" id="splatky_inpt" placeholder="0">
+							  	</div>
+							</div>
+						</div>
+						
+						<div class="row center">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="dokumentace_inpt">Nahrání dokumentace: kopie OP, potvrzení o výši příjmů</label>
+									<input type="file" class="form-control" id="dokumentace_inpt">
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="vyseSplatky_inpt">Informace o výši splátky, RPSN, atd. (viz. iKlient):</label>
+									<textarea rows="5" class="form-control" id="vyseSplatky_inpt"></textarea>
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="registr_inpt">Informace o nahlížení do registrů, PER, případně prohlášení a souhlasy.</label>
+									<textarea rows="5" class="form-control" id="registr_inpt"></textarea>
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="doklady_inpt">Informace o požadovaných dokladech:</label>
+									<textarea rows="5" class="form-control" id="doklady_inpt"></textarea>
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="uzavreniPujcky_inpt">Informace o dalších krocích a průběhu uzavření půjčky:</label>
+									<textarea class="form-control" id="uzavreniPujcky_inpt" rows="5"></textarea>
+
+							  	</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<p id="errMsg" class="errMsg__container"></p>
+								<button id="btNext" class="btn btn-primary" type="button">Uložit a pokračovat</button>
+							</div>
+						</div>
+						
+					</form>	
+				</div>
+			</div>
+
+			<div id="stepContainer4" class="row step__container">
+				<div class="frm__container--elm">
+					<form>
+						<div class="row">
+							<h2 class="frm_step_title">
+								Informace o Vás
+							</h2>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="domacnost_inpt">Typ domácnosti:</label>
+									<select class="form-control" name="domacnost" id="domacnost_inpt">
+										<option value="0">--- Vyberte ---</option>
+										<option value="1typ">1 Typ</option>
+										<option value="1typ">2 Typ</option>
+									</select>
+
+							  	</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="pocetOsob_inpt">Počet dospělých osob žijících ve společné domácnosti:</label>
+									<input type="number" class="form-control" id="pocetOsob_inpt" placeholder="1">
+							  	</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="pocetDeti_inpt">Počet dětí žíjících ve společné domácnosti:</label>
+									<input type="number" class="form-control" id="pocetDeti_inpt" placeholder="1">
+							  	</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="bydleni_inpt">Typ bydlení:</label>
+									<select class="form-control" name="bydleni" id="bydleni_inpt">
+										<option value="0">--- Vyberte ---</option>
+										<option value="1typ">1 Typ</option>
+										<option value="1typ">2 Typ</option>
+									</select>
+							  	</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="hlavniZdrojPrijmu_inpt">Hlavní zdroj příjmu:</label>
+									<select class="form-control" name="hlavniZdrojPrijmu" id="hlavniZdrojPrijmu_inpt">
+										<option value="0">--- Vyberte ---</option>
+										<option value="1typ">1 Typ</option>
+										<option value="1typ">2 Typ</option>
+									</select>
+							  	</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="mesicniPrijem_inpt">Průměrný čístý hlavní měsíční příjem:</label>
+									<input type="number" class="form-control" id="mesicniPrijem_inpt" placeholder="0">
+							  	</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="mesicniSplatky_inpt">Celková výše měsíčních splátek:</label>
+									<input type="number" class="form-control" id="mesicniSplatky_inpt" placeholder="0">
+							  	</div>
+							</div>
+							
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<p id="errMsg" class="errMsg__container"></p>
+								<button id="btSendData" class="btn btn-primary" type="button">Odeslat</button>
+							</div>
+						</div>
+						
+					</form>	
+				</div>
+			</div>
+
+        </div>
+    </section>
+
+</body>
+</html>
