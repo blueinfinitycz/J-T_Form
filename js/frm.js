@@ -1,4 +1,4 @@
-const dataFrmPart1 = {
+ const dataFrmPart1 = {
     jmeno_inpt: {type:"text"},
     prijmeni_inpt: {type:"text"},
     tel_inpt: {type:"tel"},
@@ -15,7 +15,7 @@ const dataFrmPart1 = {
     addr_trv_ulice_inpt: {type:"text"},
     addr_trv_psc_inpt: {type:"text"},
     addr_trv_mesto_inpt: {type:"text"},
-    chckTrvalBydliste_chcx: {type:"checkbox"},
+    chckTrvalBydliste_chcx: {type:"checkbox",status:"optionable"},
     addr_kores_ulice_inpt: {type:"text"},
     addr_kores_mesto_inpt: {type:"text"},
     addr_kores_psc_inpt: {type:"text"},
@@ -44,7 +44,6 @@ const dataFrmPart1 = {
   
    function InputTelValidation(){
      this.init = elm=> elm.value=elm.value.replace(/[^0-9.]/g,'')
-     
      this.validate = (elm)=> {
        let _status = elm.value.length===9
       return {status:_status,msg:_status ? "" : "Telefonní (mobilní) číslo musí obsahovat všech 9 čísel"} 
@@ -68,18 +67,12 @@ const dataFrmPart1 = {
        return {status:_status,msg:_status ? "" : "Vyplňte prosím správně celý email"}
        }
    }
-
-
-   function CheckBoxValidation(){
-     this.validate = (data)=>{}
-   }
   
   const objValidation = {
     tel: new InputTelValidation(),
     number: new InputNumberValidation(),
     text:new InputTextValidation(),
     email: new InputEmailValidation(),
-    checkbox:  new CheckBoxValidation(),
     }
   
   function FormPart(containerId,data,validationRules,showNextFrmStep,hideNextSteps,sendData){
@@ -93,7 +86,7 @@ const dataFrmPart1 = {
     this.errMsg = this.containerId.querySelector(".errMsg__container");
     this.btSendData = this.containerId.querySelector(".btSendData__container")
   
-    this.click(this.btNext ?? this.btSendData,()=> {
+    this.click(this.btNext || this.btSendData,()=> {
       if(this.validate(this.data)){
         this.btNext ? showNextFrmStep(containerId) : sendData()
         this.errMessage("");
@@ -106,19 +99,20 @@ const dataFrmPart1 = {
   }
   
   FormPart.prototype.addEventListenerToInpt=function(){
-     this.hideNextSteps(this.frmStepName)
+     
     for(i in this.data) {
       let item = document.getElementById(i)
           item.addEventListener("input",(e)=>{
             const elm=e.target;
-           
+            this.hideNextSteps(this.frmStepName)
             if(elm.type==="number" || elm.type==="tel") this.validation[elm.type].init(elm)
               this.checkFilledAllFormPart() ? this.show(this.btNext ?? this.btSendData) : this.hide(this.btNext ?? this.btSendData)
           })
     }
   }
-  FormPart.prototype.show=function(elm){elm.style.display="inline-block"}
-  FormPart.prototype.hide=function(elm){elm.style.display="none"}
+
+  FormPart.prototype.show=function(elm){elm.style=""}
+  FormPart.prototype.hide=function(elm){elm.style.display="none";}
   FormPart.prototype.click=function(elm,fce){elm.addEventListener("click",(e)=>fce())}
   FormPart.prototype.getData=function(){
     let data={name:this.frmStepName}
@@ -143,18 +137,29 @@ const dataFrmPart1 = {
         }
       }
       return res
-    }
-  
+  }
   FormPart.prototype.checkFilledAllFormPart = function(){
       let idx = 0;
      for(i in this.data) {
        let item = document.getElementById(i);
-      if(((this.data[i].type!=="checkbox" && item.value.length>0) || (this.data[i].type==="checkbox" && this.data[i].status==="required" && item.checked))){
+       if(
+         (item.type!=="checkbox" && item.value.length>0) ||
+         (item.type==="checkbox" && item.checked && this.data[i].status==="required") ||
+         (item.type==="checkbox" && this.data[i].status==="optionable")
+         ){
         idx++;
-      }
-     }
-     return idx===Object.keys(this.data).length
+       }
+
+       if(item.type==="checkbox" && this.data[i].status==="optionable") {
+         let frmPart = document.getElementById(item.dataset["togglepart"])
+         item.checked ? this.hide(frmPart) : this.show(frmPart)
+       }
+
   }
+  // console.log(idx," : ", Object.keys(this.data).length)
+  return (idx===Object.keys(this.data).length)
+  }
+
   FormPart.prototype.errMessage=function(msg){this.errMsg.textContent=msg;}
   
   function Form(){
@@ -166,40 +171,39 @@ const dataFrmPart1 = {
                 break;
              }
          }
-      }
-  
-    let hideNextSteps=function(frmName){
-      for(let i=0;i<frmStepsArr.length;i++){
-          if(frmStepsArr[i].frmStepName===frmName){
-            let item = frmStepsArr[i+1] ?? frmStepsArr[i];
-            item.hide(item.containerId)
-          }
-      }
     }
   
-    let sendData = function(){
-      let dataArr=[]
-      for(let i=0;i<frmStepsArr.length;i++){
-          dataArr.push(frmStepsArr[i].getData())
+      let hideNextSteps=function(frmName){
+        let startIndex=frmStepsArr.map(item =>item.frmStepName).indexOf(frmName)
+        for(let i=startIndex+1;i<frmStepsArr.length;i++){
+          let item = frmStepsArr[i]
+              item.hide(item.containerId)
+        }
       }
-      console.log("SEND DATA: ",dataArr)
-    }
   
-  
-    let frmStepsArr=[]
-    this.frmStepsContainer.map(item => frmStepsArr.push(new item.template(item.containerId,item.data,item.validation,showNextFrmStep,hideNextSteps,sendData)))
-    frmStepsArr.map((item,index) => index > 0 ? item.hide(frmStepsArr[index].containerId) : item.show(frmStepsArr[index].containerId))
+      let sendData = function(){
+        let data = frmStepsArr.map(item => item.getData());
+        console.log("DATA: ",data);
+
+        fetch("nejaka_url")
+        .then(res => res.json)
+      }
+
+    let frmStepsArr = this.frmStepsContainer.map((item,index) => {
+      let _item = new item.template(item.containerId,item.data,item.validation,showNextFrmStep,hideNextSteps,sendData);
+      index > 0 ? _item.hide(_item.containerId) : _item.show(_item.containerId)
+      return _item;
+    })
   }
-  
+
   const _form = {
     frmStepsContainer:[
       {containerId:"spotrebitelskyUver",data:dataFrmPart1,validation:objValidation,template:FormPart},
-    //   {containerId:"osobniUdaje",data:dataFrmPart2,validation:objValidation,template:FormPart},
+      {containerId:"osobniUdaje",data:dataFrmPart2,validation:objValidation,template:FormPart},
       {containerId:"zadostOPujcku",data:dataFrmPart3,validation:objValidation,template:FormPart},
       {containerId:"informaceOVas",data:dataFrmPart4,validation:objValidation,template:FormPart},
       ],
     createForm:Form,
   }
   
-  _form.createForm();
-  
+  _form.createForm()
