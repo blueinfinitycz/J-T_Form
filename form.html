@@ -180,7 +180,7 @@
 						</div>
 	
 						<div class="row center">
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<div class="form-group">
 									<label for="nationality_select">Státní občanství:</label>
 									<select class="form-control" name="nationality" id="nationality_select">
@@ -190,12 +190,19 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="opVydal_inpt">OP vydal:</label>
+									<input type="text" class="form-control" id="opVydal_inpt">
+								</div>
+							</div>
+							<div class="col-md-4">
 								<div class="form-group">
 									<label for="cisloOP_inpt">Číslo OP:</label>
 									<input type="text" maxlength=9 class="form-control" id="cisloOP_inpt">
 								</div>
 							</div>
+
 						</div>
 	
 						<div class="row center">
@@ -336,11 +343,17 @@
 						</div>
 	
 						<div class="row center">
-							<div class="col-xs-12">
+							<div class="col-md-6">
 								<div class="form-group">
-									<label for="dokumentace_inpt">Nahrání dokumentace: kopie OP, potvrzení o výši
+									<label for="dokumentace_inpt">Nahrání dokumentace: <br/> kopie OP, potvrzení o výši
 										příjmů</label>
 									<input type="file" class="form-control" id="dokumentace_inpt">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="zacatekUveru_inpt">Začátek úvěru:</label>
+									<input type="date" class="form-control" id="zacatekUveru_inpt">
 								</div>
 							</div>
 						</div>
@@ -358,9 +371,8 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="form-group">
-									<label for="registr_inpt">Informace o nahlížení do registrů, PER, případně prohlášení a
-										souhlasy.</label>
-									<textarea rows="5" class="form-control" id="registr_inpt"></textarea>
+									<p>Informace o nahlížení do registrů, PER, případně prohlášení a souhlasy.</p>
+									<img class="img-responsive" src="./images/schema.png" alt="schema" style="padding-bottom:10px;background-color: white;">
 								</div>
 							</div>
 						</div>
@@ -368,8 +380,15 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="form-group">
-									<label for="doklady_inpt">Informace o požadovaných dokladech:</label>
-									<textarea rows="5" class="form-control" id="doklady_inpt"></textarea>
+									<h4 name="doklady_inpt"><b>Informace o požadovaných dokladech:</b></h4>
+									<p>Podle § 4 odst. 5) zákona č. 253/2008 Sb., o některých opatřeních proti legalizaci výnosů z trestné činnosti a financování terorismu, podpisem této listiny prohlašuji, že</p>
+
+									<input type="radio" id="jsemPolitickyExponovanaOsoba" name="politickyExponovanaOsoba" value="JSEM politicky exponovaná osoba">
+									<label for="jsemPolitickyExponovanaOsoba">JSEM politicky exponovaná osoba</label><br>
+									<input type="radio" id="nejsemPolitickyExponovanaOsoba" name="politickyExponovanaOsoba" value="60">
+									<label for="nejsemPolitickyExponovanaOsoba">NEJSEM politicky exponovaná osoba</label><br>  
+
+									<p>Politicky exponovanou osobou se pro účely tohoto prohlášení rozumí fyzická osoba, která je nebo byla ve významné veřejné funkci s celostátním nebo regionálním významem, jako je zejména hlava státu, předseda vlády, vedoucí ústředního orgánu státní správy a jeho zástupce (náměstek, státní tajemník), člen parlamentu, člen řídícího orgánu politické strany, vedoucí představitel územní samosprávy, soudce nejvyššího soudu, ústavního soudu nebo jiného nejvyššího justičního orgánu, proti jehož rozhodnutí obecně až na výjimky nelze použít opravné prostředky, člen bankovní rady centrální banky, vysoký důstojník ozbrojených sil nebo sboru, člen nebo zástupce člena, je-li jím právnická osoba, statutárního orgánu obchodní korporace ovládané státem, velvyslanec nebo vedoucí diplomatické mise, anebo fyzická osoba, která obdobnou funkci vykonává nebo vykonávala v jiném státě, v orgánu Evropské unie anebo v mezinárodní organizaci. Politicky exponovanou osobou se rozumí také fyzická osoba, která je osobou blízkou k osobě uvedené v předchozím textu.</p>
 								</div>
 							</div>
 						</div>
@@ -377,9 +396,21 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="form-group">
-									<label for="uzavreniPujcky_inpt">Informace o dalších krocích a průběhu uzavření
-										půjčky:</label>
-									<textarea class="form-control" id="uzavreniPujcky_inpt" rows="5"></textarea>
+									<h4 for="uzavreniPujcky_inpt"><b>Souhlas půjčky:</b></h4>
+									<!-- <textarea class="form-control" id="uzavreniPujcky_inpt" rows="5"></textarea> -->
+									<p>Souhlasím s tím, aby <a href="#" onClick="window.open()" target="_blank"> JTLS získávala informace</a> o mé bonitě, platební morálce a důvěryhodnosti z Pozitivního registru SOLUS Tento souhlas uděluji na dobu jednání o uzavření smlouvy. V případě, že mezi mnou (nebo žadatelem, pokud jde o ručitele, spolužadatele nebo zákonného zástupce) a JTLS bude uzavřena Smlouva, uděluji tento souhlas na dobu jejího trvání.</p>
+						
+											<div class="checkbox">
+												<label for="chckTrvalBydliste_chcx">
+													<input type="checkbox"
+														data-togglepart="korespondencniAdresa__container"
+														id="chckTrvalBydliste_chcx">
+													<span>Potvrzuji, že jsem se seznámil/a, porozuměl/a a souhlasím s výše uvedenými prohlášeními,
+														a že mi J&T Leasingová společnost, a.s. poskytla vysvětlení všech mých dotazů.</span>
+												</label>
+											</div>
+				
+
 	
 								</div>
 							</div>

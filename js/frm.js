@@ -9,6 +9,7 @@
   const dataFrmPart2 = {
     nationality_select: {type:"select"},
     cisloOP_inpt: {type:"text"},
+    opVydal_inpt: {type:"text"},
     platnostOP_inpt: {type:"date"},
     rd_inpt: {type:"text"},
     mistoNarozeni_inpt: {type:"text"},
@@ -26,9 +27,10 @@
     castka_inpt: {type:"text"},
     splatky_inpt: {type:"text"},
     dokumentace_inpt: {type:"file"},
+    zacatekUveru_inpt: {type:"date"},
     vyseSplatky_inpt: {type:"text"},
-    registr_inpt: {type:"text"},
-    doklady_inpt: {type:"text"},
+    jsemPolitickyExponovanaOsoba: {type:"radio"},
+    nejsemPolitickyExponovanaOsoba: {type:"radio"},
     uzavreniPujcky_inpt: {type:"text"}
   }
   
@@ -168,6 +170,7 @@
           let item = frmStepsArr[i]
             if(item.frmStepName===frmName){
                 frmStepsArr[i+1].show(frmStepsArr[i+1].containerId)
+                console.log("YPOS: ",frmStepsArr[i+1].containerId.clientPos)
                 break;
              }
          }
