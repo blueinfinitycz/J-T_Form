@@ -1,39 +1,39 @@
+    /* spotrebitelskyUver */
  const dataFrmPart1 = {
     jmeno_inpt: {type:"text"},
     prijmeni_inpt: {type:"text"},
     tel_inpt: {type:"tel"},
-    email_inpt: {type:"email"},
-    info_chcx: {type:"checkbox",status:"required"}
+    email_inpt: {type:"email"}
   }
   
+  /* osobniUdaje */
   const dataFrmPart2 = {
     nationality_select: {type:"select"},
-    cisloOP_inpt: {type:"text"},
     opVydal_inpt: {type:"text"},
+    cisloOp_inpt: {type:"text"},
     platnostOP_inpt: {type:"date"},
     rd_inpt: {type:"text"},
     mistoNarozeni_inpt: {type:"text"},
     addr_trv_ulice_inpt: {type:"text"},
-    addr_trv_psc_inpt: {type:"text"},
     addr_trv_mesto_inpt: {type:"text"},
+    addr_trv_psc_inpt: {type:"text"},
     chckTrvalBydliste_chcx: {type:"checkbox",status:"optionable"},
     addr_kores_ulice_inpt: {type:"text"},
     addr_kores_mesto_inpt: {type:"text"},
-    addr_kores_psc_inpt: {type:"text"},
     addr_kores_psc_inpt: {type:"text"}
   }
-  
+
+   /* ZADOST O PUJCKU */
   const dataFrmPart3 = {
-    castka_inpt: {type:"text"},
-    splatky_inpt: {type:"text"},
-    dokumentace_inpt: {type:"file"},
-    zacatekUveru_inpt: {type:"date"},
-    vyseSplatky_inpt: {type:"text"},
-    jsemPolitickyExponovanaOsoba: {type:"radio"},
-    nejsemPolitickyExponovanaOsoba: {type:"radio"},
-    uzavreniPujcky_inpt: {type:"text"}
+    kopieOP_data: {type:"file"},
+    potvrzeniPrijmu_data: {type:"file"},
+    zacatekUveru_inpt: {type:"text"},
+    jsemPolitickyExponovanaOsoba_chcx: {type:"radio"},
+    nejsemPolitickyExponovanaOsoba_chcx: {type:"radio"},
+    uzavreniPujcky_chcx: {type:"checkbox"}
   }
   
+  /* INFORMACE O VAS  */
   const dataFrmPart4 = {
     domacnost_inpt:{type:"select"},
     pocetOsob_inpt:{type:"number"},
@@ -43,7 +43,117 @@
     mesicniPrijem_inpt: {type:"number"},
     mesicniSplatky_inpt: {type:"number"}
   }
-  
+
+    let trace=console.log.bind(console);
+      let _urokovaSazba = 0.109;
+      let _vyseCastkyValue =  document.getElementById("vyseCastkyValue");
+          _vyseCastkyValue.textContent=4000;
+      let _vyseCastkyValue_inpt =  document.getElementById("vyseCastkyValue_inpt");
+      let _dobaSplaceniValue = document.getElementById("dobaSplaceniValue");
+          _dobaSplaceniValue.textContent=12;
+      let _dobaSplaceniValue_inpt = document.getElementById("dobaSplaceniValue_inpt");
+          
+      let _urokovaSazbaValue =  document.getElementById("urokovaSazbaValue");
+      let _rpsnValue =  document.getElementById("rpsnValue");
+      let _vyseSplatkyValue =  document.getElementById("vyseSplatkyValue");
+     
+      _urokovaSazbaValue.textContent=_urokovaSazba+ " %";
+      _dobaSplaceniValue.textContent=12+ " měsíců";
+      _rpsnValue.textContent=_urokovaSazba;
+
+      _vyseCastkyValue_inpt.addEventListener("input",(e)=> {
+        trace("vyse castky: ",e.currentTarget.value);
+        _vyseCastkyValue.textContent=e.currentTarget.value;
+        let _vyseSplatky = vyseSplatky();
+       _vyseSplatkyValue.textContent = _vyseSplatky;
+
+       _rpsn.vyseCastkyPujcky(_vyseCastkyValue_inpt.value); // pujcka
+        _rpsn.vyseMesicniSplatky(_vyseSplatky); // mesicni splatka
+        _rpsn.dobaSplaceni(_dobaSplaceniValue_inpt.value); // pocet mesicnich splatek
+        _rpsnValue.textContent=_rpsn.calculate()*100;
+        _vyseSplatkyValue.textContent = _vyseSplatky;
+      });
+
+      _dobaSplaceniValue_inpt.addEventListener("input", (e) => {
+
+        _dobaSplaceniValue.textContent=e.currentTarget.value + " měsíců"
+        let _vyseSplatky = vyseSplatky();
+
+        _rpsn.vyseCastkyPujcky(_vyseCastkyValue_inpt.value); // pujcka
+        _rpsn.vyseMesicniSplatky(_vyseSplatky); // mesicni splatka
+        _rpsn.dobaSplaceni(_dobaSplaceniValue_inpt.value); // pocet mesicnich splatek
+        _rpsnValue.textContent=_rpsn.calculate()*100;
+        _vyseSplatkyValue.textContent = _vyseSplatky;
+
+        }
+      );
+
+      function vyseSplatky(){
+        return  _vyseCastkyValue_inpt.value * ((_urokovaSazba/12) / (1-Math.pow((1/(1+_urokovaSazba/12)) ,  _dobaSplaceniValue_inpt.value)));
+      }
+
+      function RPSN(){
+        this.a=0;
+        this.b=0;
+        this.n=0;
+
+        this.vyseCastkyPujcky = function($a){this.a=$a;}
+        this.vyseMesicniSplatky = function($b){this.b=$b}
+        this.dobaSplaceni = function($n){this.n=$n}
+        this.getValue = function($in){
+         let $a = this.a;
+         let $b=this.b;
+         let $n = this.n;
+         
+           return $a - ($b/Math.pow(1+$in, 1/12)*((Math.pow(1+$in, -1*$n/12)-1)/(Math.pow(1+$in, -1/12)-1)));
+        }
+
+        this.roundNumber =  function(num, scale){
+            if(!(""+num).includes("e")){
+              return +(Math.round(num+"e"+scale)+"e"+scale);
+            }else{
+              let arr = (""+num).split("e");
+              let sig = "";
+
+              if(+arr[1] + scale > 0){
+                sig = "+";
+              }
+              return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+            }
+        }
+
+        this.calculate = function(){
+         let $l = 0.000001;
+         let $r = 2;
+         let $cOld = -1;
+         
+         for ($i = 0; $i <= 50; $i++){
+           let $c = ($l + $r)/2;
+           let $lv = this.getValue($l);
+           let $rv = this.getValue($r);
+           let $cv = this.getValue($c);
+           
+          if ($lv < 0 && $cv < 0 && $rv > 0){
+                  $l = $c;
+             }else if ($lv < 0 && $cv > 0 && $rv > 0){
+                       $r = $c;
+             }else{
+                throw new Error("Invalid interval");
+             }
+        
+             if (this.roundNumber($c, 7) == this.roundNumber($cOld, 7)){
+                 return this.roundNumber($c, 7);
+                }else{
+                   $cOld = $c;
+                }
+         }
+         throw new Error("nelze vyresit")
+        }
+       }
+       
+       
+       let _rpsn = new RPSN();
+
    function InputTelValidation(){
      this.init = elm=> elm.value=elm.value.replace(/[^0-9.]/g,'')
      this.validate = (elm)=> {
