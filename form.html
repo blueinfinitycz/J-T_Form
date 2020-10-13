@@ -23,6 +23,7 @@
 
 	<link rel="stylesheet" href="css/style.css?ver=17">
 	<link rel="stylesheet" href="css/bootstrap_custom.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 	<!-- <script src="js/jquery-ui.js?ver=11"></script> -->
 	<!-- <script src="js/style.js?ver=12"></script> -->
@@ -132,11 +133,9 @@
 	</div>
   </div>
 
-
-
 	<section class="frm__container" id="frm">
 		<div class="container">
-			<div id="spotrebitelskyUver" class="row frm__section blueLightBg">
+			<div id="spotrebitelskyUver" class="row frm__section blueLightBg animate__animated animate__fadeIn">
 				<div class="col-md-12">
 					<div class="row text-center">
 						<div class="col-md-12">
@@ -197,13 +196,13 @@
 					<div class="row text-center">
 						<div class="col-md-12">
 							<p id="errMsg" class="errMsg__container"></p>
-								<button id="btNext" class="btn btn-primary btn__container" type="button">Uložit a pokračovat</button>
+								<button id="btNext" class="btn btn-primary btn__container btNext__container animate__animated" type="button">Uložit a pokračovat</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div id="osobniUdaje" class="row frm__section blueDarkBg">
+			<div id="osobniUdaje" class="row frm__section blueDarkBg animate__animated">
 				<div class="col-md-12">
 					<div class="row text-center">
 						<div class="col-md-12">
@@ -261,7 +260,7 @@
 									<p class="name blueDarkTxt">rodné číslo</p>
 								</div>
 								<div class="col-md-6 text-left">
-									<input type="text" class="inpt blueDarkBg whiteTxt" id="rd_inpt" />
+									<input type="text" class="inpt blueDarkBg whiteTxt" id="rd_inpt" data-rd />
 								</div>
 							</div>
 
@@ -332,7 +331,7 @@
 						</div>
 					</div>
 
-					<div class="row text-center">
+					<div id="korespondencniAdresa__container" class="row text-center animate__animated">
 						<div class="frm__sectionFlexContainer whiteBg">
 
 							<div class="row frm__sectionFlexContainerItem">
@@ -368,14 +367,14 @@
 					<div class="row text-center">
 						<div class="col-md-12">
 							<p id="errMsg" class="errMsg__container"></p>
-								<button id="btNext" class="btn btn-primary btn__container" type="button">Uložit a pokračovat</button>
+								<button id="btNext" class="btn btn-primary btn__container btNext__container animate__animated" type="button">Uložit a pokračovat</button>
 						</div>
 					</div>
 
 				</div>
 			</div>
 
-			<div id="zadostOPujcku" class="row frm__section blueLightBg">
+			<div id="zadostOPujcku" class="row frm__section blueLightBg animate__animated">
 				<div class="col-md-12">
 
 					<div class="row text-center">
@@ -506,7 +505,7 @@
 						</div>
 						<div class="col-md-6 text-left">
 							<div class="politicItem__container">
-								<input type="radio" id="nejsemPolitickyExponovanaOsoba_chcx" name="politickyExponovanaOsoba" value="60">
+								<input type="radio" id="nejsemPolitickyExponovanaOsoba_chcx" name="politickyExponovanaOsoba" checked value="NEJSEM politicky exponovaná osoba">
 								<label for="nejsemPolitickyExponovanaOsoba_chcx">NEJSEM politicky exponovaná osoba</label>
 							</div>
 						</div>
@@ -538,13 +537,13 @@
 					<div class="row text-center">
 						<div class="col-md-12">
 							<p id="errMsg" class="errMsg__container"></p>
-								<button id="btNext" class="btn btn-primary btn__container" type="button">Uložit a pokračovat</button>
+								<button id="btNext" class="btn btn-primary btn__container btNext__container animate__animated" type="button">Uložit a pokračovat</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div id="informaceOVas" class="row frm__section blueDarkBg">
+			<div id="informaceOVas" class="row frm__section blueDarkBg animate__animated">
 				<div class="col-md-12">
 					<div class="row text-center">
 						<div class="col-md-12">
@@ -643,15 +642,12 @@
 					<div class="row text-center">
 						<div class="col-md-12 ">
 							<p id="errMsg" class="errMsg__container"></p>
-							<button id="btSendData" class="btn btn-primary btSendData__container"
+							<button id="btSendData" class="btn btn-primary btSendData__container animate__animated"
 								type="button">Odeslat</button>
 						</div>
 					</div>
 				</div>
 			</div>
-
-
-	
 		</div>
 		</div>
 	</section>

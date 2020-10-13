@@ -12,7 +12,7 @@
     opVydal_inpt: {type:"text"},
     cisloOp_inpt: {type:"text"},
     platnostOP_inpt: {type:"date"},
-    rd_inpt: {type:"text"},
+    rd_inpt: {type:"rd"},
     mistoNarozeni_inpt: {type:"text"},
     addr_trv_ulice_inpt: {type:"text"},
     addr_trv_mesto_inpt: {type:"text"},
@@ -28,9 +28,10 @@
     kopieOP_data: {type:"file"},
     potvrzeniPrijmu_data: {type:"file"},
     zacatekUveru_inpt: {type:"text"},
-    jsemPolitickyExponovanaOsoba_chcx: {type:"radio"},
+    jsemPolitickyExponovanaOsoba_chcx: {type:"radio",status:"optionable"},
+    // nejsemPolitickyExponovanaOsoba_chcx: {type:"radio",status:"required"},
     nejsemPolitickyExponovanaOsoba_chcx: {type:"radio"},
-    uzavreniPujcky_chcx: {type:"checkbox"}
+    uzavreniPujcky_chcx: {type:"checkbox",status:"required"}
   }
   
   /* INFORMACE O VAS  */
@@ -44,6 +45,7 @@
     mesicniSplatky_inpt: {type:"number"}
   }
 
+
     let trace=console.log.bind(console);
       let _urokovaSazba = 0.109;
       let _vyseCastkyValue =  document.getElementById("vyseCastkyValue");
@@ -52,7 +54,6 @@
       let _dobaSplaceniValue = document.getElementById("dobaSplaceniValue");
           _dobaSplaceniValue.textContent=12;
       let _dobaSplaceniValue_inpt = document.getElementById("dobaSplaceniValue_inpt");
-          
       let _urokovaSazbaValue =  document.getElementById("urokovaSazbaValue");
       let _rpsnValue =  document.getElementById("rpsnValue");
       let _vyseSplatkyValue =  document.getElementById("vyseSplatkyValue");
@@ -62,7 +63,6 @@
       _rpsnValue.textContent=_urokovaSazba;
 
       _vyseCastkyValue_inpt.addEventListener("input",(e)=> {
-        trace("vyse castky: ",e.currentTarget.value);
         _vyseCastkyValue.textContent=e.currentTarget.value;
         let _vyseSplatky = vyseSplatky();
        _vyseSplatkyValue.textContent = _vyseSplatky;
@@ -84,7 +84,6 @@
         _rpsn.dobaSplaceni(_dobaSplaceniValue_inpt.value); // pocet mesicnich splatek
         _rpsnValue.textContent=_rpsn.calculate()*100;
         _vyseSplatkyValue.textContent = _vyseSplatky;
-
         }
       );
 
@@ -154,6 +153,72 @@
        
        let _rpsn = new RPSN();
 
+    // validace rodneho cisla
+   function RC(){
+  this.rc = 0;
+  let date_of_birth;
+  let year;
+  let month;
+  let day;
+  let monthsGroups = [{daysCount:31,monthNumber:[1,3,5,7,8,10,12]},{daysCount:30,monthNumber:[4,6,9,11]},{daysCount:29,monthNumber:[2]}]
+  
+
+  this.checkDay = function(){
+  	return day >=1 && day <=31;
+  }
+  
+  this.checkMonth = function(){
+    return month >=1 && month <=12;
+  }
+  
+  this.checkYear =  function(){
+    return year>=54;
+  }
+  
+  this.checkDate = function(){
+    trace("den: ",day, "mesic: ",month)
+  	return !! monthsGroups.filter(item => item.monthNumber.find(m => m===month && day<=item.daysCount)).length;
+  }
+  
+ this.checkControlNumbers = function(){
+    return this.rc%11===0;
+  }
+  
+  this.validate = function(elm){
+    this.rc=elm.value;
+
+     date_of_birth = this.rc.toString().substr(0,6);
+     year = date_of_birth.substr(0,2);
+     month = date_of_birth.substr(2,2) > 12 ? +date_of_birth.substr(2,2)-50 : +date_of_birth.substr(2,2);
+     day = date_of_birth.substr(date_of_birth.length-2,date_of_birth.length);
+
+    let _errMsg="";
+    let _validity=false;
+  	if(this.checkDay()) {
+    		if(this.checkMonth()){
+      		if(this.checkYear()){
+          	if(this.checkControlNumbers()){
+            	if(this.checkDate()){
+              		_validity=true;
+              }else{
+            		_errMsg="Rodné číslo obsahuje nesprávné datum (den a měsíc neodpovídá realitě)";
+              }
+            }else{
+            _errMsg="Rodné číslo obsahuje nesprávné kontrolní číslo (tj.poslední číslo)";
+            }
+          }else{
+          _errMsg="Rodné číslo obsahuje nesprávný rok narození";
+          } 	
+        }else{
+       		_errMsg="Rodné číslo obsahuje nesprávný měsic narození";	 
+        }
+    }else{
+    	 _errMsg="Rodné číslo obsahuje nesprávný den narození";
+    }
+    return {msg:_errMsg,status:_validity};
+  }
+   }
+
    function InputTelValidation(){
      this.init = elm=> elm.value=elm.value.replace(/[^0-9.]/g,'')
      this.validate = (elm)=> {
@@ -180,11 +245,12 @@
        }
    }
   
-  const objValidation = {
+    const objValidation = {
     tel: new InputTelValidation(),
     number: new InputNumberValidation(),
     text:new InputTextValidation(),
     email: new InputEmailValidation(),
+    rd: new RC()
     }
   
   function FormPart(containerId,data,validationRules,showNextFrmStep,hideNextSteps,sendData){
@@ -206,7 +272,7 @@
     }
     )
   
-    this.hide(this.btNext ?? this.btSendData)
+    this.hide(this.btNext ?? this.btSendData,true)
     this.addEventListenerToInpt()
   }
   
@@ -218,19 +284,36 @@
             const elm=e.target;
             this.hideNextSteps(this.frmStepName)
             if(elm.type==="number" || elm.type==="tel") this.validation[elm.type].init(elm)
-              this.checkFilledAllFormPart() ? this.show(this.btNext ?? this.btSendData) : this.hide(this.btNext ?? this.btSendData)
+              this.checkFilledAllFormPart() ? this.show(this.btNext ?? this.btSendData,true) : this.hide(this.btNext ?? this.btSendData,true)
           })
     }
   }
 
-  FormPart.prototype.show=function(elm){elm.style=""}
-  FormPart.prototype.hide=function(elm){elm.style.display="none";}
+  FormPart.prototype.show=function(elm,fadeIn){
+    if(fadeIn) {
+      elm.classList.remove("animate__fadeOut")
+      elm.classList.add("animate__fadeIn");
+      elm.style.zIndex = 100;
+    }else{
+      elm.style="";
+    }
+  }
+  FormPart.prototype.hide=function(elm,fadeOut){
+    if(fadeOut) {
+      elm.classList.remove("animate__fadeIn")
+      elm.classList.add("animate__fadeOut")
+    }else{
+      elm.style.display="none";
+    }
+  
+  }
   FormPart.prototype.click=function(elm,fce){elm.addEventListener("click",(e)=>fce())}
   FormPart.prototype.getData=function(){
     let data={name:this.frmStepName}
     for(let i in this.data){
       let item = document.getElementById(i);
-      data[i]=item.value
+      // trace("ITEM: ",item)
+      data[i]= item.type==="radio" || item.type==="checkbox" ? item.checked : item.value;
     }
     return data
   }
@@ -238,7 +321,7 @@
     let res=true;
       for(i in data) {
         let itemName = data[i]
-        if(itemName.type==="email" || itemName.type==="tel") {
+        if(itemName.type==="email" || itemName.type==="tel" || itemName.type==="rd") {
           let item = document.getElementById(i)
           let resObj = this.validation[itemName.type].validate(item)
           if(!resObj.status){
@@ -257,18 +340,18 @@
        if(
          (item.type!=="checkbox" && item.value.length>0) ||
          (item.type==="checkbox" && item.checked && this.data[i].status==="required") ||
-         (item.type==="checkbox" && this.data[i].status==="optionable")
+         ((item.type==="checkbox" || item.type==="radio") && this.data[i].status==="optionable")
          ){
         idx++;
        }
 
        if(item.type==="checkbox" && this.data[i].status==="optionable") {
          let frmPart = document.getElementById(item.dataset["togglepart"])
-         item.checked ? this.hide(frmPart) : this.show(frmPart)
+         item.checked ? this.hide(frmPart,true) : this.show(frmPart,true)
        }
 
   }
-  // console.log(idx," : ", Object.keys(this.data).length)
+  console.log(idx," : ", Object.keys(this.data).length)
   return (idx===Object.keys(this.data).length)
   }
 
@@ -276,21 +359,29 @@
   
   function Form(){
     let showNextFrmStep=function(frmName){
-        for(let i=0;i<frmStepsArr.length;i++){
-          let item = frmStepsArr[i]
-            if(item.frmStepName===frmName){
-                frmStepsArr[i+1].show(frmStepsArr[i+1].containerId)
-                console.log("YPOS: ",frmStepsArr[i+1].containerId.clientPos)
-                break;
-             }
-         }
+      let current_idx = frmStepsArr.map(frmPart => frmPart.frmStepName).indexOf(frmName);
+      frmStepsArr[current_idx].hide(frmStepsArr[current_idx].containerId,true);
+      frmStepsArr[current_idx+1].show(frmStepsArr[current_idx+1].containerId,true);
+
+        // for(let i=0;i<frmStepsArr.length;i++){
+        //   let item = frmStepsArr[i]
+        //     if(item.frmStepName===frmName){
+        //         // frmStepsArr[i+1].show(frmStepsArr[i+1].containerId)
+        //         frmStepsArr[i+1].hide(frmStepsArr[i+1].containerId)
+        //         // console.log("YPOS: ",frmStepsArr[i+1].containerId.clientPos)
+        //         // break;
+        //      }else{
+              
+        //      }
+        //  }
+
     }
   
       let hideNextSteps=function(frmName){
         let startIndex=frmStepsArr.map(item =>item.frmStepName).indexOf(frmName)
         for(let i=startIndex+1;i<frmStepsArr.length;i++){
           let item = frmStepsArr[i]
-              item.hide(item.containerId)
+              item.hide(item.containerId,true)
         }
       }
   
@@ -304,7 +395,7 @@
 
     let frmStepsArr = this.frmStepsContainer.map((item,index) => {
       let _item = new item.template(item.containerId,item.data,item.validation,showNextFrmStep,hideNextSteps,sendData);
-      index > 0 ? _item.hide(_item.containerId) : _item.show(_item.containerId)
+      index > 0 ? _item.hide(_item.containerId,true) : _item.show(_item.containerId,true)
       return _item;
     })
   }

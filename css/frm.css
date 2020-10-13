@@ -92,6 +92,11 @@
 .frm__container .checkboxContainer input:checked ~ .checkboxContainer--checkmark:after {
   display: block;
 }
+.frm__container .frm__section {
+  position: absolute;
+  top: 0;
+  width: inherit;
+}
 .frm__container .frm__section .title__container {
   font-family: RobotoCondensedBold;
   font-size: 45px;
