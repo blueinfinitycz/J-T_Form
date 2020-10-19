@@ -132,15 +132,184 @@
 	  </div>
 	</div>
   </div>
-
+  
 	<section class="frm__container" id="frm">
 		<div class="container">
+			<div id="zadostOPujcku" class="row frm__section blueLightBg animate__animated">
+				<div class="col-md-12">
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<h1 class="title__container blueVividTxt">
+								<p class="title__container--num">01</p>
+								žádost o půjčku
+							</h1>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<h2 class="subtitle__container blueVividTxt">VÝŠE SPLÁTKY - IKLIENT</h2>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="frm__sectionFlexContainer blueDarkBg" style="width: 992px;">
+							<div class="row frm__sectionFlexContainerItem">
+								<div class="col-md-12">
+									<p class="name whiteTxt">výše částky: 
+										<span class="rangeValue" id="vyseCastkyValue"></span>
+									</p>
+									<input type="range" id="vyseCastkyValue_inpt" class="inpt" value="0" min="40000" max="150000" step="1000" />
+								</div>
+							</div>
+
+							<div class="row frm__sectionFlexContainerItem">
+								<div class="col-md-12">
+									<p class="name whiteTxt">doba splácení:
+										<span class="rangeValue" id="dobaSplaceniValue"></span>
+									</p>
+									<input type="range" id="dobaSplaceniValue_inpt" class="inpt" value="12" min="12" max="60" step="12" />
+								</div>
+							</div>
+
+							<div class="row frm__sectionFlexContainerItem whiteBg" style="padding:10px 0">
+								<div class="col-md-4 text-center">
+									<p class="name blueVividTxt">úroková sazba </p><span class="rangeValue" id="urokovaSazbaValue">0</span>
+								</div>
+
+								<div class="col-md-4 text-center">
+									<p class="name blueVividTxt">RPSN </p><span class="rangeValue" id="rpsnValue">0</span>
+								</div>
+
+								<div class="col-md-4 text-center">
+									<p class="name blueVividTxt">výše splátky </p><span class="rangeValue" id="vyseSplatkyValue">0</span>
+								</div>
+							</div>
+
+
+							<div class="row frm__sectionFlexContainerItem">
+								<div class="col-md-4">
+									<p class="name whiteTxt"><label for="kopieOP_data">kopie op</label></p>
+									<input type="file" class="inpt whiteBg" id="kopieOP_data">
+								</div>
+
+								<div class="col-md-4">
+									<p class="name whiteTxt"><label for="potvrzeniPrijmu_data">potvrzení příjmu</label></p>
+									<input type="file" class="inpt whiteBg" id="potvrzeniPrijmu_data">
+								</div>
+
+								<div class="col-md-4">
+									<p class="name whiteTxt"><label for="zacatekUveru_inpt">začátek úvěru</label></p>
+									<input type="date" class="inpt whiteBg" id="zacatekUveru_inpt">
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<h2 class="subtitle__container blueVividTxt">nahlížení do registrů, PER, prohlášení a souhlasy</h2>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="frm__sectionFlexContainer frm__sectionFlexContainer--custom">
+								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
+									<img name="white" src="./images/about_formIcon_bily.svg" class="img-responsive" alt="about-icon">
+									<img name="blue" src="./images/about_formIcon_modry.svg" alt="about-icon">
+									<p class="name">info o vás</p>
+									<p>Vyplňte něco o vás a nahrajte související doklady</p>
+								</div>
+
+								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
+									<img name="white" src="./images/check_form_bily.svg" alt="about-icon">
+									<img name="blue" src="./images/check_form_modry.svg" alt="about-icon">
+									<p class="name">kontrola formuláře</p>
+									<p>Vyhodnotíme Vaší žádost a předáme Vám smlouvu</p>
+								</div>
+
+								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
+									<img name="white" src="./images/smlouva_s_kuryrem_bily.svg" alt="about-icon">
+									<img name="blue" src="./images/smlouva_s_kuryrem_modry.svg" alt="about-icon">
+
+									<p class="name">smlouva s kurýrem</p>
+									<p>Smlouvu podepíšete s naším kurýrem</p>
+								</div>
+
+								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
+									<img name="white" src="./images/dovoz_penez_bily.svg" alt="about-icon">
+									<img name="blue" src="./images/dovoz_penez_modry.svg" alt="about-icon">
+
+									<p class="name">dovoz peněz</p>
+									<p>Hotovo, peníze jsou na cestě</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<h2 class="subtitle__container blueVividTxt">informace o požadovaných dokladech</h2>
+							<p class="name blueVividTxt" style="max-width: 768px;margin:auto;">Podle § 4 odst. 5) zákona č. 253/2008 Sb., o některých opatřeních proti legalizaci výnosů z trestné činnosti a financování terorismu, podpisem <a href="#" target="_blank" data-toggle="modal" data-target="#listina"><b>této listiny</b></a> prohlašuji, že</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 text-right">
+							<div class="politicItem__container">
+								<input type="radio" id="jsemPolitickyExponovanaOsoba_chcx" name="politickyExponovanaOsoba" value="JSEM politicky exponovaná osoba">
+								<label for="jsemPolitickyExponovanaOsoba_chcx">JSEM politicky exponovaná osoba</label><br>
+							</div>
+						</div>
+						<div class="col-md-6 text-left">
+							<div class="politicItem__container">
+								<input type="radio" id="nejsemPolitickyExponovanaOsoba_chcx" name="politickyExponovanaOsoba" checked value="NEJSEM politicky exponovaná osoba">
+								<label for="nejsemPolitickyExponovanaOsoba_chcx">NEJSEM politicky exponovaná osoba</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<h2 class="subtitle__container blueVividTxt">souhlas půjčky</h2>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<p class="name blueVividTxt" style="max-width: 768px;margin:auto;">Souhlasím s tím, aby<a href="#" data-toggle="modal" data-target="#jtl" target="_blank"> <b>JTLS získávala informace</b></a> o mé bonitě, platební morálce a důvěryhodnosti z Pozitivního registru SOLUS Tento souhlas uděluji na dobu jednání o uzavření smlouvy. V případě, že mezi mnou (nebo žadatelem, pokud jde o ručitele, spolužadatele nebo zákonného zástupce) a JTLS bude uzavřena Smlouva, uděluji tento souhlas na dobu jejího trvání.</p>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<div class="politicItem__container" style="max-width: 768px;">
+								<label for="uzavreniPujcky_chcx">
+								<input type="checkbox" id="uzavreniPujcky_chcx">
+									<span>Potvrzuji, že jsem se seznámil/a, porozuměl/a a souhlasím s výše uvedenými prohlášeními, a že mi J&T Leasingová společnost, a.s. poskytla vysvětlení všech mých dotazů.</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<p id="errMsg" class="errMsg__container"></p>
+								<button id="btNext" class="btn btn-primary btn__container btNext__container animate__animated" type="button">Uložit a pokračovat</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div id="spotrebitelskyUver" class="row frm__section blueLightBg animate__animated animate__fadeIn">
 				<div class="col-md-12">
 					<div class="row text-center">
 						<div class="col-md-12">
 							<h1 class="title__container blueVividTxt">
-								<p class="title__container--num">01</p>
+								<p class="title__container--num">02</p>
 								žádost o spotřebitelský úvěr
 							</h1>
 						</div>
@@ -207,7 +376,7 @@
 					<div class="row text-center">
 						<div class="col-md-12">
 							<h1 class="title__container whiteTxt">
-								<p class="title__container--num">02</p>
+								<p class="title__container--num">03</p>
 								osobní údaje
 							</h1>
 						</div>
@@ -371,175 +540,6 @@
 						</div>
 					</div>
 
-				</div>
-			</div>
-
-			<div id="zadostOPujcku" class="row frm__section blueLightBg animate__animated">
-				<div class="col-md-12">
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<h1 class="title__container blueVividTxt">
-								<p class="title__container--num">03</p>
-								žádost o půjčku
-							</h1>
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<h2 class="subtitle__container blueVividTxt">VÝŠE SPLÁTKY - IKLIENT</h2>
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="frm__sectionFlexContainer blueDarkBg" style="width: 992px;">
-							<div class="row frm__sectionFlexContainerItem">
-								<div class="col-md-12">
-									<p class="name whiteTxt">výše částky: 
-										<span class="rangeValue" id="vyseCastkyValue"></span>
-									</p>
-									<input type="range" id="vyseCastkyValue_inpt" class="inpt" value="0" min="40000" max="150000" step="1000" />
-								</div>
-							</div>
-
-							<div class="row frm__sectionFlexContainerItem">
-								<div class="col-md-12">
-									<p class="name whiteTxt">doba splácení:
-										<span class="rangeValue" id="dobaSplaceniValue"></span>
-									</p>
-									<input type="range" id="dobaSplaceniValue_inpt" class="inpt" value="12" min="12" max="60" step="12" />
-								</div>
-							</div>
-
-							<div class="row frm__sectionFlexContainerItem whiteBg" style="padding:10px 0">
-								<div class="col-md-4 text-center">
-									<p class="name blueVividTxt">úroková sazba </p><span class="rangeValue" id="urokovaSazbaValue">0</span>
-								</div>
-
-								<div class="col-md-4 text-center">
-									<p class="name blueVividTxt">RPSN </p><span class="rangeValue" id="rpsnValue">0</span>
-								</div>
-
-								<div class="col-md-4 text-center">
-									<p class="name blueVividTxt">výše splátky </p><span class="rangeValue" id="vyseSplatkyValue">0</span>
-								</div>
-							</div>
-
-
-							<div class="row frm__sectionFlexContainerItem">
-								<div class="col-md-4">
-									<p class="name whiteTxt"><label for="kopieOP_data">kopie op</label></p>
-									<input type="file" class="inpt whiteBg" id="kopieOP_data">
-								</div>
-
-								<div class="col-md-4">
-									<p class="name whiteTxt"><label for="potvrzeniPrijmu_data">potvrzení příjmu</label></p>
-									<input type="file" class="inpt whiteBg" id="potvrzeniPrijmu_data">
-								</div>
-
-								<div class="col-md-4">
-									<p class="name whiteTxt"><label for="zacatekUveru_inpt">začátek úvěru</label></p>
-									<input type="date" class="inpt whiteBg" id="zacatekUveru_inpt">
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<h2 class="subtitle__container blueVividTxt">nahlížení do registrů, PER, prohlášení a souhlasy</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="frm__sectionFlexContainer frm__sectionFlexContainer--custom">
-								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
-									<img name="white" src="./images/about_formIcon_bily.svg" class="img-responsive" alt="about-icon">
-									<img name="blue" src="./images/about_formIcon_modry.svg" alt="about-icon">
-									<p class="name">info o vás</p>
-									<p>Vyplňte něco o vás a nahrajte související doklady</p>
-								</div>
-
-								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
-									<img name="white" src="./images/check_form_bily.svg" alt="about-icon">
-									<img name="blue" src="./images/check_form_modry.svg" alt="about-icon">
-									<p class="name">kontrola formuláře</p>
-									<p>Vyhodnotíme Vaší žádost a předáme Vám smlouvu</p>
-								</div>
-
-								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
-									<img name="white" src="./images/smlouva_s_kuryrem_bily.svg" alt="about-icon">
-									<img name="blue" src="./images/smlouva_s_kuryrem_modry.svg" alt="about-icon">
-
-									<p class="name">smlouva s kurýrem</p>
-									<p>Smlouvu podepíšete s naším kurýrem</p>
-								</div>
-
-								<div class="frm__sectionFlexContainerItem frm__sectionFlexContainerItem--infoPanel">
-									<img name="white" src="./images/dovoz_penez_bily.svg" alt="about-icon">
-									<img name="blue" src="./images/dovoz_penez_modry.svg" alt="about-icon">
-
-									<p class="name">dovoz peněz</p>
-									<p>Hotovo, peníze jsou na cestě</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<h2 class="subtitle__container blueVividTxt">informace o požadovaných dokladech</h2>
-							<p class="name blueVividTxt" style="max-width: 768px;margin:auto;">Podle § 4 odst. 5) zákona č. 253/2008 Sb., o některých opatřeních proti legalizaci výnosů z trestné činnosti a financování terorismu, podpisem <a href="#" target="_blank" data-toggle="modal" data-target="#listina"><b>této listiny</b></a> prohlašuji, že</p>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-6 text-right">
-							<div class="politicItem__container">
-								<input type="radio" id="jsemPolitickyExponovanaOsoba_chcx" name="politickyExponovanaOsoba" value="JSEM politicky exponovaná osoba">
-								<label for="jsemPolitickyExponovanaOsoba_chcx">JSEM politicky exponovaná osoba</label><br>
-							</div>
-						</div>
-						<div class="col-md-6 text-left">
-							<div class="politicItem__container">
-								<input type="radio" id="nejsemPolitickyExponovanaOsoba_chcx" name="politickyExponovanaOsoba" checked value="NEJSEM politicky exponovaná osoba">
-								<label for="nejsemPolitickyExponovanaOsoba_chcx">NEJSEM politicky exponovaná osoba</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<h2 class="subtitle__container blueVividTxt">souhlas půjčky</h2>
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<p class="name blueVividTxt" style="max-width: 768px;margin:auto;">Souhlasím s tím, aby<a href="#" data-toggle="modal" data-target="#jtl" target="_blank"> <b>JTLS získávala informace</b></a> o mé bonitě, platební morálce a důvěryhodnosti z Pozitivního registru SOLUS Tento souhlas uděluji na dobu jednání o uzavření smlouvy. V případě, že mezi mnou (nebo žadatelem, pokud jde o ručitele, spolužadatele nebo zákonného zástupce) a JTLS bude uzavřena Smlouva, uděluji tento souhlas na dobu jejího trvání.</p>
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<div class="politicItem__container" style="max-width: 768px;">
-								<label for="uzavreniPujcky_chcx">
-								<input type="checkbox" id="uzavreniPujcky_chcx">
-									<span>Potvrzuji, že jsem se seznámil/a, porozuměl/a a souhlasím s výše uvedenými prohlášeními, a že mi J&T Leasingová společnost, a.s. poskytla vysvětlení všech mých dotazů.</span>
-								</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="row text-center">
-						<div class="col-md-12">
-							<p id="errMsg" class="errMsg__container"></p>
-								<button id="btNext" class="btn btn-primary btn__container btNext__container animate__animated" type="button">Uložit a pokračovat</button>
-						</div>
-					</div>
 				</div>
 			</div>
 

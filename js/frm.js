@@ -1,30 +1,5 @@
-    /* spotrebitelskyUver */
- const dataFrmPart1 = {
-    jmeno_inpt: {type:"text"},
-    prijmeni_inpt: {type:"text"},
-    tel_inpt: {type:"tel"},
-    email_inpt: {type:"email"}
-  }
-  
-  /* osobniUdaje */
-  const dataFrmPart2 = {
-    nationality_select: {type:"select"},
-    opVydal_inpt: {type:"text"},
-    cisloOp_inpt: {type:"text"},
-    platnostOP_inpt: {type:"date"},
-    rd_inpt: {type:"rd"},
-    mistoNarozeni_inpt: {type:"text"},
-    addr_trv_ulice_inpt: {type:"text"},
-    addr_trv_mesto_inpt: {type:"text"},
-    addr_trv_psc_inpt: {type:"text"},
-    chckTrvalBydliste_chcx: {type:"checkbox",status:"optionable"},
-    addr_kores_ulice_inpt: {type:"text"},
-    addr_kores_mesto_inpt: {type:"text"},
-    addr_kores_psc_inpt: {type:"text"}
-  }
-
    /* ZADOST O PUJCKU */
-  const dataFrmPart3 = {
+   const dataFrmPart1 = {
     kopieOP_data: {type:"file"},
     potvrzeniPrijmu_data: {type:"file"},
     zacatekUveru_inpt: {type:"text"},
@@ -33,7 +8,32 @@
     nejsemPolitickyExponovanaOsoba_chcx: {type:"radio"},
     uzavreniPujcky_chcx: {type:"checkbox",status:"required"}
   }
-  
+   
+  /* spotrebitelskyUver */
+ const dataFrmPart2 = {
+  jmeno_inpt: {type:"text"},
+  prijmeni_inpt: {type:"text"},
+  tel_inpt: {type:"tel"},
+  email_inpt: {type:"email"}
+}
+
+ /* osobniUdaje */
+ const dataFrmPart3 = {
+  nationality_select: {type:"select"},
+  opVydal_inpt: {type:"text"},
+  cisloOp_inpt: {type:"text"},
+  platnostOP_inpt: {type:"date"},
+  rd_inpt: {type:"rd"},
+  mistoNarozeni_inpt: {type:"text"},
+  addr_trv_ulice_inpt: {type:"text"},
+  addr_trv_mesto_inpt: {type:"text"},
+  addr_trv_psc_inpt: {type:"text"},
+  chckTrvalBydliste_chcx: {type:"checkbox",status:"optionable"},
+  addr_kores_ulice_inpt: {type:"text"},
+  addr_kores_mesto_inpt: {type:"text"},
+  addr_kores_psc_inpt: {type:"text"}
+}
+
   /* INFORMACE O VAS  */
   const dataFrmPart4 = {
     domacnost_inpt:{type:"select"},
@@ -45,6 +45,7 @@
     mesicniSplatky_inpt: {type:"number"}
   }
 
+//zadostOPujcku,spotrebitelskyUver,osobniUdaje,informaceOVas
 
     let trace=console.log.bind(console);
       let _urokovaSazba = 0.109;
@@ -58,9 +59,9 @@
       let _rpsnValue =  document.getElementById("rpsnValue");
       let _vyseSplatkyValue =  document.getElementById("vyseSplatkyValue");
      
-      _urokovaSazbaValue.textContent=_urokovaSazba+ " %";
+      _urokovaSazbaValue.textContent=(_urokovaSazba*100)+ " %";
       _dobaSplaceniValue.textContent=12+ " měsíců";
-      _rpsnValue.textContent=_urokovaSazba;
+      _rpsnValue.textContent=_urokovaSazba.toFixed(2);
 
       _vyseCastkyValue_inpt.addEventListener("input",(e)=> {
         _vyseCastkyValue.textContent=e.currentTarget.value;
@@ -70,7 +71,7 @@
        _rpsn.vyseCastkyPujcky(_vyseCastkyValue_inpt.value); // pujcka
         _rpsn.vyseMesicniSplatky(_vyseSplatky); // mesicni splatka
         _rpsn.dobaSplaceni(_dobaSplaceniValue_inpt.value); // pocet mesicnich splatek
-        _rpsnValue.textContent=_rpsn.calculate()*100;
+        _rpsnValue.textContent=(_rpsn.calculate()*100).toString().split("0")[0];
         _vyseSplatkyValue.textContent = _vyseSplatky;
       });
 
@@ -82,13 +83,13 @@
         _rpsn.vyseCastkyPujcky(_vyseCastkyValue_inpt.value); // pujcka
         _rpsn.vyseMesicniSplatky(_vyseSplatky); // mesicni splatka
         _rpsn.dobaSplaceni(_dobaSplaceniValue_inpt.value); // pocet mesicnich splatek
-        _rpsnValue.textContent=_rpsn.calculate()*100;
+        _rpsnValue.textContent=(_rpsn.calculate()*100).toString().split("0")[0];
         _vyseSplatkyValue.textContent = _vyseSplatky;
         }
       );
 
       function vyseSplatky(){
-        return  _vyseCastkyValue_inpt.value * ((_urokovaSazba/12) / (1-Math.pow((1/(1+_urokovaSazba/12)) ,  _dobaSplaceniValue_inpt.value)));
+        return  (_vyseCastkyValue_inpt.value * ((_urokovaSazba/12) / (1-Math.pow((1/(1+_urokovaSazba/12)) ,  _dobaSplaceniValue_inpt.value)))).toFixed(2);
       }
 
       function RPSN(){
@@ -291,8 +292,9 @@
 
   FormPart.prototype.show=function(elm,fadeIn){
     if(fadeIn) {
-      elm.classList.remove("animate__fadeOut")
-      elm.classList.add("animate__fadeIn");
+      // elm.classList.remove("animate__fadeOut")
+      // elm.classList.add("animate__fadeIn");
+      elm.style.display="inline-block";
       elm.style.zIndex = 100;
     }else{
       elm.style="";
@@ -300,8 +302,9 @@
   }
   FormPart.prototype.hide=function(elm,fadeOut){
     if(fadeOut) {
-      elm.classList.remove("animate__fadeIn")
-      elm.classList.add("animate__fadeOut")
+      // elm.classList.remove("animate__fadeIn")
+      // elm.classList.add("animate__fadeOut")
+      elm.style.display="none";
     }else{
       elm.style.display="none";
     }
@@ -402,9 +405,9 @@
 
   const _form = {
     frmStepsContainer:[
-      {containerId:"spotrebitelskyUver",data:dataFrmPart1,validation:objValidation,template:FormPart},
-      {containerId:"osobniUdaje",data:dataFrmPart2,validation:objValidation,template:FormPart},
-      {containerId:"zadostOPujcku",data:dataFrmPart3,validation:objValidation,template:FormPart},
+      {containerId:"zadostOPujcku",data:dataFrmPart1,validation:objValidation,template:FormPart},
+      {containerId:"spotrebitelskyUver",data:dataFrmPart2,validation:objValidation,template:FormPart},
+      {containerId:"osobniUdaje",data:dataFrmPart3,validation:objValidation,template:FormPart},
       {containerId:"informaceOVas",data:dataFrmPart4,validation:objValidation,template:FormPart},
       ],
     createForm:Form,
